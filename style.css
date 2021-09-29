@@ -46,6 +46,21 @@ input{
     padding: 10px;
     margin: 10px;
 }
+input[type=submit]{
+    border: none;
+    font-size: 17px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 20px;
+    width: 90px;
+}
+
+input[type=submit]:hover{
+    background-color: green;
+    color: white;
+    transition: 0.5s;
+    
+}
 button{
     border: none;
     font-size: 17px;
