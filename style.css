@@ -1,0 +1,63 @@
+h1{
+    margin-top: 0px;
+    font-size: 100px;
+    color: teal;
+    text-align: center;
+    text-shadow: 4px 4px 10px grey;
+}
+h2{
+    margin-top: 0px;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    text-shadow: 4px 4px 10px grey;
+}
+.Login{
+    border-radius: 15px;
+    margin: auto;
+    padding: 20px;
+    height: 300px;
+    width: 600px;
+    background-color: teal;
+    background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
+    color: white;
+}
+.SignUP{
+    border-radius: 15px;
+    margin: auto;
+    padding: 20px;
+    height: 570px;
+    width: 590px;
+    background-color: teal;
+    background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
+    color: white;
+    /* float: left;
+    padding: 10px;
+    height: 500px;
+    width: 400px;
+    background-color: teal;
+    color: white; */
+}
+.SignUP input{
+    width: 300px;
+    text-align: center;
+}
+input{
+    padding: 10px;
+    margin: 10px;
+}
+button{
+    border: none;
+    font-size: 17px;
+    margin: 5px;
+    padding: 12px;
+    border-radius: 20px;
+}
+button:hover{
+    background-color: green;
+    color: white;
+    transition: 0.5s;
+}
+#Gmail{
+    width: 320px;
+}
