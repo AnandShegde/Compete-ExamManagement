@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-    
+    //pavan kumar
     $conn = mysqli_connect('localhost', 'root', '');
     $sqlQuery = 'CREATE DATABASE IF NOT EXISTS userInfo ;';
     mysqli_query($conn, $sqlQuery);
