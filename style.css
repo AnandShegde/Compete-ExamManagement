@@ -14,7 +14,7 @@ h2{
     text-align: center;
     text-shadow: 4px 4px 4px black;
 }
-.Login{
+/* .Login{
     border-radius: 15px;
     margin-right: 70px;
     float: right;
@@ -24,7 +24,7 @@ h2{
     background-color: teal;
     background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
     color: antiquewhite;
-}
+} */
 .SignUP{
     border-radius: 30px;
     margin: auto;
@@ -75,18 +75,26 @@ body{
     background-image: url("homebgm.png");
     background-size: cover;
 }
-#bgm{
-    margin-left: 40px;
-    float: left;
-    background-image: url("homeimage.jpg");
-    background-size: cover;
-    width: 650px;
-    height: 450px;
-    border-radius: 30px;
-}
+
 .SignUP input{
     display: block;
 }
 .key{
     width: 400px;
 }
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+#bgm{
+    /* margin-left: 40px;  */
+    /* float: left; */
+    background-image: url("homeimage.jpg");
+    background-size: cover;
+    /* width: 50%;
+    padding: 20px;
+     height: 450px;  */
+    border-radius: 30px;
+    /* border: 2px solid red; */
+}
+

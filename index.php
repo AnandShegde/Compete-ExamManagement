@@ -17,8 +17,27 @@
         uName VARCHAR(120) NOT NULL, uGmail VARCHAR(200) NOT NULL, uAge INT NOT NULL, uInstitute VARCHAR(120) NOT NULL, uPassword VARCHAR(50) ); ';
     mysqli_query($conn1, $query);
     @$sign= $_POST['sign'];
-    ?>
-    <!-- if($sign)
+    @$login= $_POST['login'];
+    if($login)
+    {
+        $Username= $_POST['Email'];
+        $password= $_POST['password'];
+        $query= "SELECT uName, uPasword FROM userTable WHERE uGmail='$Email'";
+        $result= $conn1->query($query);
+        
+        if($result->num_rows>0)
+        {
+            $row= $result->fetch_assoc();
+            // THIS WILL LOGIN THE USER ANY SESSION RELATED ACTIVITIES THAT MUST HAPPEN DURING LOGIN SHOULD BE DONE HERE
+            if($password==$row['uPassword'])
+            {
+                header("Location: homepage.html"); 
+
+            }
+        }
+    }
+    
+    if($sign)
     {
         
         $Username= $_POST['Username'];
@@ -26,15 +45,26 @@
         $age= $_POST['Age'];
         $Insti= $_POST['Institute'];
         $password= $_POST['CrPassword'];
-        $sql= "SELECT uName FROM userTable WHERE uName='$Username'";
-        $result= $conn1->query($sql);
-        
 
+
+
+        $sql= "SELECT uName FROM userTable WHERE uName='$Username'";
+        $sql1 ="SELECT uName FROM userTable WHERE uGmail='$Email'";
+        $result= $conn1->query($sql); // for checking whether given username already exists
+        $result1= $conn1->query($sql1);// for checking whether given email already exists
         if($result->num_rows>0)
         {
             echo "Username Already exists";
 
         }
+        elseif($result1->num_rows>0)
+        {
+            echo "Email already exists";
+            
+        }
+
+
+
         else
         {
             $sql= "INSERT INTO userTable (uName,uGmail,uAge,uInstitute,uPassword) VALUES('$Username','$Email','$age','$Insti','$password');";
@@ -76,19 +106,19 @@
 //        title VARCHAR(120) NOT NULL, author VARCHAR(120), year SMALLINT(6));';
 //    mysqli_query($conn1, $query1);
 //    mysqli_query($conn1, $query2);
-?>  -->
+?> 
 
     <h1>DARE2COMPETE</h1>
     <div class="container">
-        <div id="bgm">
+        <div class="child" id='bgm'>
         
         </div>
-        <div class="Login">
+        <div class="child">
             <h2>Login</h2>
-            <form action="#" method="post"> <!--Login form-->
-                Gmail ID: <input type="text" name="Email" id="Gmail"> <br>
+            <form action="" method="post"> <!--Login form-->
+                Email ID: <input type="text" name="Email" id="Gmail"> <br>
                 Password: <input type="password" name="Password"> 
-                <button type="submit">Log in</button>
+                <button type="submit" value="login">Log in</button>
                 <button type="submit">Forgot Password</button> <br>
             </form>
             <form action="signup.php">
@@ -96,7 +126,7 @@
             </form>
         </div>
     </div>
-<?php
+<!-- <?php
     if($sign)
     {
         
@@ -155,6 +185,6 @@
 //        title VARCHAR(120) NOT NULL, author VARCHAR(120), year SMALLINT(6));';
 //    mysqli_query($conn1, $query1);
 //    mysqli_query($conn1, $query2);
-?>
+?> -->
 </body>
 </html>
