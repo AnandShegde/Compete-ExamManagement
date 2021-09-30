@@ -80,6 +80,9 @@
 
     <h1>DARE2COMPETE</h1>
     <div class="container">
+        <div id="bgm">
+        
+        </div>
         <div class="Login">
             <h2>Login</h2>
             <form action="#" method="post"> <!--Login form-->
