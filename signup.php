@@ -13,7 +13,8 @@
             <span class="key">Date of Birth</span><input type="date" name="DOB" > <br>
             <span class="key">Create Password*</span><input type="password" name="CrPassword"  required> <br>
             <span class="key">Confirm Password*</span><input type="text" name="CnPassword"  required> 
-            <input value="Sign Up" name="sign"type="submit"></input> 
+            <!--you had made it a button I needed the input so there is some discripancy in style please change -->
+             <input value="Sign Up" name="sign"type="submit"></input> 
         </form>
         <form action="index.php">
             <button type="submit">Back</button>
