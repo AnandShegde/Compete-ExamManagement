@@ -14,9 +14,12 @@
     mysqli_query($conn, $sqlQuery);
     $conn1 = mysqli_connect('localhost', 'root', '', 'userInfo');
     $query = 'CREATE TABLE IF NOT EXISTS userTable(
-        uName VARCHAR(120) NOT NULL, uGmail VARCHAR(200) NOT NULL, uAge INT NOT NULL, uInstitute VARCHAR(120) NOT NULL, uPassword VARCHAR(50) ); ';
+        uName VARCHAR(120) NOT NULL, 
+        uGmail VARCHAR(200) NOT NULL,
+         uAge INT NOT NULL, uInstitute VARCHAR(120) NOT NULL, 
+         uPassword VARCHAR(50) ); ';
     mysqli_query($conn1, $query);
-    @$sign= $_POST['sign'];
+   // @$sign= $_POST['sign'];
     ?>
     <!-- if($sign)
     {
@@ -93,7 +96,8 @@
             </form>
         </div>
     </div>
-<?php
+ <?php
+ /*
     if($sign)
     {
         
@@ -152,6 +156,7 @@
 //        title VARCHAR(120) NOT NULL, author VARCHAR(120), year SMALLINT(6));';
 //    mysqli_query($conn1, $query1);
 //    mysqli_query($conn1, $query2);
-?>
+*/
+?> 
 </body>
 </html>
