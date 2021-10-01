@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php 
     $nameerror=$ageerror=$inerror=$emailerror=$passerror=$cpasserror=$perror="";
     $Username=$cpassword=$password="";
@@ -98,15 +97,12 @@
     }
 
 ?>
-=======
->>>>>>> 90af6fd6a0fec9729f7d1e6f4795e88bed2b8e09
 
 <head>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="SignUP">
-<<<<<<< HEAD
         <h2>Sign Up</h2>
         <h3 style="color: yellow;">* Required</h3>
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> <!--Sign up-->
@@ -134,9 +130,8 @@
             <span style="color: yellow;"><?php echo $perror; ?></span>
             </fieldset> 
             <button type="submit" name="sign" id="Sign_up">Sign Up</button>
-=======
-        <h2>Sign UP</h2>
-        <form action="" method="post"> <!--Sign up-->
+        <!--<h2>Sign UP</h2>
+        <form action="" method="post">
             <span class="key">Username*</span> <input type="text" name="Username" required> <br>
             <span class="key">Gmail ID*</span> <input type="text" name="Email" required> <br>
             <span class="key">Age</span> <input type="number" name="Age"  required> <br>
@@ -144,9 +139,7 @@
             <span class="key">Date of Birth</span><input type="date" name="DOB" > <br>
             <span class="key">Create Password*</span><input type="password" name="CrPassword"  required> <br>
             <span class="key">Confirm Password*</span><input type="text" name="CnPassword"  required> 
-            <!--you had made it a button I needed the input so there is some discripancy in style please change -->
-             <input value="Sign Up" name="sign"type="submit"></input> 
->>>>>>> 90af6fd6a0fec9729f7d1e6f4795e88bed2b8e09
+             <input value="Sign Up" name="sign"type="submit"></input> -->
         </form>
         <form action="index.php">
             <button type="submit">Back</button>
@@ -158,6 +151,7 @@
 
 
 <?php
+/*
 $conn = mysqli_connect('localhost', 'root', '');
 $sqlQuery = 'CREATE DATABASE IF NOT EXISTS userInfo ;';
 mysqli_query($conn, $sqlQuery);
@@ -228,7 +222,7 @@ if($sign)
     }
 
 }
-
+*/
 ?>
 </body>
 

@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-<<<<<<< HEAD
 <?php
     //pavan kumar
     $conn = mysqli_connect('localhost', 'root', '');
@@ -82,10 +81,8 @@
 //    mysqli_query($conn1, $query2);
 ?>  -->
 
-=======
->>>>>>> 90af6fd6a0fec9729f7d1e6f4795e88bed2b8e09
     <h1>DARE2COMPETE</h1>
-    <center><p id="errors"></p></center>
+    <!--<center><p id="errors"></p></center>-->
     <div class="container">
         <div  id='bgm'>
         
@@ -104,7 +101,6 @@
             </form>
         </div>
     </div>
-<<<<<<< HEAD
  <?php
  /*
     if($sign)
@@ -157,7 +153,6 @@
             <?php
         }
     }
-<<<<<<< HEAD
     
 //    $conn = mysqli_connect('localhost', 'root', '');
 //    $sql = 'CREATE DATABASE IF NOT EXISTS publications;';
@@ -172,10 +167,5 @@
 //    mysqli_query($conn1, $query2);
 */
 ?> 
-=======
-
-?> 
-
->>>>>>> 90af6fd6a0fec9729f7d1e6f4795e88bed2b8e09
 </body>
 </html>
