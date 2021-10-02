@@ -3,14 +3,14 @@
     $Username=$cpassword=$password="";
     $conn = mysqli_connect('localhost', 'root', '');
     $sqlQuery = 'CREATE DATABASE IF NOT EXISTS userInfo ;';
-    mysqli_query($conn, $sqlQuery);
+    mysqli_query($conn,$sqlQuery);
     $conn1 = mysqli_connect('localhost', 'root', '', 'userInfo');
     $query = 'CREATE TABLE IF NOT EXISTS userTable(
         uName VARCHAR(120) NOT NULL, 
         uGmail VARCHAR(200) NOT NULL,
         uAge INT NOT NULL, uInstitute VARCHAR(120) NOT NULL, 
-        uPassword VARCHAR(50) ); ';
-    mysqli_query($conn1, $query);
+        uPassword VARCHAR(50) );';
+    mysqli_query($conn1,$query);
     $flag=1;
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -34,7 +34,7 @@
              $age= $_POST['Age'];
         if(empty($_POST['Institute'])){
             $flag=0;
-            $inerror="Institute required";
+            $inerror="Institute name required";
         } 
         else
              $Insti= $_POST['Institute'];
@@ -53,7 +53,7 @@
             $cpassword=$_POST['CnPassword'];
         }
         if($password!=$cpassword){
-            $perror="Properly Enter password";
+            $perror="Password does not match";
             $flag=0;
         }
         $sql= "SELECT uName FROM userTable WHERE uName='$Username'";
@@ -86,15 +86,13 @@
                     {
                         echo "sesesfes";
                     } 
-                    echo "<script>alert('Sign Up Succesful')</script>";
+                    echo "<script>alert('Sign Up Successful')</script>";
                     header("location: index.php");
                 }
             
             }
         }
-
     }
-
 ?>
 
 <head>
@@ -114,7 +112,6 @@
             <span style="color: yellow">*</span> 
             Insititute: <span style="color: yellow;"><?php echo $inerror; ?></span>
             <input type="text" name="Institute"> <br>
-            Date of Birth: <input type="date" name="DOB"> <br>
             <fieldset>
             <legend style="font-size:20px">Login-details</legend><br>
             <span style="color: yellow">*</span> 
@@ -125,7 +122,7 @@
             <input type="password" name="CrPassword"> <br>
             <span style="color: yellow">*</span> 
             Confirm Password: <span style="color: yellow;"><?php echo $cpasserror; ?></span>
-            <input type="text" name="CnPassword"> <br>
+            <input type="password" name="CnPassword"> <br>
             <span style="color: yellow;"><?php echo $perror; ?></span>
             </fieldset> 
             <button type="submit" name="sign" id="Sign_up">Sign Up</button>&emsp;&emsp;&emsp;&emsp;
