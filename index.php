@@ -8,6 +8,11 @@
 </head>
 <body>
 <?php
+    if($_GET)
+    {
+        if($_GET['user']==1)
+            echo "<script>alert('Sign Up Successful')</script>";
+    }
     $conn = mysqli_connect('localhost', 'root', '');
     $sqlQuery = 'CREATE DATABASE IF NOT EXISTS userInfo ;';
     mysqli_query($conn, $sqlQuery);
