@@ -15,15 +15,16 @@ h2{
     text-shadow: 4px 4px 4px black;
 }
 .Login{
-    border-radius: 15px;
-    margin-right: 50px;
-    float: right;
+    border-radius: 20px;
+    margin-left: 1%;
+    float: left;
     padding: 20px;
     height: 336px;
     max-width: 500px;
     background-color: teal;
     background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
     color: antiquewhite;
+    margin-bottom: 30px;
 }
 .SignUP{
     border-radius: 30px;
@@ -80,17 +81,22 @@ body{
     background-size: cover;
 }
 #bgm{
-    margin-left: 30px;
-    float: left;
+    margin-left: 2%;
     background-image: url("homeimage.jpg");
     background-size: cover;
     width: 500px;
     height: 380px;
     border-radius: 30px;
+    margin-bottom: 35px;
 }
 .SignUP input{
     display: block;
 }
 .key{
     width: 400px;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
