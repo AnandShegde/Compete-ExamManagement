@@ -11,7 +11,7 @@
    
     Question:
     <form action="" method="post">
-        <textarea name="question" id="question" cols="30" rows="10"></textarea>
+        <textarea name="question" id="question" style="width:90%"></textarea>
         <br><br>
         Options:
         <div class="no_options">
@@ -22,10 +22,13 @@
         </div>
         <div></div>
         <div></div>
-        <input type="submit" value="add" name="done" id="done"disabled>
+        <input type="submit" value="add" name="done" id="done" disabled>
 
 
     </form>
+
+
+
     <script>
 
         function give_option_blanks()
@@ -69,5 +72,12 @@
             }
         }
     </script>
+
+
+        <?php
+
+
+        
+?>
 </body>
 </html>

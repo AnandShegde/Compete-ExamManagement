@@ -108,36 +108,7 @@
          uAge INT NOT NULL, uInstitute VARCHAR(120) NOT NULL, 
          uPassword VARCHAR(50) ); ';
     mysqli_query($conn1, $query);
-    //Checking for login details
-    @$login= $_POST['login'];
-    if($login)
-    {
-        $Email= $_POST['Email'];
-        $password= $_POST['Password'];
-        $query= "SELECT * FROM userTable WHERE uGmail='$Email'";
-        $result= $conn1->query($query);
-        if($result->num_rows>0)
-        {
-            $row= $result->fetch_assoc();
-            // THIS WILL LOGIN THE USER ANY SESSION RELATED ACTIVITIES THAT MUST HAPPEN DURING LOGIN SHOULD BE DONE HERE
-            if($password==$row['uPassword'])
-            {
-                header("Location: homepage.html"); 
-            }
-            else
-            {
-                ?>
-                <script>document.getElementById('errors').innerHTML="Password does not match"</script>
-                <?php
-            }
-        }
-        else
-        {
-            ?>
-            <script>document.getElementById("errors").innerHTML="There is no account with the given email"</script>
-            <?php
-        }
-    }
+
 ?>
     
     <h1 id="title">COMPETE</h1>
@@ -184,5 +155,40 @@
         </div>
     </div>
 <script src="SliderCode/slider-script.js"></script>
+
+
+<?php 
+//Checking for login details
+//anand: I need this script at end. else the error message won't be displayed;
+    @$login= $_POST['login'];
+    if($login)
+    {
+        $Email= $_POST['Email'];
+        $password= $_POST['Password'];
+        $query= "SELECT * FROM userTable WHERE uGmail='$Email'";
+        $result= $conn1->query($query);
+        if($result->num_rows>0)
+        {
+            $row= $result->fetch_assoc();
+            // THIS WILL LOGIN THE USER ANY SESSION RELATED ACTIVITIES THAT MUST HAPPEN DURING LOGIN SHOULD BE DONE HERE
+            if($password==$row['uPassword'])
+            {
+                header("Location: homepage.html"); 
+            }
+            else
+            {
+                ?>
+                <script>document.getElementById('errors').innerHTML="Password does not match"</script>
+                <?php
+            }
+        }
+        else
+        {
+            ?>
+            <script>document.getElementById("errors").innerHTML="There is no account with the given email"</script>
+            <?php
+        }
+    }
+?>
 </body>
 </html>
