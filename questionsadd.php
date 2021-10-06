@@ -10,40 +10,34 @@
    <div class="instuction">Please give the question and four options and their answers.</div>
    
     Question:
-    <form action="" method="post"><textarea name="question" id="question" cols="30" rows="10"></textarea>
-    <br><br>
-    Options:
-    <div class="no_options">
-        number of options: <input type="number" id='no_of_options' name='no_of_options' onkeyup="options();" min='2' max='5' required oninvalid="this.setCustomValidity('Enter a value between 2 and 5')">
-    </div>
-    <div id="optioncontainer">
+    <form action="" method="post">
+        <textarea name="question" id="question" cols="30" rows="10"></textarea>
+        <br><br>
+        Options:
+        <div class="no_options">
+            number of options: <input type="number" id='no_of_options' name='no_of_options' oninput="give_option_blanks();"  >
+        </div>
+        <div id="optioncontainer">
 
-    </div>
-    <div></div>
-    <div></div>
-    <input type="submit" value="add" name="done">
+        </div>
+        <div></div>
+        <div></div>
+        <input type="submit" value="add" name="done" id="done"disabled>
 
 
     </form>
-
-    <?php
-    $X=$_POST['no_of_options'];
-
-    echo $X;
-
-
-    ?>
     <script>
 
-        function options()
+        function give_option_blanks()
         {
-            console.log('anna');
+ 
             var container= document.getElementById("optioncontainer");
             var x=document.getElementById("no_of_options").value;
             console.log(x);
             if(x>5 || x<2)
             {
-                document.getElementById("no_of_options").reportValidity('2-5 options');
+                document.getElementById("no_of_options").setCustomValidity('You can have 2 to 5 options for a question');
+                document.getElementById("no_of_options").reportValidity();
                 console.log("here");
             }
             else
@@ -61,12 +55,16 @@
                    input.id= "options"
                    input.type= "text";
                    input.name="option"+i; 
+                   input.required;
           
                     container.appendChild(input);
 
                    
                     container.appendChild(document.createElement("br"));
                     container.appendChild(document.createElement("br"));
+                    document.getElementById('done').disabled=false;
+                    document.getElementById("no_of_options").setCustomValidity('');
+                    
                 }
             }
         }
