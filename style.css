@@ -15,7 +15,7 @@ h2{
     text-shadow: 4px 4px 4px black;
 }
 .Login{
-    border-radius: 20px;
+    border-radius: 10px;
     margin-left: 1%;
     float: left;
     padding: 20px;
@@ -77,17 +77,18 @@ button:hover{
     text-align: center;
 }
 body{
-    background-image: url("homebgm.png");
+    background-image: url("trianglify-lowres.png");
     background-size: cover;
 }
 #bgm{
-    margin-left: 2%;
+    margin-left: 1%;
     background-image: url("homeimage.jpg");
     background-size: cover;
     width: 500px;
     height: 380px;
     border-radius: 30px;
     margin-bottom: 35px;
+    box-sizing: border-box;
 }
 .SignUP input{
     display: block;

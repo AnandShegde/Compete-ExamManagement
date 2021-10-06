@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="SliderCode/slider-style.css">
     <title>Document</title>
     <style>
         #layout{
@@ -65,14 +66,11 @@
 </head>
 <body>
 <div id="layout"></div>
-
      <div id="dlgbox">
          <div id="head">Website name</div>
          <div id="body">Sign-Up Successfull</div>
          <div id="footer"><button onclick="ok()">OK</button></div>
      </div>
-
-
      <script type="text/javascript">
         function ok(){
             var whitebg = document.getElementById("layout");
@@ -110,12 +108,63 @@
          uAge INT NOT NULL, uInstitute VARCHAR(120) NOT NULL, 
          uPassword VARCHAR(50) ); ';
     mysqli_query($conn1, $query);
-   ?>
+    //Checking for login details
+    @$login= $_POST['login'];
+    if($login)
+    {
+        $Email= $_POST['Email'];
+        $password= $_POST['Password'];
+        $query= "SELECT * FROM userTable WHERE uGmail='$Email'";
+        $result= $conn1->query($query);
+        if($result->num_rows>0)
+        {
+            $row= $result->fetch_assoc();
+            // THIS WILL LOGIN THE USER ANY SESSION RELATED ACTIVITIES THAT MUST HAPPEN DURING LOGIN SHOULD BE DONE HERE
+            if($password==$row['uPassword'])
+            {
+                header("Location: homepage.html"); 
+            }
+            else
+            {
+                ?>
+                <script>document.getElementById('errors').innerHTML="Password does not match"</script>
+                <?php
+            }
+        }
+        else
+        {
+            ?>
+            <script>document.getElementById("errors").innerHTML="There is no account with the given email"</script>
+            <?php
+        }
+    }
+?>
 
-    <h1>DARE2COMPETE</h1>
+    <h1>COMPETE</h1>
     <center><p id="errors"></p></center>
     <div class="container">
-        <div  id='bgm'></div>
+        <div class="slideContainer" id="#bgm">
+            <div class="slider">
+                <img src="sliderImages/5.jpeg" alt="" id="img">
+            </div>
+            <div class="slider">
+                <img src="sliderImages/6.jpeg" alt="" id="img">
+            </div>
+            <div class="slider">
+                <img src="sliderImages/1.jpeg" alt="" id="img">
+            </div>
+            <div class="slider">
+                <img src="sliderImages/2.jpeg" alt="" id="img">
+            </div>
+            <div class="slider">
+                <img src="sliderImages/3.jpeg" alt="" id="img">
+            </div>
+            <div class="slider">
+                <img src="sliderImages/4.jpeg" alt="" id="img">
+            </div>
+            <span class="button left" onclick="control(-1)">&#10094</span>
+            <span class="button right" onclick="control(1)">&#10095</span>
+        </div> 
         <div class="Login">
             <div style="text-align:center"><span style="font-size:40px;">Login User</span></div>
             <form action="" method="post"> <!--Login form-->
@@ -133,38 +182,6 @@
             </form>
         </div>
     </div>
-    <?php
-    @$login= $_POST['login'];
-    if($login)
-    {
-        $Email= $_POST['Email'];
-        $password= $_POST['Password'];
-        $query= "SELECT * FROM userTable WHERE uGmail='$Email'";
-        $result= $conn1->query($query);
-        
-        if($result->num_rows>0)
-        {
-            $row= $result->fetch_assoc();
-            // THIS WILL LOGIN THE USER ANY SESSION RELATED ACTIVITIES THAT MUST HAPPEN DURING LOGIN SHOULD BE DONE HERE
-            if($password==$row['uPassword'])
-            {
-                header("Location: homepage.html"); 
-
-            }
-            else
-            {
-                ?>
-                <script>document.getElementById('errors').innerHTML="Password does not match"</script>
-                <?php
-            }
-        }
-        else
-        {
-            ?>
-            <script>document.getElementById("errors").innerHTML="There is no account with the given email"</script>
-            <?php
-        }
-    }
-?>
+<script src="SliderCode/slider-script.js"></script>
 </body>
 </html>
