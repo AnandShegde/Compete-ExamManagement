@@ -139,8 +139,9 @@
         }
     }
 ?>
-
-    <h1>COMPETE</h1>
+    
+    <h1 id="title">COMPETE</h1>
+    <img src="logo.png" alt="" id="logo" width=100px height=100px> 
     <center><p id="errors"></p></center>
     <div class="container">
         <div class="slideContainer" id="#bgm">
