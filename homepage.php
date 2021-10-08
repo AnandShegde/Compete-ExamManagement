@@ -7,6 +7,15 @@
     <title>homepage</title>
 </head>
 <body>
+    <?php
+    session_start();
+    if(!isset($_SESSION['loggedin']))
+    {
+        header("Location: index.php");
+    }
+
+
+    ?>
     <h1>This will be the homepage</h1>
     
 </body>
