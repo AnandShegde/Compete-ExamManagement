@@ -71,11 +71,7 @@
     {
         header("Location: homepage.html");
     }
-
-
-
 ?>
-
 
 <div id="layout"></div>
      <div id="dlgbox">
@@ -145,7 +141,7 @@
     
     <h1 id="title">COMPETE</h1>
     <img src="logo.png" alt="" id="logo" width=100px height=100px> 
-    <center><p id="errors"></p></center>
+   <!-- <center><p id="errors"></p></center> -->
     <div class="container">
         <div class="slideContainer" id="#bgm">
             <div class="slider">
@@ -173,13 +169,14 @@
             <div style="text-align:center"><span style="font-size:40px;">Login User</span></div>
             <form action="" method="post"> <!--Login form-->
                  <div id="email">
-                 <input type="text" name="Email" placeholder="Email-Id"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required> <br>
+                 <input type="text" name="Email" placeholder="Email-Id"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
                  </div>
                  <div id="password">
-                 <input type="password" name="Password" placeholder="Password" required> <br>
+                 <input type="password" name="Password" placeholder="Password" required><br>
+                 <span style="color:yellow;" id="errors"></span><br>
                  </div>
                 <div id="btnlogin">
-                <input type="submit" value="Log in" name='login'></input><br><br>
+                <input type="submit" value="Log in" name='login' id="log"></input><br><br>
                 </div>
                 <a href="" style="color:yellow;">Forgot Password</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                 <a href="signup.php" style="color:yellow;">Sign Up</a>
@@ -188,25 +185,21 @@
     </div>
 <script src="SliderCode/slider-script.js"></script>
 
-
 <?php 
 //Checking for login details
 //anand: I need this script at end. else the error message won't be displayed;
     if($login)
     {
-
-    
         if(!isset($z))
         {
             ?>
-            <script>document.getElementById('errors').innerHTML="Password does not match"</script>
+            <script>document.getElementById('errors').innerHTML="*Password does not match"</script>
             <?php
         }
-
         if(!isset($use))
         {
             ?>
-            <script>document.getElementById("errors").innerHTML="There is no account with the given email"</script>
+            <script>document.getElementById("errors").innerHTML="*There is no account with the given email"</script>
             <?php
         }
     }
