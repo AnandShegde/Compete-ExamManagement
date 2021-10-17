@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Extra/letter_q.png">
     <title>Add questions</title>
+    <link rel="stylesheet" href="questionsadd.css">
 </head>
 <body>
     <?php
@@ -16,11 +17,14 @@
     }
 
     ?>
-   <div class="instuction">Please give the question and four options and their answers.</div>
+    <div class="content">
+
+    <h1>ADD QUESTION</h1>
+   <div class="instuction">Please state the question, as well as the options and their responses.</div>
    
     Question:
     <form action="" method="post">
-        <textarea name="question" id="question" style="width:90%"></textarea>
+        <textarea name="question" id="question"></textarea>
         <br><br>
         Options:
         <div class="no_options">
@@ -41,7 +45,7 @@
     </form>
 
 
-
+    </div>
     <script>
         var x;
         function give_option_blanks()
