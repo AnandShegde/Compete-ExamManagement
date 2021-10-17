@@ -39,7 +39,7 @@
   <a href="#homepage.php">Home</a>
   <a href="contact.html">Contact</a>
   <a href="about.html">About</a>
-  <a href="logout.php">Log-out</a>
+  <a href="logout.php">Log-out</a>  
 </div>
 </body>
 </html>
