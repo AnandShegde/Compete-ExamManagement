@@ -14,6 +14,7 @@
     <link rel="icon" href="Extra/letter_q.png">
     <title>Compete</title>
 <style>
+
 .topnav {
   overflow: hidden;
   background-color:#cfcccc;
@@ -32,14 +33,31 @@
   background-color:skyblue;
   color: black;
 }
+
+#login_icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#log_img{
+  padding-top: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+}
+
 </style>
 </head>
 <body>
 <div class="topnav">
-  <a href="#homepage.php">Home</a>
-  <a href="contact.html">Contact</a>
-  <a href="about.html">About</a>
-  <a href="logout.php">Log-out</a>  
+  <a href="#homepage.php">🏠Home</a>
+  <a href="contact.html">📞Contact</a>
+  <a href="about.html">📚About</a>
+  <a href="#viewprofile.php">👨‍🎓Profile</a>
+  <a href="logout.php">🚪Log-out</a>
+  <div align="right" id="log_img">
+  <img src="login_icon.jpg" alt="no image found" id="login_icon">
+  </div>  
 </div>
 </body>
 </html>
