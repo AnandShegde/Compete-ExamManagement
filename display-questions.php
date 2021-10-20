@@ -37,11 +37,11 @@
         .Qcontainer{
             font-family: 'Source Sans Pro', sans-serif;
             font-weight: bold;
-            width: 70%;
             margin-bottom: 50px;
             margin-left: 18%;
             background-color: rgb(250, 240, 225);
-            max-width: fit-content;
+            max-width: 50%;
+            min-width: 50%;
             padding: 2%;
             border-radius: 15px;
             box-shadow: 5px 5px 13px black;
@@ -74,7 +74,26 @@
         }
         .opdiv{
             padding: 8px;
+        } .buttonHolder{
+            display: flex;
         }
+        .controls{
+            padding: 25px;
+            margin: 20px;
+            font-size: 20px;
+            border-radius: 15px;
+            align-items: center;
+            margin-left: 25%;
+            background-color: rgb(250, 240, 225);
+            color: rgb(37, 140, 224);
+        }
+        .controls:hover{
+            color: rgb(236, 236, 236);
+            transition: 0.4s;
+            font-weight: bolder;
+            background-color: rgb(30, 96, 36);
+        }
+      
     </style>
 </head>
 
@@ -83,8 +102,10 @@
     <div id="parent">
     
     </div>
-    <button >Save and next</button>
-    <h1></h1>
+    <div class="buttonHolder">
+        <button class="controls" onclick="previous()">Previous</button>
+        <button class="controls" onclick="next()">Next</button>
+    </div>
     <!-- <script src="question.js"></script> -->
     <script>
         let parent = document.getElementById("parent");
@@ -175,6 +196,33 @@
             parent.appendChild(questionBody);
 
        <?php }?>
+       let questionArray = document.getElementById("parent").childNodes;
+        for(let i=2; i<=questionArray.length-1; i++){
+            questionArray[i].style.display = "none";
+        }
+        var i = 1;
+        function next(){
+            if(i == questionArray.length-1){
+                questionArray[i].style.display = "none";
+                questionArray[1].style.display = "block";
+                i = 1;
+                return;
+            }
+            questionArray[i].style.display = "none";
+            questionArray[i+1].style.display = "block";
+            i++;
+        }
+        function previous(){
+            if(i==1){
+                questionArray[i].style.display = "none";
+                questionArray[questionArray.length-1].style.display = "block";
+                i = questionArray.length-1;
+                return;
+            }
+            questionArray[i].style.display = "none";
+            questionArray[i-1].style.display = "block";
+            i--;
+        }
     </script>
     
 </body>
