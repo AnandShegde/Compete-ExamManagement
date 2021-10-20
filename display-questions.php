@@ -86,13 +86,14 @@
     <button >Save and next</button>
     <h1></h1>
     <!-- <script src="question.js"></script> -->
+    <input type="" hidden>
     <script>
         let parent = document.getElementById("parent");
         let x= <?= $noOfQuestions?>;
         console.log(x);
         
         i=0;
-            
+        
             
         
         <?php for( $i=0; $i< $noOfQuestions ; $i++){ ?>
@@ -138,6 +139,7 @@
             option2.name = "circle"+i;
             option3.name = "circle"+i;
             option4.name = "circle"+i;
+
 
             divop1.appendChild(option1);
             divop2.appendChild(option2);
