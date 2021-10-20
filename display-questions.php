@@ -46,6 +46,13 @@
             border-radius: 15px;
             box-shadow: 5px 5px 13px black;
         }
+        .container{
+            margin-left: 18%;
+            max-width: 55%;
+            min-width: 50%;
+            position: relative;
+        }
+
         input[type='radio']:after {
             width: 15px;
             height: 15px;
@@ -74,16 +81,19 @@
         }
         .opdiv{
             padding: 8px;
-        } .buttonHolder{
+        }                
+        /* } .buttonHolder{
             display: flex;
-        }
+        } */
         .controls{
             padding: 25px;
-            margin: 20px;
+            /* margin: 20px; */
             font-size: 20px;
             border-radius: 15px;
-            align-items: center;
-            margin-left: 25%;
+            width: 180px;
+            text-align: center;
+            /* align-items: center; */
+            /* margin-left: 25%; */
             background-color: rgb(250, 240, 225);
             color: rgb(37, 140, 224);
         }
@@ -93,18 +103,37 @@
             font-weight: bolder;
             background-color: rgb(30, 96, 36);
         }
+        #next{
+            position:absolute;
+            right: 0;
+            bottom: -110;
+
+        }
+        #prev{
+            position: absolute;
+            left: 0;
+            bottom: -110;
+        }
+
+        #next:active,#prev:active{
+            font-size: 18px;
+
+        }
       
     </style>
 </head>
 
 <body>
     <h1 style="text-align: center;">Quiz Name</h1>
-    <div id="parent">
     
-    </div>
-    <div class="buttonHolder">
-        <button class="controls" onclick="previous()">Previous</button>
-        <button class="controls" onclick="next()">Next</button>
+    <div class="container">
+        <div id="parent">
+
+        </div>
+        <!-- <div class="buttonHolder"> -->
+            <button class="controls" id='prev' onclick="previous()">Previous</button>
+            <button class="controls" id='next' onclick="next()">Next</button>
+        <!-- </div> -->
     </div>
     <!-- <script src="question.js"></script> -->
     <input type="" hidden>
