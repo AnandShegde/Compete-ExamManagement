@@ -12,47 +12,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
     <style>
+       body{
+            background-image: url("bg.jpg");
+            background-size: cover;
+        }
+        #output{
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 30px;
+            color: rgb(16, 1, 60);
+            font-weight: bold;
+            text-align: center;
+        }
+        #navbuttons{
+            width: 350px;
+            box-sizing: border-box;
+            margin-left: 10%;
+            /* float: right; */
+        }
+        .buttonHolder{
+            display: flex;
+            margin-left: 25%;
+        }
+        .controls{
+            padding: 15px;
+            margin: 15px;
+            font-size: 18px;
+            border-radius: 6px;
+            align-items: center;
+            margin-left: 5%;
+            background-color: rgb(250, 240, 225);
+            color: rgb(37, 140, 224);
+            float: left;
+        }
+        .controls:hover{
+            color: rgb(236, 236, 236);
+            transition: 0.4s;
+            font-weight: bolder;
+            background-color: rgb(30, 96, 36);
+        }
         .options{
-            font-size: 26px;
+            font-size: 20px;
             padding-left: 15px;
             color: rgb(16, 1, 60);
         }
         .question{
-            font-size: 32px;
-            margin-bottom: 20px;
+            font-size: 25px;
+            margin-bottom: 10px;
             color: teal;
         }
         h1{
             font-family: 'Source Sans Pro', sans-serif;
-            font-weight: bold;
             font-size: 100px;
+            transform: scale(1, 1);
+            color: #20546d;
+            text-shadow:6px 6px 40px rgb(57, 130, 154);
         }
-        /* .buttons{
-            margin-right: 20px;
-            margin-left: 10px;
-            width: 23px;
-            height: 23px;
-            background-color: green;
-        } */
         .Qcontainer{
             font-family: 'Source Sans Pro', sans-serif;
             font-weight: bold;
             margin-bottom: 50px;
-            margin-left: 18%;
+            margin-left: 20%;
             background-color: rgb(250, 240, 225);
-            max-width: 50%;
-            min-width: 50%;
+            min-width: 70%;
+            max-width: 70%;
             padding: 2%;
             border-radius: 15px;
-            box-shadow: 5px 5px 13px black;
+            box-shadow: 5px 5px 25px black;
         }
-        .container{
-            margin-left: 18%;
-            max-width: 55%;
-            min-width: 50%;
-            position: relative;
-        }
-
         input[type='radio']:after {
             width: 15px;
             height: 15px;
@@ -81,43 +107,22 @@
         }
         .opdiv{
             padding: 8px;
-        }                
-        /* } .buttonHolder{
-            display: flex;
-        } */
-        .controls{
-            padding: 25px;
-            /* margin: 20px; */
-            font-size: 20px;
-            border-radius: 15px;
-            width: 180px;
-            text-align: center;
-            /* align-items: center; */
-            /* margin-left: 25%; */
+        }
+        .navbutton{
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            margin: 3px;
+            font-size: 25px;
+            color: teal;
             background-color: rgb(250, 240, 225);
-            color: rgb(37, 140, 224);
         }
-        .controls:hover{
-            color: rgb(236, 236, 236);
-            transition: 0.4s;
-            font-weight: bolder;
-            background-color: rgb(30, 96, 36);
+        .navbutton:hover{
+            background-color: green;
+            color: white;
         }
-        #next{
-            position:absolute;
-            right: 0;
-            bottom: -110;
-
-        }
-        #prev{
-            position: absolute;
-            left: 0;
-            bottom: -110;
-        }
-
-        #next:active,#prev:active{
-            font-size: 18px;
-
+        #grandp{
+            display: flex;
         }
       
     </style>
@@ -125,18 +130,22 @@
 
 <body>
     <h1 style="text-align: center;">Quiz Name</h1>
+    <div id="grandp">
+        <div id="qnp">
+            <div id="parent">
     
-    <div class="container">
-        <div id="parent">
-
+            </div>
+            <div class="buttonHolder">
+                <button class="controls" onclick="previous()">Previous</button>
+                <button class="controls" onclick="next()">Next</button>
+                <button class="controls">Mark for review</button>
+            </div>
         </div>
-        <!-- <div class="buttonHolder"> -->
-            <button class="controls" id='prev' onclick="previous()">Previous</button>
-            <button class="controls" id='next' onclick="next()">Next</button>
-        <!-- </div> -->
+        <div id="navButtons">
+    
+        </div>
     </div>
-    <!-- <script src="question.js"></script> -->
-    <input type="" hidden>
+    <p id="output"></p>
     <script>
         let parent = document.getElementById("parent");
         let x= <?= $noOfQuestions?>;
@@ -227,7 +236,19 @@
             parent.appendChild(questionBody);
 
        <?php }?>
-       let questionArray = document.getElementById("parent").childNodes;
+        let questionArray = document.getElementById("parent").childNodes;
+        for(let i=2; i<=questionArray.length-1; i++){
+            questionArray[i].style.display = "none";
+        }
+        let buttonsParent = document.getElementById("navButtons");
+        for(let i = 1; i < questionArray.length; i++){
+            let y = document.createElement("button");
+            y.className = "navButton";
+            y.innerHTML = i;
+            buttonsParent.appendChild(y);
+        }
+        var i = 1;
+        currentBlue();
         for(let i=2; i<=questionArray.length-1; i++){
             questionArray[i].style.display = "none";
         }
@@ -236,24 +257,67 @@
             if(i == questionArray.length-1){
                 questionArray[i].style.display = "none";
                 questionArray[1].style.display = "block";
+                currentYellow();
+                // hoverGreen();
                 i = 1;
+                currentBlue();
+                // hoverGreen();
                 return;
             }
             questionArray[i].style.display = "none";
+            currentYellow();
             questionArray[i+1].style.display = "block";
             i++;
+            currentBlue();
         }
         function previous(){
             if(i==1){
                 questionArray[i].style.display = "none";
+                currentYellow();
                 questionArray[questionArray.length-1].style.display = "block";
                 i = questionArray.length-1;
+                currentBlue();
                 return;
             }
             questionArray[i].style.display = "none";
+            currentYellow();
             questionArray[i-1].style.display = "block";
             i--;
+            currentBlue();
         }
+        function currentBlue(){
+            let navButtons = document.getElementById("navButtons");
+            let buttonArray = navButtons.childNodes;
+            buttonArray[i].style.background = "blue";
+            buttonArray[i].style.color = "white";
+        }
+        function currentYellow(){
+            let navButtons = document.getElementById("navButtons");
+            let buttonArray = navButtons.childNodes;
+            buttonArray[i].style.background = "rgb(250, 240, 225)";
+            buttonArray[i].style.color = "teal";
+        }
+        // function hoverGreen(){
+        //     buttonArray[i].style.hover.background = "green";
+        // }
+        var time = 600;
+        var output = document.getElementById("output")
+        function display(){
+            if(time == 0){
+                clearInterval(event);
+            }
+            let min = parseInt(time/60);
+            let sec = time%60;
+            if(parseInt(min/10)==0){
+                min = '0' + min;
+            }
+            if(parseInt(sec/10)==0){
+                sec = '0' + sec;
+            }
+            output.innerHTML = "Time left : "+min+":"+sec;
+            time--;
+        }
+        let event = setInterval(display, 1000);
     </script>
     
 </body>
