@@ -14,7 +14,10 @@
     <link rel="icon" href="Extra/letter_q.png">
     <title>Compete</title>
 <style>
-
+body{
+  margin: 0rem;
+  padding: 0rem;
+}
 .topnav {
   overflow: hidden;
   background-color:#cfcccc;
