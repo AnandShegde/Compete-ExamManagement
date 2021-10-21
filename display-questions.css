@@ -1,0 +1,111 @@
+body{
+    background-image: url("bg.jpg");
+    background-size: cover;
+}
+#output{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30px;
+    color: rgb(16, 1, 60);
+    font-weight: bold;
+    text-align: center;
+}
+#navbuttons{
+    width: 350px;
+    box-sizing: border-box;
+    margin-left: 10%;
+}
+.buttonHolder{
+    display: flex;
+    margin-left: 25%;
+}
+.controls{
+    padding: 15px;
+    margin: 15px;
+    font-size: 18px;
+    border-radius: 6px;
+    align-items: center;
+    margin-left: 5%;
+    background-color: rgb(250, 240, 225);
+    color: rgb(37, 140, 224);
+    float: left;
+}
+.controls:hover{
+    color: rgb(236, 236, 236);
+    transition: 0.4s;
+    font-weight: bolder;
+    background-color: rgb(30, 96, 36);
+}
+.options{
+    font-size: 20px;
+    padding-left: 15px;
+    color: rgb(16, 1, 60);
+}
+.question{
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: teal;
+}
+h1{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 100px;
+    transform: scale(1, 1);
+    color: #20546d;
+    text-shadow:6px 6px 40px rgb(57, 130, 154);
+}
+.Qcontainer{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 20%;
+    background-color: rgb(250, 240, 225);
+    min-width: 70%;
+    max-width: 70%;
+    padding: 2%;
+    border-radius: 15px;
+    box-shadow: 5px 5px 25px black;
+}
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+input[type='radio']:checked:after {
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: green;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+.opdiv{
+    padding: 8px;
+}
+.navbutton{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 3px;
+    font-size: 25px;
+    color: teal;
+    background-color: rgb(250, 240, 225);
+}
+.navbutton:hover{
+    background-color: green;
+    color: white;
+}
+#grandp{
+    display: flex;
+}
