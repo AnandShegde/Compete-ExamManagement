@@ -82,7 +82,7 @@ body{
 
 .flex-child2 a{
   border:2px solid black;
-  color:black;
+  color:darkblue;
   text-decoration: none;
   border-radius: 5px;
   padding: 2%;
@@ -90,10 +90,47 @@ body{
   display: inline-block;
   font-size: 20px;
   background-color: rgb(228, 226, 226);
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
 }
 
 .flex-child2 a:hover{
-  background-color: rgb(109, 208, 247);
+  background-color: rgb(238, 253, 154);
+}
+
+.flex-container2{
+  display: flex;
+  margin-top: 2%;
+  height: 250px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flex1{
+  border: 2px solid black;
+  width: 33.33%;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.flex2{
+  border: 2px solid black;
+  width: 33.33%;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.flex3{
+  border: 2px solid black;
+  width: 33.33%;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 </style>
@@ -114,11 +151,26 @@ body{
     HERE WE WILL BE SLIDES OF QUIZ HOSTED BY OTHER USERS
   </div>
   <div class="flex-child2">
-    <h1 style="text-align: center;">QUIZ PANEL</h1><br><br>
-    <a href="#Register_Quiz.php">Attempt Quiz</a><br><br>
-    <a href="#Host_Quiz.php">Host Quiz</a><br><br>
-    <a href="#Given_Quizs.php">Given Quizs</a><br><br>
+    <h1 style="text-align: center;">QUIZ PANEL</h1><br>
+    <a href="#Register_Quiz.php">Attempt Quiz</a><br>
+    <a href="#Host_Quiz.php">Host Quiz</a><br>
+    <a href="#Given_Quizs.php">Given Quizs</a><br>
   </div>
 </div>
+<div class="flex-container2">
+  <div class="flex1">
+    <h1>📝Quizzes</h1>
+    <h1 style="font-size: 100px; color: red;margin-top: -2%;">899</h1>
+  </div>
+  <div class="flex2">
+    <h1>✒️Quizzes Hosted</h1>
+    <h1 style="font-size: 100px; color: red;margin-top: -2%;">19</h1>
+  </div>
+  <div class="flex3">
+    <h1>👨‍🎓Users</h1>
+    <h1 style="font-size: 100px; color: red;margin-top: -2%;">9450</h1>
+  </div>
+</div><br><br>
+<hr>
 </body>
 </html>
