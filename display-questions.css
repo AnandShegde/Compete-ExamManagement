@@ -6,33 +6,38 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 30px;
     color: rgb(16, 1, 60);
+    position: absolute;
+    top: 10rem;
+    left: 15rem;
     font-weight: bold;
-    text-align: center;
+    color: red;
 }
 #navbuttons{
-    width: 350px;
+    display: flex;
     box-sizing: border-box;
-    margin-left: 10%;
+    position: absolute;
+    right: 10rem;
+    top: 12rem;
+    max-width: 20rem;
 }
 .buttonHolder{
     display: flex;
-    margin-left: 25%;
+    justify-content: space-between;
+    position: absolute;
+    top: 40rem;
+    left: 25rem;
 }
 .controls{
-    padding: 15px;
-    margin: 15px;
-    font-size: 18px;
-    border-radius: 6px;
-    align-items: center;
-    margin-left: 5%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 5px;
     background-color: rgb(250, 240, 225);
     color: rgb(37, 140, 224);
-    float: left;
 }
 .controls:hover{
     color: rgb(236, 236, 236);
     transition: 0.4s;
-    font-weight: bolder;
     background-color: rgb(30, 96, 36);
 }
 .options{
@@ -47,22 +52,29 @@ body{
 }
 h1{
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 100px;
-    transform: scale(1, 1);
+    font-size: 7rem;
+    transform: scale(1.1, 1);
     color: #20546d;
     text-shadow:6px 6px 40px rgb(57, 130, 154);
+    position: absolute;
+    top: 0rem;
+    left: 30rem;
+    margin: 0rem;
+
 }
 .Qcontainer{
+    width: 55rem;
+    min-height: 22rem;
+    max-height: 25rem;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
-    margin-bottom: 50px;
-    margin-left: 20%;
     background-color: rgb(250, 240, 225);
-    min-width: 70%;
-    max-width: 70%;
-    padding: 2%;
-    border-radius: 15px;
     box-shadow: 5px 5px 25px black;
+    position: absolute;
+    top: 15rem;
+    left: 5rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
 }
 input[type='radio']:after {
     width: 15px;
@@ -94,11 +106,12 @@ input[type='radio']:checked:after {
     padding: 8px;
 }
 .navbutton{
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    margin: 3px;
-    font-size: 25px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    font-size: 2rem;
+    padding: 0.4rem;
+    margin: 0.3rem;
     color: teal;
     background-color: rgb(250, 240, 225);
 }
@@ -108,4 +121,15 @@ input[type='radio']:checked:after {
 }
 #grandp{
     display: flex;
+}
+.reviewButton{
+    padding: 10px;
+    margin: 10px;
+    font-size: 17px;
+    border-radius: 5px;
+    background-color: rgb(250, 240, 225);
+    color: rgb(37, 140, 224);
+    position: absolute;
+    top: 11rem;
+    left: 4.5rem;
 }

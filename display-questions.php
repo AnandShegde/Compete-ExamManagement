@@ -15,15 +15,15 @@
     <h1 style="text-align: center;">Quiz Name</h1>
     <div id="grandp">
         <div id="qnp">
-            <div id="parent"></div>
-            <div class="buttonHolder">
+            <div id="parent"></div>    <!--done-->
+            <div class="buttonHolder"> <!--done -->
                 <button class="controls" onclick="previous()">Previous</button>
                 <button class="controls" onclick="next()">Next</button>
-                <button class="controls">Mark for review</button>
             </div>
         </div>
         <div id="navButtons"></div>
     </div>
+    <button class="reviewButton">Mark for review</button>
     <p id="output"></p>
 
     <script>
