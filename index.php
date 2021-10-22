@@ -139,10 +139,9 @@
         }
     }
 ?>
-    <div class="logo_title">
-        <img src="logo.png" alt="image not loaded" width=100px height=100px style="border-radius: 50%;margin-top: 1.8%;">
-        <h1 id="title">COMPETE</h1> 
-    </div>
+    
+    <h1 id="title">COMPETE</h1>
+    <img src="logo.png" alt="" id="logo" width=100px height=100px> 
    <!-- <center><p id="errors"></p></center> -->
     <div class="container">
         <div class="slideContainer" id="#bgm">
@@ -180,10 +179,8 @@
                 <div id="btnlogin">
                 <input type="submit" value="Log in" name='login' id="log"></input><br><br>
                 </div>
-                <div style="display: flex;flex-direction: row;">
-                    <div><a href="" style="color:yellow;">Forgot Password</a></div>
-                    <div style="margin-left:56%;"><a href="signup.php" style="color:yellow;">Sign Up</a></div>
-                </div>
+                <a href="" style="color:yellow;">Forgot Password</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <a href="signup.php" style="color:yellow;">Sign Up</a>
             </form>
         </div>
     </div>
