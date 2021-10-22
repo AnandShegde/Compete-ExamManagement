@@ -13,12 +13,14 @@ body{
     color: red;
 }
 #navbuttons{
+    width: 20%;
     display: flex;
     box-sizing: border-box;
     position: absolute;
-    right: 10rem;
-    top: 12rem;
+    right: 0rem;
+    top: 17rem;
     max-width: 20rem;
+    
 }
 .buttonHolder{
     display: flex;
@@ -52,20 +54,19 @@ body{
 }
 h1{
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 7rem;
+    font-size: 5rem;
     transform: scale(1.1, 1);
     color: #20546d;
     text-shadow:6px 6px 40px rgb(57, 130, 154);
-    position: absolute;
-    top: 0rem;
-    left: 30rem;
+    text-align: center;
     margin: 0rem;
 
 }
 .Qcontainer{
-    width: 55rem;
+    width: 70%;
+    box-sizing: border-box;
     min-height: 22rem;
-    max-height: 25rem;
+    /* max-height: 25rem; */
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
     background-color: rgb(250, 240, 225);
@@ -116,7 +117,7 @@ input[type='radio']:checked:after {
     background-color: rgb(250, 240, 225);
 }
 .navbutton:hover{
-    background-color: green;
+    background-color: rgb(255, 226, 182);
     color: white;
 }
 #grandp{
