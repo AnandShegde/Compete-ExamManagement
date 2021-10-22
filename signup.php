@@ -56,6 +56,11 @@
             $perror="Password does not match";
             $flag=0;
         }
+
+        if($flag!=0)
+        {
+
+        
         $sql= "SELECT uName FROM userTable WHERE uName='$Username'";
         $result= $conn1->query($sql);
         $sql= "SELECT uName FROM userTable WHERE uGmail='$Email'";
@@ -97,6 +102,7 @@
             
             }
         }
+    }
     }
 ?>
 

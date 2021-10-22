@@ -177,7 +177,7 @@
 
         function reset()
         {
-           var n=i+1;
+            var n=i+1;
             circlename='circle'+n;
             var radios = document.getElementsByName(circlename);
             for(var j=0;j<radios.length;j++)
@@ -317,7 +317,7 @@
             buttonArray[i].style.background = "rgb(250, 240, 225)";
             buttonArray[i].style.color = "teal";
         }
-        var time = 600;
+        var time = 600; 
         var output = document.getElementById("output")
         function display(){
             if(time == 0){
