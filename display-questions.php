@@ -1,17 +1,17 @@
 <?php 
-    // session_start();
-    // $connection = mysqli_connect("localhost", "root", "", "userinfo");
-    // $tablename= 'quiz'.$_SESSION['user'];
-    // $query = 'SELECT * FROM `userinfo`.`' .$tablename.'`';
-    // $result = mysqli_query($connection, $query);
-    // $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    // $noOfQuestions = sizeof($questionSet); 
-
-    $connection = mysqli_connect("localhost", "root", "", "dbname");
-    $query = "SELECT * FROM tbname;";
+    session_start();
+    $connection = mysqli_connect("localhost", "root", "", "userinfo");
+    $tablename= 'quiz'.$_SESSION['user'];
+    $query = 'SELECT * FROM `userinfo`.`' .$tablename.'`';
     $result = mysqli_query($connection, $query);
     $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
     $noOfQuestions = sizeof($questionSet); 
+
+    // $connection = mysqli_connect("localhost", "root", "", "dbname");
+    // $query = "SELECT * FROM tbname;";
+    // $result = mysqli_query($connection, $query);
+    // $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    // $noOfQuestions = sizeof($questionSet); 
 ?>
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
