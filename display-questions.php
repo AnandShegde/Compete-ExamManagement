@@ -1,8 +1,14 @@
 <?php 
-    session_start();
-    $connection = mysqli_connect("localhost", "root", "", "userinfo");
-    $tablename= 'quiz'.$_SESSION['user'];
-    $query = 'SELECT * FROM `userinfo`.`' .$tablename.'`';
+    // session_start();
+    // $connection = mysqli_connect("localhost", "root", "", "userinfo");
+    // $tablename= 'quiz'.$_SESSION['user'];
+    // $query = 'SELECT * FROM `userinfo`.`' .$tablename.'`';
+    // $result = mysqli_query($connection, $query);
+    // $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    // $noOfQuestions = sizeof($questionSet); 
+
+    $connection = mysqli_connect("localhost", "root", "", "dbname");
+    $query = "SELECT * FROM tbname;";
     $result = mysqli_query($connection, $query);
     $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
     $noOfQuestions = sizeof($questionSet); 
@@ -65,38 +71,26 @@
         option2.name = "circle"+i1;
         option3.name = "circle"+i1;
         option4.name = "circle"+i1;
-        option1.id='1';
-        option2.id='2';
-        option3.id='3';
-        option4.id='4';
+        // option1.id='1';
+        // option2.id='2';
+        // option3.id='3';
+        // option4.id='4';
 
-        if("<?= $questionSet[$i]['option1'] ?>"!='')
-        {
+        if("<?= $questionSet[$i]['option1'] ?>"!=''){
             divop1.appendChild(option1);
             o1.innerHTML = "A. "+ "<?= $questionSet[$i]['option1'] ?>";
-            
         }
-        if("<?= $questionSet[$i]['option2'] ?>"!='')
-        {
+        if("<?= $questionSet[$i]['option2'] ?>"!=''){
             divop2.appendChild(option2);
             o2.innerHTML = "B. "+ "<?= $questionSet[$i]['option2'] ?>";
-            
         }
-        
-        if("<?= $questionSet[$i]['option3'] ?>"!='')
-        {
+        if("<?= $questionSet[$i]['option3'] ?>"!=''){
             o3.innerHTML = "C. "+ "<?= $questionSet[$i]['option3'] ?>"; 
             divop3.appendChild(option3);
-        }
-        
-        if("<?= $questionSet[$i]['option4'] ?>"!='')
-        {
+        }if("<?= $questionSet[$i]['option4'] ?>"!=''){
             divop4.appendChild(option4);
             o4.innerHTML = "D. "+ "<?= $questionSet[$i]['option4'] ?>";
-           
         }
-        
-        
         o1.className = "options";
         o2.className = "options";
         o3.className = "options";
@@ -106,7 +100,7 @@
         divop3.appendChild(o3);
         divop4.appendChild(o4);
         question.innerHTML = i1+". "+ "<?= $questionSet[$i]['question'] ?>";
-        i1++
+        i1++;
         question.className = "question";
         questionBody.appendChild(question);
         questionBody.appendChild(divop1);
@@ -114,101 +108,108 @@
         questionBody.appendChild(divop3);
         questionBody.appendChild(divop4);
         parent.appendChild(questionBody);
-        
     <?php }?>
         let questionArray = document.getElementById("parent").childNodes;
         for(let i=1; i<=questionArray.length-1; i++){
             questionArray[i].style.display = "none";
         }
+        var i = 0;
         let buttonsParent = document.getElementById("navButtons");
-        for(let i = 1; i <= questionArray.length; i++){
+        for(let j = 1; j <= questionArray.length; j++){
             let y = document.createElement("button");
             y.className = "navButton";
-            y.innerHTML = i;
+            y.id = j;
+            y.innerHTML = j;
+            y.addEventListener('click', function(event){
+                let value=0;
+                let n=i+1;
+                circlename='circle'+n;
+                let radios = document.getElementsByName(circlename);
+                for(let j = 0; j < radios.length; j++){
+                    if(radios[j].type === 'radio' && radios[j].checked){
+                        value = radios[j].value;       
+                    }
+                }
+                questionArray[j-1].style.display = "block";
+                if(questionArray[i].style.background == "purple" || questionArray[i].style.background == "orange"){
+
+                }else{
+                    if(value === 0){
+                        currentRed();
+                    }else{
+                        currentGreen();
+                    }
+                }
+                // if(value === 0){
+                //     currentRed();
+                // }else{
+                //     currentGreen();
+                // }
+                questionArray[i].style.display = "none";
+                i = j-1;
+                currentBlue();
+            })
             buttonsParent.appendChild(y);
         }
-        var i = 0;
         currentBlue();
         function next(){
-            var value=0;
-            n=i+1;
+            let value=0;
+            let n=i+1;
             circlename='circle'+n;
-            
-            
-            var radios = document.getElementsByName(circlename);
-            var value;
-            for (var j = 0; j < radios.length; j++) {
-                if (radios[i].type === 'radio' && radios[j].checked) {
-                    // get value, set checked flag or do whatever you need to
-                    value = radios[j].value     
+            let radios = document.getElementsByName(circlename);
+            for(let j = 0; j < radios.length; j++){
+                if (radios[j].type === 'radio' && radios[j].checked){
+                    value = radios[j].value ;    
                 }
             }
-        
-
             if(i == questionArray.length-1){
                 questionArray[i].style.display = "none";
                 questionArray[0].style.display = "block";
-                if(value==0)
-                {
+                if(value==0){
                     currentRed();
                 }
-                else
-                {
+                else{
                     currentGreen();
                 }
-                
                 i = 0;
                 currentBlue();
                 return;
             }
             questionArray[i].style.display = "none";
-            if(value==0)
-                {
-                    currentRed();
-                }
-                else
-                {
-                    currentGreen();
-                }
+            if(value == 0){
+                currentRed();
+            }
+            else{
+                currentGreen();
+            }
             questionArray[i+1].style.display = "block";
             i++;
             currentBlue();
         }
-
-        function reset()
-        {
-            var n=i+1;
+        function reset(){
+            let n=i+1;
             circlename='circle'+n;
-            var radios = document.getElementsByName(circlename);
-            for(var j=0;j<radios.length;j++)
-            {
+            let radios = document.getElementsByName(circlename);
+            for(let j=0;j<radios.length;j++){
                 radios[j].checked=false;
             }
-            
         }
-
         function previous(){
-            var value=0;
-            n=i+1;
+            let value=0;
+            let n=i+1;
             circlename='circle'+n;
-            
-            var radios = document.getElementsByName(circlename);
-            for (var j = 0; j < radios.length; j++) {
-                if (radios[j].type === 'radio' && radios[j].checked) {
-                    // get value, set checked flag or do whatever you need to
-                    
+            let radios = document.getElementsByName(circlename);
+            for(var j = 0; j < radios.length; j++){
+                if(radios[j].type === 'radio' && radios[j].checked){
                     value = radios[j].value;       
                 }
             }
-          
             if(i==0){
                 questionArray[i].style.display = "none";
-                if(value==0)
-                {
+                if(value==0){
                     currentRed();
                 }
-                else
-                {
+                else{
                     currentGreen();
                 }
                 questionArray[questionArray.length-1].style.display = "block";
@@ -216,61 +217,47 @@
                 currentBlue();
                 return;
             }
-           
             questionArray[i].style.display = "none";
-            if(value==0)
-                {
-                    currentRed();
-                }
-                else
-                {
-                    currentGreen();
-                }
+            if(value==0){
+                currentRed();
+            }
+            else{
+                currentGreen();
+            }
             questionArray[i-1].style.display = "block";
             i--;
             currentBlue();
         }
-        function mark_for_review()
-        {
+        function mark_for_review(){
             var value=0;
-            n=i+1;
+            let n=i+1;
             circlename='circle'+n;
-            
             var radios = document.getElementsByName(circlename);
-            for (var j = 0; j < radios.length; j++) {
-                if (radios[j].type === 'radio' && radios[j].checked) {
-                    // get value, set checked flag or do whatever you need to
-                    
+            for(var j = 0; j < radios.length; j++){
+                if(radios[j].type === 'radio' && radios[j].checked){
                     value = radios[j].value;       
                 }
             }
-          
             if(i == questionArray.length-1){
                 questionArray[i].style.display = "none";
                 questionArray[0].style.display = "block";
-                if(value==0)
-                {
+                if(value==0){
                     currentOrenge();
                 }
-                else
-                {
+                else{
                     currentPurple();
                 }
-                
                 i = 0;
                 currentBlue();
                 return;
             }
-           
             questionArray[i].style.display = "none";
-            if(value==0)
-                {
-                    currentOrenge();
-                }
-                else
-                {
-                    currentPurple();
-                }
+            if(value==0){
+                currentOrenge();
+            }
+            else{
+                currentPurple();
+            }
             questionArray[i+1].style.display = "block";
             i++;
             currentBlue();
@@ -288,24 +275,20 @@
             buttonArray[i].style.background = "Orange";
             buttonArray[i].style.color = "white";
         }
-        function currentRed()
-        {
+        function currentRed(){
             let navButtons = document.getElementById("navButtons");
             let buttonArray = navButtons.childNodes;
             buttonArray[i].style.background = "red";
             buttonArray[i].style.color = "white";
         }
-        function currentPurple()
-        {
+        function currentPurple(){
             let navButtons = document.getElementById("navButtons");
             let buttonArray = navButtons.childNodes;
             buttonArray[i].style.background ='purple';
             buttonArray[i].style.color = "white";
-
-            
         }
-        function currentGreen()
-        {let navButtons = document.getElementById("navButtons");
+        function currentGreen(){
+            let navButtons = document.getElementById("navButtons");
             let buttonArray = navButtons.childNodes;
             buttonArray[i].style.background = "green";
             buttonArray[i].style.color = "white";
