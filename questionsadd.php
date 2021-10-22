@@ -15,6 +15,10 @@
     {
         header("Location: index.php");
     }
+    elseif(!isset($_SESSION['qname']))
+    {
+        header("Location: question.php");
+    }
 
     ?>
     <div class="content">
@@ -109,12 +113,13 @@
         {
             
             $conn = mysqli_connect('localhost', 'root', '');
-            $sqlQuery = 'CREATE DATABASE IF NOT EXISTS userInfo ;';
+            $username= $_SESSION['user'];
+            $sqlQuery = "CREATE DATABASE IF NOT EXISTS `$username` ;";
             mysqli_query($conn,$sqlQuery);
-            $conn1 = mysqli_connect('localhost', 'root', '', 'userInfo');
-            $tablename= 'quiz'.$_SESSION['user'];
-            $sql= 'CREATE TABLE IF NOT EXISTS `userinfo`.`'.$tablename.'` 
-            ( `question` VARCHAR(1200) NOT NULL ,
+            $conn1 = mysqli_connect('localhost', 'root', '', "$username");
+            $tablename= $_SESSION['qname'].$_SESSION['user'];
+            $sql= "CREATE TABLE IF NOT EXISTS `$username`.`".$tablename.
+            '`( `question` VARCHAR(1200) NOT NULL ,
             `no` INT NOT NULL AUTO_INCREMENT , 
             `option1` VARCHAR(200) NOT NULL , 
             `option2` VARCHAR(200) NOT NULL , 
