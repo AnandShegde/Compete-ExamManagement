@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $email=$_SESSION['user'];
     if(!isset($_SESSION['loggedin']))
     {
         header("Location: index.php");
@@ -9,6 +10,10 @@
     $result=mysqli_query($connect,$sql);
     $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
     $no_of_users=sizeof($data);
+    $sql="SELECT * FROM usertable WHERE uGmail='$email'";
+    $result=mysqli_query($connect,$sql);
+    $row=$result->fetch_assoc();
+    $username=$row['uName'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,8 +50,8 @@ body{
 }
 
 #login_icon{
-  width: 40px;
-  height: 40px;
+  width: 27px;
+  height: 27px;
   border-radius: 50%;
 }
 
@@ -148,7 +153,8 @@ body{
   <a href="viewprofile.php">👨‍🎓Profile</a>
   <a href="logout.php">🚪Logout</a>
   <div align="right" id="log_img">
-  <img src="login_icon.jpg" alt="no image found" id="login_icon">
+  <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
+  <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
   </div> 
 </div>
 <div class="flex-container">

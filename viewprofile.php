@@ -44,8 +44,8 @@
 }
 
 #login_icon{
-  width: 40px;
-  height: 40px;
+  width: 27px;
+  height: 27px;
   border-radius: 50%;
 }
 
@@ -84,7 +84,8 @@
             <a href="viewprofile.php">👨‍🎓Profile</a>
             <a href="logout.php">🚪Logout</a>
             <div align="right" id="log_img">
-            <img src="login_icon.jpg" alt="no image found" id="login_icon">
+            <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
+            <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
             </div> 
         </div>
         <h1 style="text-align: center;font-family: 'Courier New', Courier, monospace;">User Profile</h1>
