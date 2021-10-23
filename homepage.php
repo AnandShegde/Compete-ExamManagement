@@ -4,6 +4,11 @@
     {
         header("Location: index.php");
     }
+    $connect=mysqli_connect("localhost","root","","userInfo");
+    $sql="SELECT * FROM usertable";
+    $result=mysqli_query($connect,$sql);
+    $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
+    $no_of_users=sizeof($data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -168,7 +173,7 @@ body{
   </div>
   <div class="flex3">
     <h1>👨‍🎓Users</h1>
-    <h1 style="font-size: 100px; color: red;margin-top: -2%;">9450</h1>
+    <h1 style="font-size: 100px; color: red;margin-top: -2%;"><?php echo "$no_of_users" ?></h1>
   </div>
 </div><br><br>
 <hr>
