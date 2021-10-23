@@ -1,17 +1,17 @@
 <?php 
-    session_start();
-    $connection = mysqli_connect("localhost", "root", "", "userinfo");
-    $tablename= 'quiz'.$_SESSION['user'];
-    $query = 'SELECT * FROM `userinfo`.`' .$tablename.'`';
-    $result = mysqli_query($connection, $query);
-    $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    $noOfQuestions = sizeof($questionSet); 
-
-    // $connection = mysqli_connect("localhost", "root", "", "dbname");
-    // $query = "SELECT * FROM tbname;";
+    // session_start();
+    // $connection = mysqli_connect("localhost", "root", "", "userinfo");
+    // $tablename= 'quiz'.$_SESSION['user'];
+    // $query = 'SELECT * FROM `userinfo`.`' .$tablename.'`';
     // $result = mysqli_query($connection, $query);
     // $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
     // $noOfQuestions = sizeof($questionSet); 
+
+    $connection = mysqli_connect("localhost", "root", "", "dbname");
+    $query = "SELECT * FROM tbname;";
+    $result = mysqli_query($connection, $query);
+    $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $noOfQuestions = sizeof($questionSet); 
 ?>
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,7 +130,7 @@
                         value = radios[j].value;       
                     }
                 }
-                questionArray[j-1].style.display = "block";
+               
                 if(questionArray[i].style.background == "purple" || questionArray[i].style.background == "orange"){
 
                 }else{
@@ -146,6 +146,7 @@
                 //     currentGreen();
                 // }
                 questionArray[i].style.display = "none";
+                questionArray[j-1].style.display = "block";
                 i = j-1;
                 currentBlue();
             })

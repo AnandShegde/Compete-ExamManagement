@@ -17,7 +17,7 @@ body{
    flex-wrap: wrap;
    top: 15rem;
    right: 0rem;
-   width: 20rem;
+   width: 25%;
    height: 20rem;
 }
 .navButton{
@@ -118,7 +118,7 @@ input[type='radio']:checked:after {
     color: teal;
     background-color: rgb(250, 240, 225);
 }
-.navbutton:hover{
+.navButton:hover{
     background-color: rgb(255, 226, 182);
     color: white;
 }
