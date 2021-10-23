@@ -124,7 +124,7 @@
         $password= $_POST['Password'];
         $sql= "SELECT  *  FROM TABLE";
         $query= "SELECT * FROM userTable WHERE uGmail='$Email'";
-        $result= $conn1->query($sql);
+        $result= $conn1->query($query);
         if($result->num_rows>0)
         {
             $use= 1;
