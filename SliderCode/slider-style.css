@@ -3,10 +3,11 @@ body{
 }
 .slideContainer{
     /* margin: auto; */
-    width: 50%;
+    width: 60%;
     height: 600px;
     position: relative;
     box-sizing: border-box;
+    margin-left: 2%;
 }
 .caption{
     width: 100%;

@@ -17,9 +17,11 @@ body{
    flex-wrap: wrap;
    top: 15rem;
    right: 0rem;
-   width: 20rem;
+   width: 25%;
    height: 20rem;
+   margin-left: 5%;
 }
+
 .navButton{
 
 }
@@ -55,7 +57,7 @@ body{
 }
 h1{
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 5rem;
+    font-size: 7rem;
     transform: scale(1.1, 1);
     color: #20546d;
     text-shadow:6px 6px 40px rgb(57, 130, 154);
@@ -64,10 +66,9 @@ h1{
 
 }
 .Qcontainer{
-    width: 70%;
+    width: 65%;
     box-sizing: border-box;
     min-height: 22rem;
-    /* max-height: 25rem; */
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
     background-color: rgb(250, 240, 225);
@@ -78,6 +79,7 @@ h1{
     padding: 1.5rem;
     box-sizing: border-box;
     border-radius: 20px;
+    border: 1.5px solid black;
 }
 input[type='radio']:after {
     width: 15px;
@@ -119,11 +121,15 @@ input[type='radio']:checked:after {
     background-color: rgb(250, 240, 225);
 }
 .navButton:hover{
+
+    background-color: rgb(255, 226, 182);
     background-color: rgb(255, 226, 182)!important;
     color: white;
 }
 #grandp{
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .reviewButton{
     padding: 10px;
@@ -135,4 +141,7 @@ input[type='radio']:checked:after {
     position: absolute;
     top: 11rem;
     left: 4.5rem;
+}
+#parent{
+    margin-right: 2%;
 }
