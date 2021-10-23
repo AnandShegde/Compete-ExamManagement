@@ -1,11 +1,16 @@
 <?php 
     session_start();
-    $connection = mysqli_connect("localhost", "root", "", "userinfo");
-    $tablename= 'quiz'.$_SESSION['user'];
-    $query = 'SELECT * FROM `userinfo`.`' .$tablename.'`';
+    
+    $_SESSION['qname']= "xyz";
+    $_SESSION['host']='anandishegde@gmail.com';
+    $database = $_SESSION['host'];
+    $connection = mysqli_connect("localhost", "root", "", "$database");
+    $tablename= $_SESSION['qname'];
+    $query = "SELECT * FROM `$database`.`" .$tablename.'`';
     $result = mysqli_query($connection, $query);
     $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
     $noOfQuestions = sizeof($questionSet); 
+
 
     // $connection = mysqli_connect("localhost", "root", "", "dbname");
     // $query = "SELECT * FROM tbname;";
@@ -23,8 +28,13 @@
     <h1 style="text-align: center;">Quiz Name</h1>
     <div id="grandp">
         <div id="qnp">
+            
+
+
+            
             <div id="parent"></div>    <!--done-->
-            <div class="buttonHolder"> <!--done -->
+            <div class="buttonHolder">
+            <form action="Submit.php" method="post" id="form"></form> <!--done -->
                 <button class="controls" onclick="previous()">Previous</button>
                 <button class="controls" onclick="reset()">reset</button>
                 <button class="controls" onclick="next()">Next</button>
@@ -41,6 +51,7 @@
         let x= <?= $noOfQuestions?>;
         let i1 = 1;
     <?php for( $i=0; $i< $noOfQuestions ; $i++){ ?>
+        var form = document.getElementById("form");
         var questionBody = document.createElement("div");
         questionBody.className = "Qcontainer";
         var question = document.createElement("div");
@@ -52,6 +63,7 @@
         var option2 = document.createElement("input");
         var option3 = document.createElement("input");
         var option4 = document.createElement("input");
+        var ans= document.createElement("input");
         var o4 = document.createElement("span");
         var o3 = document.createElement("span");
         var o2 = document.createElement("span");
@@ -68,6 +80,11 @@
         option2.type = "radio";
         option3.type = "radio";
         option4.type = "radio";
+        ans.type= "input";
+        ans.name= "values[]";
+        ans.hidden= true;
+        ans.id= 'ans'+i1;
+        ans.value=0;
         option1.name = "circle"+i1;
         option2.name = "circle"+i1;
         option3.name = "circle"+i1;
@@ -108,6 +125,7 @@
         questionBody.appendChild(divop2);
         questionBody.appendChild(divop3);
         questionBody.appendChild(divop4);
+        form.appendChild(ans);
         parent.appendChild(questionBody);
     <?php }?>
         let questionArray = document.getElementById("parent").childNodes;
@@ -128,7 +146,8 @@
                 let radios = document.getElementsByName(circlename);
                 for(let j = 0; j < radios.length; j++){
                     if(radios[j].type === 'radio' && radios[j].checked){
-                        value = radios[j].value;       
+                        value = radios[j].value;    
+                           
                     }
                 }
                 questionArray[j-1].style.display = "block";
@@ -155,27 +174,28 @@
 
         function submit(){
             var z=0;
-            let 
-            for(z=0;z<=x;z++)
+            let values= new Array(x+1);
+            for(z=1;z<=x;z++)
             {
-                let value=0;
+                var value=0;
            
             circlename='circle'+z;
             let radios = document.getElementsByName(circlename);
             for(let j = 0; j < radios.length; j++){
                 if (radios[j].type === 'radio' && radios[j].checked){
                     value = radios[j].value ;  
-                    console.log(value);      
+                    values[z]= j+1;     
+                    console.log(j,values[z]);
+                    document.getElementById("ans"+z).value= j+1;
                 }
+                console.log(j);
             }
-
-            
-
-
-            }
-            
-
+            console.log(values);          
+            var form = document.getElementById("form");
+            form.submit();
+            }    
         }
+        
 
 
         currentBlue();

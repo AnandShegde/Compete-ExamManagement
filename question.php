@@ -59,6 +59,7 @@
     $conn = mysqli_connect('localhost', 'root', '');
     $sqlQuery = 'CREATE DATABASE IF NOT EXISTS userInfo ;';
     $username= $_SESSION['user'];
+    
     $sql= "CREATE DATABASE IF NOT EXISTS `$username`";
     if(!$conn->query($sql))
     {

@@ -117,7 +117,7 @@
             $sqlQuery = "CREATE DATABASE IF NOT EXISTS `$username` ;";
             mysqli_query($conn,$sqlQuery);
             $conn1 = mysqli_connect('localhost', 'root', '', "$username");
-            $tablename= $_SESSION['qname'].$_SESSION['user'];
+            $tablename= $_SESSION['qname'];
             $sql= "CREATE TABLE IF NOT EXISTS `$username`.`".$tablename.
             '`( `question` VARCHAR(1200) NOT NULL ,
             `no` INT NOT NULL AUTO_INCREMENT , 
@@ -129,10 +129,16 @@
             `correct_option` TINYINT NOT NULL ,
             `no_of_options` TINYINT NOT NULL , 
             PRIMARY KEY (`no`)) ENGINE = InnoDB;';
-            $question= $_POST['question'];
-            $x= $_POST['x'];
+            $question= $_POST['question']; 
             
             $conn1->query($sql);
+            $sql= "CREATE TABLE IF NOT EXISTS `$username`.`".$tablename.'responses`(
+                `username` VARCHAR(200) NOT NULL,
+                `no` INT NOT NULL AUTO_INCREMENT , PRIMARY KEY (`no`)) ENGINE= InnoDB;';
+            $conn1->query($sql);
+            $response= $tablename."responses";
+
+            $x= $_POST['x'];
             $options= [];
             for($i=1;$i<=$x;$i++)
             {
@@ -150,15 +156,25 @@
             
 
             $correct= $_POST['correct-option'];
+
             
             $sql="INSERT INTO `$tablename` (`question`,`option1`, `option2`, `option3`, `option4`, `option5`, `correct_option`, `no_of_options`)
             VALUES ('$question',  '$options[0]', '$options[1]','$options[2]','$options[3]',' $options[4]','$correct ',' $x');";
             
-            if(!$conn1->query($sql))
-            {
-                echo "error inserting";
-            }
-            
+            if ($conn1->query($sql) === TRUE) {
+                $last_id = $conn1->insert_id;
+              } else {
+                echo "Error: " . $sql . "<br>" . $conn1->error;
+              }
+              echo $last_id;
+            //  $sql= " SELECT `no` FROM `$tablename` ORDER BY `no` DESC LIMIT 1";
+            //  $result= $conn1->query($sql);
+            //  $sie= mysqli_fetch_assoc($result);
+             
+            //  echo $sie["no"];
+            $sql= "ALTER TABLE `$response`
+            ADD `$last_id` INT";
+            $conn1->query($sql);
 
         }
     
