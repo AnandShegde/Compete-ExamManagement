@@ -31,6 +31,7 @@ h2{
     padding: 20px;
     height: 336px;
     width: 33%;
+    margin-right: 2%;
     background-color: teal;
     background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
     color: antiquewhite;
