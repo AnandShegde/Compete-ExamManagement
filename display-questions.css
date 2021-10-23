@@ -119,7 +119,9 @@ input[type='radio']:checked:after {
     background-color: rgb(250, 240, 225);
 }
 .navButton:hover{
+
     background-color: rgb(255, 226, 182);
+    background-color: rgb(255, 226, 182)!important;
     color: white;
 }
 #grandp{

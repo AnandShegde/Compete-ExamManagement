@@ -1,11 +1,13 @@
-#logo{
-  position: absolute;
-  top: 2%;
-  left: 19%;
+.logo_title{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom:-5%;
 }
+
 #title{
-    /*display: inline;*/
     font-size: 130px;
+    font-family: 'Courier New', Courier, monospace;
 }
 h1{
     margin-top: 0px;
@@ -25,15 +27,13 @@ h2{
 }
 .Login{
     border-radius: 10px;
-    margin-left: 1%;
-    float: left;
+    margin-left: 3%;
     padding: 20px;
     height: 336px;
-    max-width: 500px;
+    width: 33%;
     background-color: teal;
     background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
     color: antiquewhite;
-    margin-bottom: 30px;
 }
 .SignUP{
     border-radius: 30px;
@@ -105,8 +105,9 @@ body{
 .key{
     width: 400px;
 }
+
 .container{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: center;
 }

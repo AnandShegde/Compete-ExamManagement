@@ -28,6 +28,7 @@
                 <button class="controls" onclick="previous()">Previous</button>
                 <button class="controls" onclick="reset()">reset</button>
                 <button class="controls" onclick="next()">Next</button>
+                <button class="controls submit" onclick="submit()">Submit</button>
             </div>
         </div>
         <div id="navButtons"></div>
@@ -152,6 +153,32 @@
             })
             buttonsParent.appendChild(y);
         }
+
+        function submit(){
+            var z=0;
+            let 
+            for(z=0;z<=x;z++)
+            {
+                let value=0;
+           
+            circlename='circle'+z;
+            let radios = document.getElementsByName(circlename);
+            for(let j = 0; j < radios.length; j++){
+                if (radios[j].type === 'radio' && radios[j].checked){
+                    value = radios[j].value ;  
+                    console.log(value);      
+                }
+            }
+
+            
+
+
+            }
+            
+
+        }
+
+
         currentBlue();
         function next(){
             let value=0;
