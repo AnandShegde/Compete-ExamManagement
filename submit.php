@@ -7,7 +7,7 @@
     
     $qname= $qname;
 
-    $qname= $qname."responeses";
+    $qname= $qname."responses";
     
     
    $conn1= mysqli_connect("localhost","root",'',"$host");
@@ -15,7 +15,7 @@
     echo $qname;
     echo "<br>";
     echo $host.$qname;
-    $sql= "INSERT INTO $qname (`username`) VALUES ('anandishegde@gmail.com');";
+    $sql= "INSERT INTO `xyzresponses` (`username`) VALUES ('anandishegde@gmail.com');";
    if(! $conn1->query($sql))
    {
        echo $conn1->error;
@@ -34,8 +34,8 @@
         echo $qname;
         echo "<br>";
 
-        $sql= "UPDATE `$qname` SET `$i` = '$val' WHERE `$qname`.`no` = $id;";
-        
+        $sql= "UPDATE `".$qname."` SET `$i` = '$val' WHERE `$qname`.`no` = $id;";
+        echo $sql;
         if(!$conn1->query($sql))
         {
             echo $conn1->error;
