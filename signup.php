@@ -110,6 +110,24 @@
     <title>Compete</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Extra/letter_q.png">
+    <style>
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey; 
+            border-radius: 3rem;
+            background: #F2F3F3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #024F9F; 
+            border-radius: 2rem;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2339CD;
+            transition: 1s; 
+        }
+    </style>
 </head>
 <body>
     <div class="SignUP">
