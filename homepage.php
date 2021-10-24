@@ -148,8 +148,8 @@ body{
 <body>
 <div class="topnav">
   <a href="homepage.php">🏠Home</a>
-  <a href="contact.html">📞Contact</a>
-  <a href="about.html">📚About</a>
+  <a href="contact.php">📞Contact</a>
+  <a href="about.php">📚About</a>
   <a href="viewprofile.php">👨‍🎓Profile</a>
   <a href="logout.php">🚪Logout</a>
   <div align="right" id="log_img">

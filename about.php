@@ -10,7 +10,6 @@
     $result=mysqli_query($connect,$sql);
     $row = $result->fetch_assoc();
     $username=$row['uName'];
-    $institute=$row['uInstitute'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,27 +53,7 @@
   padding-right: 8px;
   cursor: pointer;
 }
-            .container{
-                display: flex;
-                justify-content: center;
-                direction: row;
-            }
-            .profile_container{
-                border: 2px solid black;
-                border-radius: 5px;
-                min-width: 60%;
-                max-width: 100%;
-                padding:1%;
-            }
-            .profile_container div{
-                border: 1px solid black;
-                font-family: 'Courier New', Courier, monospace;
-                font-size: 25px;
-                font-weight: 550;
-                padding:3%;
-                box-sizing:border-box;
-            }
-        </style>
+</style>
     </head>
     <body>
         <div class="topnav">
@@ -86,15 +65,8 @@
             <div align="right" id="log_img">
             <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
             <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
-            </div> 
+            </div>
         </div>
-        <h1 style="text-align: center;font-family: 'Courier New', Courier, monospace;">User Profile</h1>
-        <div class="container">
-        <div class="profile_container">
-            <div style="text-align:center;"><span>👨‍🎓Username</span><br><span style="color:green"><?php echo "$username";?></span></div>
-            <div style="text-align:center;"><span>🏫Institute</span><br><span style="color:green"><?php echo "$institute";?></span></div>
-            <div style="text-align:center;"><span>📧Email-ID</span><br><span style="color:green"><?php echo "$email"?></span></div>
-        </div>
-       </div>
+        <h1>Here we will write how website works</h1>
     </body>
 </html>
