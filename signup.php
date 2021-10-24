@@ -107,7 +107,9 @@
 ?>
 
 <head>
+    <title>Compete</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Extra/letter_q.png">
 </head>
 <body>
     <div class="SignUP">

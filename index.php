@@ -76,7 +76,7 @@
 
 <div id="layout"></div>
      <div id="dlgbox">
-         <div id="head">Website name</div>
+         <div id="head">Compete</div>
          <div id="body">Sign-Up Successfull</div>
          <div id="footer"><button onclick="ok()">OK</button></div>
      </div>
@@ -182,7 +182,7 @@
                 <input type="submit" value="Log in" name='login' id="log"></input><br><br>
                 </div>
                 <div style="display: flex;flex-direction: row;">
-                    <div><a href="" style="color:yellow;">Forgot Password</a></div>
+                    <div><a href="#forgot" style="color:yellow;">Forgot Password</a></div>
                     <div style="margin-left:56%;"><a href="signup.php" style="color:yellow;">Sign Up</a></div>
                 </div>
             </form>
