@@ -6,6 +6,7 @@
     <link rel="icon" href="Extra/letter_q.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="SliderCode/slider-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <title>Compete</title>
     <style>
         #layout{
@@ -65,7 +66,7 @@
         }
     </style>
 </head>
-<body>
+<body style="font-family: 'Courier New', Courier, monospace;">
 <?php
     session_start();
     if(isset($_SESSION['loggedin']))
@@ -169,17 +170,17 @@
             <span class="button right" onclick="control(1)">&#10095</span>
         </div> 
         <div class="Login">
-            <div style="text-align:center"><span style="font-size:40px;">Login User</span></div>
+            <div style="text-align:center;margin-bottom:6%" ><span style="font-size:40px;">Login User</span></div>
             <form action="" method="post"> <!--Login form-->
                  <div id="email">
-                 <input type="text" name="Email" placeholder="Email-Id"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
+                 <input type="text"  name="Email" placeholder="Email-Id"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
                  </div>
                  <div id="password">
                  <input type="password" name="Password" placeholder="Password" required><br>
                  <span style="color:yellow;" id="errors"></span><br>
                  </div>
                 <div id="btnlogin">
-                <input type="submit" value="Log in" name='login' id="log"></input><br><br>
+                <input type="submit" style="font-family: 'Courier New', Courier, monospace;font-weight:800" value="Login" name='login' id="log"></input><br><br>
                 </div>
                 <div style="display: flex;flex-direction: row;">
                     <div><a href="#forgot" style="color:yellow;">Forgot Password</a></div>
