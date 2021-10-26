@@ -27,6 +27,8 @@
 body{
   margin: 0rem;
   padding: 0rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight:600;
 }
 .topnav {
   overflow: hidden;
