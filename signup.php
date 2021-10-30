@@ -131,7 +131,7 @@
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="SignUP">
         <div id="userinfo">
-        <legend style="font-size:20px;text-align:center">User-details</legend>
+        <legend style="font-size:25px;text-align:center">User-details</legend>
         <h3 style="color: yellow;">* Required</h3>
             <span style="color: yellow">*</span> 
             Username: <span style="color: yellow;"><?php echo $nameerror; ?></span>
@@ -144,7 +144,7 @@
             <input type="text" name="Institute" placeholder="Institute"><br>
         </div>
         <div id="login_details">
-            <legend style="font-size:20px;text-align:center">Login-details</legend><br><br><br>
+            <legend style="font-size:25px;text-align:center">Login-details</legend><br><br><br>
             <span style="color: yellow">*</span> 
             Email-ID: <span style="color: yellow;"><?php echo $emailerror; ?></span>
             <input type="text" name="Email" placeholder="Email-Id"><br>
