@@ -15,6 +15,11 @@
     $row=$result->fetch_assoc();
     $username=$row['uName'];
     $_SESSION['user'] = $username;
+
+    //no of quizes
+    $sqlQuery = "SELECT * FROM quizes";
+    $result = mysqli_query($connect, $sqlQuery);
+    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -175,7 +180,7 @@ body{
 <div class="flex-container2">
   <div class="flex1">
     <h1>📝Quizzes</h1>
-    <h1 style="font-size: 100px; color: red;margin-top: -2%;">899</h1>
+    <h1 style="font-size: 100px; color: red;margin-top: -2%;"><?php echo sizeof($data) ?></h1>
   </div>
   <div class="flex2">
     <h1>✒️Quizzes Hosted</h1>
