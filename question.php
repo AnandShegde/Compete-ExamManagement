@@ -27,33 +27,35 @@
         header("Location: index.php");
     }
     ?>
-    <h1>Host a Quiz</h1>
     
+    <div class="x">
+        <h1>Host a Quiz</h1>
+        <form action="" method="post" >
+            <div class="form">    
+                <div class="name a">
+                <label for="qname">Quiz Name</label><br>
+                <input type="text" name="qname" id="qname" placeholder="ex: Programming quiz" required> </div>
+                <div class="date a">
+                <label for="qdate">Quiz date</label><br>
+                <input type="date" name="qdate" id="qdate" required> </div>
 
-    <form action="" method="post" >
-        <div class="form">    
-            <div class="name">
+                <div class="qstime a">
+                <label for="qstime">Quiz Start time: </label><br>
+                <input type="time" name="qstime" id="qstime" step="1" required></div>
 
-           
-            <label for="qname">Quiz Name</label>
-            <input type="text" name="qname" id="qname" placeholder="ex: Programming quiz" required> </div>
-            <div class="date">
-            <label for="qdate">Quiz date</label>
-            <input type="date" name="qdate" id="qdate" required> </div>
+                <div class="qetime a">
+                <label for="qetime">Quiz end time:</label><br>
+                <input type="time" name="qetime" id="qetime" step="1" required></div>
+                
+                <div class="eligibility a">
+                <label for="eligibility">Eligibility</label></div><br>
+                <div class="submit">
 
-            <div class="qstime">
-            <label for="qstime">Quiz Start time: </label>
-            <input type="time" name="qstime" id="qstime" step="1" required></div>
-
-            <div class="qetime">
-            <label for="qetime">Quiz end time:</label>
-            <input type="time" name="qetime" id="qetime" step="1" required></div>
-            
-            <div class="eligibility">
-            <label for="eligibility">Eligibility</label></div>
-            <input type="submit" name="add" value="Create">
+                
+                <input type="submit" name="add" value="Create" id="submit"></div>
+            </div>
+        </form>
     </div>
-    </form>
 
     <?php
     $conn = mysqli_connect('localhost', 'root', '');

@@ -18,11 +18,11 @@
     // $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
     // $noOfQuestions = sizeof($questionSet); 
 
-    $connection = mysqli_connect("localhost", "root", "", "dbname");
-    $query = "SELECT * FROM tbname;";
-    $result = mysqli_query($connection, $query);
-    $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    $noOfQuestions = sizeof($questionSet); 
+    // $connection = mysqli_connect("localhost", "root", "", "dbname");
+    // $query = "SELECT * FROM tbname;";
+    // $result = mysqli_query($connection, $query);
+    // $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    // $noOfQuestions = sizeof($questionSet); 
 ?>
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
