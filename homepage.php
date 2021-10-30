@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $email=$_SESSION['user'];
+    $email=$_SESSION['mail'];
     if(!isset($_SESSION['loggedin']))
     {
         header("Location: index.php");
@@ -14,6 +14,7 @@
     $result=mysqli_query($connect,$sql);
     $row=$result->fetch_assoc();
     $username=$row['uName'];
+    $_SESSION['user'] = $username;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -166,8 +167,9 @@ body{
   <div class="flex-child2">
     <h1 style="text-align: center;">QUIZ PANEL</h1><br>
     <a href="#Register_Quiz.php">Attempt Quiz</a><br>
-    <a href="#Host_Quiz.php">Host Quiz</a><br>
+    <a href="question.php">Host Quiz</a><br>
     <a href="#Given_Quizs.php">Given Quizs</a><br>
+    <a href="register.php">Register</a>
   </div>
 </div>
 <div class="flex-container2">
