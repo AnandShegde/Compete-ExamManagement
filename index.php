@@ -28,6 +28,7 @@
            position: fixed;
            z-index: 9999;
            border-radius: 5px;
+           font-weight:800;
         }
         #head{
             background-color: rgb(91, 91, 216);
@@ -35,6 +36,7 @@
             padding: 5px;
             text-align: center;
             margin: 5px 5px 0px 5px;
+            font-weight:800;
         }
         #body{
             background-color: rgb(181, 181, 241);
@@ -42,6 +44,7 @@
             padding: 5px;
             text-align: center;
             margin: 5px 5px 0px 5px;
+            font-weight:800;
         }
         #footer{
             background-color:rgb(91, 91, 216);
@@ -50,15 +53,17 @@
             text-align: center;
             margin: 5px 5px 0px 5px;
             margin-bottom: 5px;
+            font-weight:800;
         }
         #footer button{ 
             color: brown;
             background-color: #fff;
-            width: 40%;
+            width: 20%;
             border-color: black;
             border-radius: 5px;
             cursor: pointer;
             padding: 5px;
+            font-weight:800;
         }
         #footer button:hover{
             background-color: cyan;
@@ -78,17 +83,19 @@
 <div id="layout"></div>
      <div id="dlgbox">
          <div id="head">Compete</div>
-         <div id="body">Sign-Up Successfull</div>
+         <div id="body">Sign-Up Successfull <br> Information regarding Username and Password is sent to Your Mail-Id</div>
          <div id="footer"><button onclick="ok()">OK</button></div>
      </div>
      <script type="text/javascript">
-        function ok(){
+        function ok()
+        {
             var whitebg = document.getElementById("layout");
             var dlg = document.getElementById("dlgbox");
             whitebg.style.display = "none";
             dlg.style.display = "none";
         }
-        function ALERT(){
+        function ALERT()
+        {
             var whitebg = document.getElementById("layout");
             var dlg = document.getElementById("dlgbox");
             whitebg.style.display = "block";
@@ -105,8 +112,10 @@
 <?php
     if($_GET)
     {
-        if($_GET['user']==1)
+        if($_GET['flag']==1)
+        {
             echo '<script type="text/javascript">ALERT()</script>';
+        }
     }
     $conn = mysqli_connect('localhost', 'root', '');
     $sqlQuery = 'CREATE DATABASE IF NOT EXISTS userInfo ;';
@@ -133,7 +142,7 @@
             if($password==$row['uPassword'])
             {
                 $_SESSION['loggedin']= true;
-                $_SESSION['user']=$Email;          
+                $_SESSION['user']= $Email;          
                 header("Location:homepage.php"); 
                 $z=1;
             }
@@ -171,7 +180,7 @@
         </div> 
         <div class="Login">
             <div style="text-align:center;margin-bottom:6%" ><span style="font-size:40px;">Login User</span></div>
-            <form action="" method="post"> <!--Login form-->
+            <form method="post"> <!--Login form-->
                  <div id="email">
                  <input type="text"  name="Email" placeholder="Email-Id"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
                  </div>
