@@ -91,6 +91,7 @@
             var hostName = document.createElement("h2");
             var id = document.createElement("h2");
             var button = document.createElement("button");
+            var quizDate = document.createElement("h2");
 
             quizBody.className = "quizContainer";
             heading.className = "heading";
@@ -99,6 +100,7 @@
             hostName.className = "hostName";
             id.className = "id";
             button.className = "btn";
+            quizDate.className = "quizDate";
 
             heading.innerHTML = "<?= $data[$i]['name'] ?>";
             startTime.innerHTML = "<?= $data[$i]['start time'] ?>";
@@ -106,6 +108,7 @@
             hostName.innerHTML = "<?= $data[$i]['host-Email'] ?>";
             id.innerHTML = "<?= $data[$i]['id'] ?>";
             button.innerHTML = "Register";
+            quizDate.innerHTML = "<?= $data[$i]['date'] ?>";
 
             quizBody.appendChild(heading);
             quizBody.appendChild(startTime);
@@ -113,6 +116,7 @@
             quizBody.appendChild(hostName);
             quizBody.appendChild(id);
             quizBody.appendChild(button);
+            quizBody.appendChild(quizDate);
             
             y.appendChild(quizBody);
         <?php } ?>
