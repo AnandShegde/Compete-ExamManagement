@@ -20,6 +20,8 @@
             body{
   margin: 0rem;
   padding: 0rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight:600;
 }
 .topnav {
   overflow: hidden;
@@ -53,6 +55,39 @@
   padding-right: 8px;
   cursor: pointer;
 }
+
+.contact{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 5%;
+}
+
+#h{
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border-radius: 5px;
+  width:33.33%;
+  border:2px solid black;
+}
+
+#k{
+  width:100%;
+  height:100%;
+}
+
+.contact img{
+  width:75%;
+  height:75%;
+  margin-top: 3%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+center{
+  margin-bottom: 2%;
+}
+
 </style>
     </head>
     <body>
@@ -67,6 +102,17 @@
             <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
             </div>
         </div>
-        <h1>We will give contact info</h1>
+        <div class="contact"> 
+           <div id="h">
+             <div id="k"><center><img src="contact_img/anand.jpeg" alt=""><br><br><span id="m">Anand Hegde<br>200020007@iitdh.ac.in</span></center></div>
+             
+           </div>
+           <div id="h">
+             <div id="k"><center><img src="contact_img/karthik.jpeg" alt=""><br><br><span id="m">Karthik JP<br>200010022@iitdh.ac.in</span></center></div>
+           </div>
+           <div id="h">
+             <div id="k"><center><img src="contact_img/pavan.png" alt=""><br><br><span id="m">Pavan Kumar V Patil<br>200030041@iitdh.ac.in</span></center></div>
+           </div>
+        </div>
     </body>
 </html>
