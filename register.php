@@ -76,9 +76,7 @@
             </div>
         </div>
     <h1 id="heading">Quizes available for registration</h1>
-    <form action="#backend.php">
-      <div id="container"></div>
-    </form>
+    <div id="container"></div>
     <form action="homepage.php">
       <div style="display: flex; justify-content:center; margin: 3%;">
         <button class="btn" style="float: none" type="submit">Back</button>
@@ -89,6 +87,9 @@
     <script>
         var y = document.getElementById("container");
         <?php for($i = 0; $i < sizeof($data); $i++) { ?>
+            var form = document.createElement("form");
+            form.action = "reg_quiz.php"
+            form.method = "POST";
             var quizBody = document.createElement("div");
             var heading = document.createElement("h2");
             var startTime = document.createElement("h2");
@@ -96,9 +97,18 @@
             var hostName = document.createElement("h2");
             var id = document.createElement("h2");
             var button = document.createElement("button");
-            button.name = "<?= $i+1 ?>"
+            button.value = "<?= $i+1 ?>";
+            button.name = "submitted";
             button.type = "submit";
             var quizDate = document.createElement("h2");
+
+            heading.innerHTML = "Quiz name: <br> "+"<?= $data[$i]['name'] ?>";
+            startTime.innerHTML = "Start time(24hrs format): <br> "+"<?= $data[$i]['start time'] ?>";
+            endTime.innerHTML = "End time(24hrs format): <br> "+"<?= $data[$i]['end time'] ?>";
+            hostName.innerHTML = "Host name: <br> "+"<?= $data[$i]['host-Email'] ?>";
+            id.innerHTML = "Quiz ID: <br> "+"<?= $data[$i]['id'] ?>";
+            button.innerHTML = "Register";
+            quizDate.innerHTML = "Date of conduct: <br> "+"<?= $data[$i]['date'] ?>";
 
             quizBody.className = "quizContainer";
             heading.className = "heading";
@@ -109,13 +119,8 @@
             button.className = "btn";
             quizDate.className = "quizDate";
 
-            heading.innerHTML = "Quiz name: <br> "+"<?= $data[$i]['name'] ?>";
-            startTime.innerHTML = "Start time(24hrs format): <br> "+"<?= $data[$i]['start time'] ?>";
-            endTime.innerHTML = "End time(24hrs format): <br> "+"<?= $data[$i]['end time'] ?>";
-            hostName.innerHTML = "Host name: <br> "+"<?= $data[$i]['host-Email'] ?>";
-            id.innerHTML = "Quiz ID: <br> "+"<?= $data[$i]['id'] ?>";
-            button.innerHTML = "Register";
-            quizDate.innerHTML = "Date of conduct: <br> "+"<?= $data[$i]['date'] ?>";
+            heading.style = "text-align: center; color: white;"
+           
 
             quizBody.appendChild(heading);
             quizBody.appendChild(id);
@@ -124,7 +129,8 @@
             quizBody.appendChild(startTime);
             quizBody.appendChild(button);
             quizBody.appendChild(endTime);
-            y.appendChild(quizBody);
+            form.appendChild(quizBody);
+            y.appendChild(form);
         <?php } ?>
     </script>
 </body>
