@@ -31,6 +31,8 @@
         background-color:#cfcccc;
         height: auto;
         width: auto;
+        position: sticky;
+        top: 0;
       }
 
     .topnav a {
