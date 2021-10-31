@@ -74,9 +74,16 @@
             </div>
         </div>
     <h1 id="heading">Quizes available for registration</h1>
-    <div id="container">
-
-    </div>
+    <form action="#backend.php">
+      <div id="container"></div>
+    </form>
+    <form action="homepage.php">
+      <div style="display: flex; justify-content:center; margin: 3%;">
+        <button class="btn" style="float: none" type="submit">Back</button>
+      </div>
+    </form>
+  
+   
     <script>
         var y = document.getElementById("container");
         <?php for($i = 0; $i < sizeof($data); $i++) { ?>
@@ -87,6 +94,8 @@
             var hostName = document.createElement("h2");
             var id = document.createElement("h2");
             var button = document.createElement("button");
+            button.name = "<?= $i+1 ?>"
+            button.type = "submit";
             var quizDate = document.createElement("h2");
 
             quizBody.className = "quizContainer";
