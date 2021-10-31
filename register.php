@@ -18,50 +18,46 @@
 ?>
 <head>
     <title>Register</title>
+    <link rel="stylesheet" href="register.css">
     <style>
-        .quizContainer{
-            border: 1px solid black;
-            padding: 10px;
-        }
-        
-            body{
-  margin: 0rem;
-  padding: 0rem;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight:600;
-}
-.topnav {
-  overflow: hidden;
-  background-color:#cfcccc;
-  height: auto;
-  width: auto;
-}
+      body{
+        margin: 0rem;
+        padding: 0rem;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight:600;
+      }
+      .topnav {
+        overflow: hidden;
+        background-color:#cfcccc;
+        height: auto;
+        width: auto;
+      }
 
-.topnav a {
-  float: left;
-  color:black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 22px;
-}
+    .topnav a {
+      float: left;
+      color:black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 22px;
+    }
 
-.topnav a:hover {
-  background-color:skyblue;
-  color: black;
-}
+    .topnav a:hover {
+      background-color:skyblue;
+      color: black;
+    }
 
-#login_icon{
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-}
+    #login_icon{
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+    }
 
-#log_img{
-  padding-top: 8px;
-  padding-right: 8px;
-  cursor: pointer;
-}
+    #log_img{
+      padding-top: 8px;
+      padding-right: 8px;
+      cursor: pointer;
+    }
 
     </style>
 </head>
@@ -77,7 +73,7 @@
             <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
             </div>
         </div>
-    <h1>Quizes available for registration</h1>
+    <h1 id="heading">Quizes available for registration</h1>
     <div id="container">
 
     </div>
