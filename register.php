@@ -98,13 +98,13 @@
             button.className = "btn";
             quizDate.className = "quizDate";
 
-            heading.innerHTML = "<?= $data[$i]['name'] ?>";
-            startTime.innerHTML = "<?= $data[$i]['start time'] ?>";
-            endTime.innerHTML = "<?= $data[$i]['end time'] ?>";
-            hostName.innerHTML = "<?= $data[$i]['host-Email'] ?>";
-            id.innerHTML = "<?= $data[$i]['id'] ?>";
+            heading.innerHTML = "Quiz name <br> "+"<?= $data[$i]['name'] ?>";
+            startTime.innerHTML = "Start time (24hrs format)<br> "+"<?= $data[$i]['start time'] ?>";
+            endTime.innerHTML = "End time  (24hrs format)<br> "+"<?= $data[$i]['end time'] ?>";
+            hostName.innerHTML = "Host name <br> "+"<?= $data[$i]['host-Email'] ?>";
+            id.innerHTML = "Quiz ID <br> "+"<?= $data[$i]['id'] ?>";
             button.innerHTML = "Register";
-            quizDate.innerHTML = "<?= $data[$i]['date'] ?>";
+            quizDate.innerHTML = "Date of conduct <br> "+"<?= $data[$i]['date'] ?>";
 
             quizBody.appendChild(heading);
             quizBody.appendChild(startTime);

@@ -22,8 +22,10 @@ body{
     border-radius: 20px;
     float: right;
     background-color: rgb(247, 212, 218);
+    cursor: pointer;
 }
 .btn:hover{
     background: purple;
     color: white;
+    transition: 0.4s;
 }
