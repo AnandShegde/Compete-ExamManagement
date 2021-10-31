@@ -81,7 +81,7 @@
         var y = document.getElementById("container");
         <?php for($i = 0; $i < sizeof($data); $i++) { ?>
             var quizBody = document.createElement("div");
-            var heading = document.createElement("h1");
+            var heading = document.createElement("h2");
             var startTime = document.createElement("h2");
             var endTime = document.createElement("h2");
             var hostName = document.createElement("h2");
@@ -98,22 +98,21 @@
             button.className = "btn";
             quizDate.className = "quizDate";
 
-            heading.innerHTML = "Quiz name <br> "+"<?= $data[$i]['name'] ?>";
-            startTime.innerHTML = "Start time (24hrs format)<br> "+"<?= $data[$i]['start time'] ?>";
-            endTime.innerHTML = "End time  (24hrs format)<br> "+"<?= $data[$i]['end time'] ?>";
-            hostName.innerHTML = "Host name <br> "+"<?= $data[$i]['host-Email'] ?>";
-            id.innerHTML = "Quiz ID <br> "+"<?= $data[$i]['id'] ?>";
+            heading.innerHTML = "Quiz name: <br> "+"<?= $data[$i]['name'] ?>";
+            startTime.innerHTML = "Start time(24hrs format): <br> "+"<?= $data[$i]['start time'] ?>";
+            endTime.innerHTML = "End time(24hrs format): <br> "+"<?= $data[$i]['end time'] ?>";
+            hostName.innerHTML = "Host name: <br> "+"<?= $data[$i]['host-Email'] ?>";
+            id.innerHTML = "Quiz ID: <br> "+"<?= $data[$i]['id'] ?>";
             button.innerHTML = "Register";
-            quizDate.innerHTML = "Date of conduct <br> "+"<?= $data[$i]['date'] ?>";
+            quizDate.innerHTML = "Date of conduct: <br> "+"<?= $data[$i]['date'] ?>";
 
             quizBody.appendChild(heading);
-            quizBody.appendChild(startTime);
-            quizBody.appendChild(endTime);
-            quizBody.appendChild(hostName);
             quizBody.appendChild(id);
-            quizBody.appendChild(button);
+            quizBody.appendChild(hostName);
             quizBody.appendChild(quizDate);
-            
+            quizBody.appendChild(startTime);
+            quizBody.appendChild(button);
+            quizBody.appendChild(endTime);
             y.appendChild(quizBody);
         <?php } ?>
     </script>
