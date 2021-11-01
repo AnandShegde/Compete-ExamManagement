@@ -172,7 +172,7 @@ body{
     HERE WE WILL BE SLIDES OF QUIZ HOSTED BY OTHER USERS
   </div>
   <div class="flex-child2">
-    <h1 style="text-align: center;">QUIZ PANEL</h1><br>
+    <h1 style="text-align: center;">QUIZ PANEL</h1>
     <a href="attempt.php">Attempt Quiz</a><br>
     <a href="question.php">Host Quiz</a><br>
     <a href="#Given_Quizs.php">Given Quizs</a><br>
