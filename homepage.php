@@ -192,15 +192,15 @@ body{
 </div>
 <div class="flex-container2">
   <div class="flex1">
-    <h1><i class="fa-solid fa-book-open"></i> Quizzes</h1>
+    <h1 style="color: white;"><i class="fa-solid fa-book-open"></i> Quizzes</h1>
     <h1 style="font-size: 100px; color: white;margin-top: -2%;"><?php echo sizeof($data) ?></h1>
   </div>
   <div class="flex2">
-    <h1><i class="fa-regular fa-pen-to-square"></i> Quizzes Hosted</h1>
+    <h1 style="color: white;"><i class="fa-regular fa-pen-to-square"></i> Quizzes Hosted</h1>
     <h1 style="font-size: 100px; color: white;margin-top: -2%;">19</h1>
   </div>
   <div class="flex3">
-    <h1><i class="fa-solid fa-users"></i> Users</h1>
+    <h1 style="color: white;"><i class="fa-solid fa-users"></i> Users</h1>
     <h1 style="font-size: 100px; color: white;margin-top: -2%;"><?php echo "$no_of_users" ?></h1>
   </div>
 </div>
