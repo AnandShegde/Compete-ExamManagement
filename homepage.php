@@ -41,7 +41,8 @@ body{
 .topnav {
   overflow: hidden;
   /*background-color:#cfcccc;*/
-  background-image: linear-gradient(170deg,rgb(166, 239, 252),rgb(243, 247, 247) );
+ /* background-image: linear-gradient(170deg,rgb(166, 239, 252),rgb(243, 247, 247) );*/
+ background-color:rgb(176, 237, 248);
   height: auto;
   width: auto;
   position: sticky;
@@ -109,15 +110,15 @@ body{
 }
 
 .flex-child2 a{
-  border:2px solid black;
-  color:darkblue;
+  border:1.5px solid white;
+  color:black;
   text-decoration: none;
   border-radius: 5px;
   padding: 2%;
-  width: 40%;
+  width: 42%;
   display: inline-block;
   font-size: 20px;
-  background-color: rgb(228, 226, 226);
+  background-color: rgb(166, 239, 252);
   margin-top: 2.5%;
   margin-bottom: 2.5%;
 }
