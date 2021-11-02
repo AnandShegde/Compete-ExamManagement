@@ -19,6 +19,7 @@
     {
         header("Location: question.php");
     }    
+    echo $_SESSION['qname'];
     ?>
 
 
@@ -62,8 +63,8 @@ var x;
 $edit= 0;
 if(isset($_SESSION['edit']))
 {
-    $_SESSION['qname']= "xyz";
-    //echo $_SESSION['qname'];
+  
+    echo $_SESSION['qname'];
     $_SESSION['host']=$_SESSION['user'];
     $database = $_SESSION['host'];
     $connection = mysqli_connect("localhost", "root", "", "$database");
@@ -74,7 +75,7 @@ if(isset($_SESSION['edit']))
     $noOfQuestions = sizeof($questionSet);
     $j= $_POST['editb'];
 
-    echo "console.log($j);";
+    // echo "console.log($j);";
     $edit= 1;
     
     
@@ -212,6 +213,7 @@ if(isset($_POST['done']))
     mysqli_query($conn,$sqlQuery);
     $conn1 = mysqli_connect('localhost', 'root', '', "$username");
     $tablename= $_SESSION['qname'];
+    
     $sql= "CREATE TABLE IF NOT EXISTS `$username`.`".$tablename.
     '`( `question` VARCHAR(1200) NOT NULL ,
     `no` INT NOT NULL AUTO_INCREMENT , 
@@ -245,7 +247,7 @@ if(isset($_POST['done']))
         $options[$i-1]='';
     } 
     $correct= $_POST['correct-option'];
-    if($edit)
+    if(!$edit)
     {
         $sql="INSERT INTO `$tablename` (`question`,`option1`, `option2`, `option3`, `option4`, `option5`, `correct_option`, `no_of_options`)
         VALUES ('$question',  '$options[0]', '$options[1]','$options[2]','$options[3]',' $options[4]','$correct ',' $x');";
