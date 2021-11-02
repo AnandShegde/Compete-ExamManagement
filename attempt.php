@@ -91,13 +91,13 @@
             button.type = "submit";
             var quizDate = document.createElement("h2");
 
-            heading.innerHTML = "Quiz name: <br> "+"<?= $data[$i]['q_name'] ?>";
-            startTime.innerHTML = "Start time(24hrs format): <br> "+"<?= $data[$i]['starttime'] ?>";
-            endTime.innerHTML = "End time(24hrs format): <br> "+"<?= $data[$i]['endtime'] ?>";
-            hostName.innerHTML = "Host name: <br> "+"<?= $data[$i]['host'] ?>";
-            id.innerHTML = "Quiz ID: <br> "+"<?= $data[$i]['id'] ?>";
+            heading.innerHTML = "Quiz name: "+"<?= $data[$i]['q_name'] ?>";
+            startTime.innerHTML = "Start time(24hrs format): "+"<?= $data[$i]['starttime'] ?>";
+            endTime.innerHTML = "End time(24hrs format): "+"<?= $data[$i]['endtime'] ?>";
+            hostName.innerHTML = "Host name: "+"<?= $data[$i]['host'] ?>";
+            id.innerHTML = "Quiz ID: "+"<?= $data[$i]['id'] ?>";
             button.innerHTML = "Attempt";
-            quizDate.innerHTML = "Date of conduct: <br> "+"<?= $data[$i]['q_date'] ?>";
+            quizDate.innerHTML = "Date of conduct: "+"<?= $data[$i]['q_date'] ?>";
 
             quizBody.className = "quizContainer";
             heading.className = "heading";
