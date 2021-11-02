@@ -9,6 +9,7 @@
 <head>
     <title>Attempt a quiz</title>
     <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       body{
         margin: 0rem;
@@ -54,17 +55,17 @@
     </style>
 </head>
 <body>
-    <div class="topnav">
-    <a href="homepage.php">🏠Home</a>
-    <a href="contact.php">📞Contact</a>
-    <a href="about.php">📚About</a>
-    <a href="viewprofile.php">👨‍🎓Profile</a>
-    <a href="logout.php">🚪Logout</a>
+  <div class="topnav">
+    <a href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
+    <a href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
+    <a href="about.php"><i class="fa-solid fa-book"></i> About</a>
+    <a href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
+    <a href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
     <div align="right" id="log_img">
-        <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
-        <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
-    </div> 
-    </div>
+      <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
+      <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
+    </div>  
+  </div>
     <h1 id="heading">Quizes available for attempt</h1>
     <div id="container"></div>
     <form action="homepage.php">

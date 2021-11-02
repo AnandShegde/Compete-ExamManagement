@@ -28,6 +28,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Extra/letter_q.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Compete</title>
 <style>
 body{
@@ -157,11 +158,11 @@ body{
 </head>
 <body>
 <div class="topnav">
-  <a href="homepage.php">🏠Home</a>
-  <a href="contact.php">📞Contact</a>
-  <a href="about.php">📚About</a>
-  <a href="viewprofile.php">👨‍🎓Profile</a>
-  <a href="logout.php">🚪Logout</a>
+  <a href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
+  <a href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
+  <a href="about.php"><i class="fa-solid fa-book"></i> About</a>
+  <a href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
+  <a href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
   <div align="right" id="log_img">
   <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
   <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
@@ -181,18 +182,19 @@ body{
 </div>
 <div class="flex-container2">
   <div class="flex1">
-    <h1>📝Quizzes</h1>
+    <h1><i class="fa-solid fa-book-open"></i> Quizzes</h1>
     <h1 style="font-size: 100px; color: red;margin-top: -2%;"><?php echo sizeof($data) ?></h1>
   </div>
   <div class="flex2">
-    <h1>✒️Quizzes Hosted</h1>
+    <h1><i class="fa-regular fa-pen-to-square"></i> Quizzes Hosted</h1>
     <h1 style="font-size: 100px; color: red;margin-top: -2%;">19</h1>
   </div>
   <div class="flex3">
-    <h1>👨‍🎓Users</h1>
+    <h1><i class="fa-solid fa-users"></i> Users</h1>
     <h1 style="font-size: 100px; color: red;margin-top: -2%;"><?php echo "$no_of_users" ?></h1>
   </div>
-</div><br><br>
+</div>
+<br><br>
 <hr>
 </body>
 </html>

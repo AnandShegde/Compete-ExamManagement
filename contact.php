@@ -16,6 +16,7 @@
     <head>
         <title>Compete</title>
         <link rel="icon" href="Extra/letter_q.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <style>
             body{
   margin: 0rem;
@@ -91,17 +92,17 @@ center{
 </style>
     </head>
     <body>
-        <div class="topnav">
-            <a href="homepage.php">🏠Home</a>
-            <a href="contact.php">📞Contact</a>
-            <a href="about.php">📚About</a>
-            <a href="viewprofile.php">👨‍🎓Profile</a>
-            <a href="logout.php">🚪Logout</a>
-            <div align="right" id="log_img">
-            <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
-            <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
-            </div>
-        </div>
+    <div class="topnav">
+    <a href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
+    <a href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
+    <a href="about.php"><i class="fa-solid fa-book"></i> About</a>
+    <a href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
+    <a href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
+    <div align="right" id="log_img">
+      <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
+      <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
+    </div> 
+    </div>
         <div class="contact"> 
            <div id="h">
              <div id="k"><center><img src="contact_img/anand.jpeg" alt=""><br><br><span id="m">Anand Hegde<br>200020007@iitdh.ac.in</span></center></div>
