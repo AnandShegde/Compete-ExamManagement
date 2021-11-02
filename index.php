@@ -153,7 +153,7 @@
     
     <div class="logo_title">
         <!-- <img src="logo.png" alt="image not loaded" width=100px height=100px style="border-radius: 50%;margin-top: 1.8%;"> -->
-        <h1 id="title" style="letter-spacing: 0.1rem;"></i><i class="fa-solid fa-arrow-trend-up" style="font-size: 80px; color: #2f3640; letter-spacing: 1rem"></i>COMPETE</h1> s
+        <h1 id="title" style="letter-spacing: 0.1rem;"></i><i class="fa-solid fa-arrow-trend-up" style="font-size: 80px; color: #2f3640; letter-spacing: 1rem"></i>COMPETE</h1>
     </div>
    <!-- <center><p id="errors"></p></center> -->
     <div class="container">
