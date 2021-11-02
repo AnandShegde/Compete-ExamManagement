@@ -36,10 +36,12 @@ body{
   padding: 0rem;
   font-family: 'Courier New', Courier, monospace;
   font-weight:600;
+  background-image: linear-gradient(170deg,rgb(243, 247, 247),rgb(166, 239, 252) );
 }
 .topnav {
   overflow: hidden;
-  background-color:#cfcccc;
+  /*background-color:#cfcccc;*/
+  background-image: linear-gradient(170deg,rgb(166, 239, 252),rgb(243, 247, 247) );
   height: auto;
   width: auto;
   position: sticky;
@@ -70,6 +72,10 @@ body{
   padding-top: 8px;
   padding-right: 8px;
   cursor: pointer;
+  position: absolute;
+  top: 15%;
+  right: 1%;
+
 }
 
 .flex-container {
@@ -97,8 +103,9 @@ body{
     margin-left: 10px;
     width: 30%;
     border-radius: 4px;
-    color:blue;
+    color:white;
     text-align: center;
+    background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
 }
 
 .flex-child2 a{
@@ -134,6 +141,7 @@ body{
   margin-right: 10px;
   border-radius: 6px;
   text-align: center;
+  background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
 }
 
 .flex2{
@@ -143,6 +151,7 @@ body{
   margin-right: 10px;
   border-radius: 6px;
   text-align: center;
+  background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
 }
 
 .flex3{
@@ -152,20 +161,21 @@ body{
   margin-right: 10px;
   border-radius: 6px;
   text-align: center;
+  background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
 }
 
 </style>
 </head>
 <body>
 <div class="topnav">
-  <a href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
-  <a href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
-  <a href="about.php"><i class="fa-solid fa-book"></i> About</a>
-  <a href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
-  <a href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
-  <div align="right" id="log_img">
-  <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
-  <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
+  <a style="font-size: 17px;" href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
+  <a style="font-size: 17px;" href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
+  <a style="font-size: 17px;" href="about.php"><i class="fa-solid fa-book"></i> About</a>
+  <a style="font-size: 17px;" href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
+  <a style="font-size: 17px;" href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
+  <div  id="log_img">
+  <!-- <img src="login_icon.jpg" alt="no image found" id="login_icon"><br> -->
+  <span style="font-size:17px;color:blue;"><i class="fas fa-user-alt"></i> <?php echo "$username"; ?></span>
   </div> 
 </div>
 <div class="flex-container">
@@ -182,16 +192,16 @@ body{
 </div>
 <div class="flex-container2">
   <div class="flex1">
-    <h1><i class="fa-solid fa-book-open"></i> Quizzes</h1>
-    <h1 style="font-size: 100px; color: red;margin-top: -2%;"><?php echo sizeof($data) ?></h1>
+    <h1 style="color: white;"><i class="fa-solid fa-book-open"></i> Quizzes</h1>
+    <h1 style="font-size: 100px; color: white;margin-top: -2%;"><?php echo sizeof($data) ?></h1>
   </div>
   <div class="flex2">
-    <h1><i class="fa-regular fa-pen-to-square"></i> Quizzes Hosted</h1>
-    <h1 style="font-size: 100px; color: red;margin-top: -2%;">19</h1>
+    <h1 style="color: white;"><i class="fa-regular fa-pen-to-square"></i> Quizzes Hosted</h1>
+    <h1 style="font-size: 100px; color: white;margin-top: -2%;">19</h1>
   </div>
   <div class="flex3">
-    <h1><i class="fa-solid fa-users"></i> Users</h1>
-    <h1 style="font-size: 100px; color: red;margin-top: -2%;"><?php echo "$no_of_users" ?></h1>
+    <h1 style="color: white;"><i class="fa-solid fa-users"></i> Users</h1>
+    <h1 style="font-size: 100px; color: white;margin-top: -2%;"><?php echo "$no_of_users" ?></h1>
   </div>
 </div>
 <br><br>
