@@ -87,7 +87,7 @@ body{
     margin-right: 10px;
     margin-left: 10px;
     width: 70%;
-    border-radius: 10px;
+    border-radius: 4px;
     text-align: center;
 } 
 
@@ -96,7 +96,7 @@ body{
     margin-right: 10px;
     margin-left: 10px;
     width: 30%;
-    border-radius: 10px;
+    border-radius: 4px;
     color:blue;
     text-align: center;
 }
@@ -132,7 +132,7 @@ body{
   width: 33.33%;
   margin-left: 10px;
   margin-right: 10px;
-  border-radius: 10px;
+  border-radius: 6px;
   text-align: center;
 }
 
@@ -141,7 +141,7 @@ body{
   width: 33.33%;
   margin-left: 10px;
   margin-right: 10px;
-  border-radius: 10px;
+  border-radius: 6px;
   text-align: center;
 }
 
@@ -150,7 +150,7 @@ body{
   width: 33.33%;
   margin-left: 10px;
   margin-right: 10px;
-  border-radius: 10px;
+  border-radius: 6px;
   text-align: center;
 }
 
