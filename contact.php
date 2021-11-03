@@ -23,6 +23,7 @@
   padding: 0rem;
   font-family: 'Courier New', Courier, monospace;
   font-weight:600;
+  background-image: linear-gradient(170deg,rgb(243, 247, 247),rgb(166, 239, 252) );
 }
 .topnav {
   overflow: hidden;

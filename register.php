@@ -106,7 +106,7 @@
     <div id="container"></div>
     <form action="homepage.php">
       <div style="display: flex; justify-content:center; margin: 3%;">
-        <button class="btn" style="float: none" type="submit">Back</button>
+        <button class="btn_back" style="float: none" type="submit">Back</button>
       </div>
     </form>
   
@@ -141,13 +141,13 @@
             button.type = "submit";
             var quizDate = document.createElement("h2");
 
-            heading.innerHTML = "Quiz name: "+"<?= $data[$i]['name'] ?>";
-            startTime.innerHTML = "Start time(24hrs format): "+"<?= $data[$i]['start time'] ?>";
-            endTime.innerHTML = "End time(24hrs format): "+"<?= $data[$i]['end time'] ?>";
-            hostName.innerHTML = "Host name: "+"<?= $data[$i]['host-Email'] ?>";
-            id.innerHTML = "Quiz ID: "+"<?= $data[$i]['id'] ?>";
+            heading.innerHTML = "Quiz Name: "+"<?= $data[$i]['name'] ?>";
+            startTime.innerHTML = "*Start time(24hrs format): "+"<?= $data[$i]['start time'] ?>";
+            endTime.innerHTML = "*End time(24hrs format): "+"<?= $data[$i]['end time'] ?>";
+            hostName.innerHTML = "*Host name: "+"<?= $data[$i]['host-Email'] ?>";
+            id.innerHTML = "*Quiz ID: "+"<?= $data[$i]['id'] ?>";
             button.innerHTML = "Register";
-            quizDate.innerHTML = "Date of conduct: "+"<?= $data[$i]['date'] ?>";
+            quizDate.innerHTML = "*Date of conduct: "+"<?= $data[$i]['date'] ?>";
 
             quizBody.className = "quizContainer";
             heading.className = "heading";
