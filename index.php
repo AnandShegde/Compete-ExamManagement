@@ -6,8 +6,6 @@
     <link rel="icon" href="Extra/letter_q.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="SliderCode/slider-style.css">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Compete</title>
@@ -110,13 +108,6 @@
             dlg.style.left = (winWidth/2) - 300/2 + "px";
             dlg.style.top = "150px";
         }
-        function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
     </script>
 
 <?php
@@ -194,7 +185,6 @@
                     Login User
                 <span>
         </div>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <form method="post"> <!--Login form-->
                  <div id="email">
                  <i class="fa-solid fa-user-large"></i><input type="text"  name="Email" placeholder="Email-Id"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
