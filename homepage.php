@@ -16,6 +16,16 @@
     $username=$row['uName'];
     $_SESSION['user'] = $username;
 
+    $sql= 'CREATE TABLE IF NOT EXISTS `userinfo`.`quizes` ( `id` INT NOT NULL AUTO_INCREMENT ,
+    `host-Email` TEXT NOT NULL ,
+    `date` DATE NOT NULL , 
+    `start time` TIME NOT NULL , 
+    `end time` TIME NOT NULL , 
+    `duration` TIME NOT NULL ,
+    `name` TEXT NOT NULL , 
+    PRIMARY KEY (`id`)) ENGINE = InnoDB;';
+    $connect->query($sql);
+
     //no of quizes
     $sqlQuery = "SELECT * FROM quizes";
     $result = mysqli_query($connect, $sqlQuery);
