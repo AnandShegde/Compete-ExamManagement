@@ -37,8 +37,7 @@
     //data->all available quizes
     $sql = "SELECT * FROM reg_quizes";
     $resultFilter = mysqli_query($conn, $sql);
-    $dataFilter = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
+    $dataFilter = mysqli_fetch_all($resultFilter, MYSQLI_ASSOC);
 ?>
 <head>
     <title>Register</title>
@@ -114,17 +113,19 @@
    
     <script>
         var y = document.getElementById("container");
-        <?php for($i = 0; $i < sizeof($data); $i++) { ?>
-        <?php
+   <?php for($i = 0; $i < sizeof($data); $i++)
+      {
           $key = 1;
-          for($j = 0; $j < sizeof($dataFilter); $j++) {
-              if($dataFilter[$j]['id'] == $data[$i]['id']){
+          for($j = 0; $j < sizeof($dataFilter); $j++)
+          {
+              if($dataFilter[$j]['id'] == $data[$i]['id'])
+              {
                 $key = 0;
                 break;
               }
           }
-        ?>
-        <?php if($key == 1) { ?>
+         if($key == 1)
+         { ?>
             var form = document.createElement("form");
             form.action = "reg_quiz.php"
             form.method = "POST";
