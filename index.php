@@ -181,16 +181,16 @@
         </div>  -->
         <div class="Login">
         <div style="text-align:center;margin-bottom:6%" >
-                <span style="font-size:40px;color:white;">
-                    <i class="fa-solid fa-user-large"></i> Login User
+                <span style="font-size:35px;color:white;font-weight:650;">
+                    Login User
                 <span>
         </div>
             <form method="post"> <!--Login form-->
                  <div id="email">
-                 <input type="text"  name="Email" placeholder="Email-Id"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
+                 <i class="fa-solid fa-user-large"></i><input type="text"  name="Email" placeholder="Email-Id"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
                  </div>
                  <div id="password">
-                 <input type="password" name="Password" placeholder="Password" required><br>
+                 <i class="fa-solid fa-lock"></i><input type="password" name="Password" placeholder="Password" required><br>
                  <span style="color:yellow;" id="errors"></span><br>
                  </div>
                 <div id="btnlogin">
