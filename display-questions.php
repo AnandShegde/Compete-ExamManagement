@@ -1,22 +1,26 @@
 <?php 
-    session_start();
+    // session_start();
     
-    $_SESSION['qname']= "xyz";
-    $_SESSION['host']='anandishegde@gmail.com';
-    $database = $_SESSION['host'];
-    $connection = mysqli_connect("localhost", "root", "", "$database");
-    $tablename= $_SESSION['qname'];
-    $query = "SELECT * FROM `$database`.`" .$tablename.'`';
-    $result = mysqli_query($connection, $query);
-    $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    $noOfQuestions = sizeof($questionSet); 
-
-
-    // $connection = mysqli_connect("localhost", "root", "", "dbname");
-    // $query = "SELECT * FROM tbname;";
+    // $_SESSION['qname']= "xyz";
+    // $_SESSION['host']='anandishegde@gmail.com';
+    // $database = $_SESSION['host'];
+    // $connection = mysqli_connect("localhost", "root", "", "$database");
+    // $tablename= $_SESSION['qname'];
+    // $query = "SELECT * FROM `$database`.`" .$tablename.'`';
     // $result = mysqli_query($connection, $query);
     // $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
     // $noOfQuestions = sizeof($questionSet); 
+
+    //my code
+    session_start();
+    $hostName = $_SESSION['q_host_db'];
+    $tableName = $_SESSION['q_current_table'];
+    $connect = mysqli_connect("localhost", "root", "", $hostName);
+    $connection = mysqli_connect("localhost", "root", "", $hostName);
+    $query = "SELECT * FROM $tableName;";
+    $result = mysqli_query($connection, $query);
+    $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $noOfQuestions = sizeof($questionSet); 
 
     // $connection = mysqli_connect("localhost", "root", "", "dbname");
     // $query = "SELECT * FROM tbname;";
@@ -31,7 +35,7 @@
     <link rel="stylesheet" href="display-questions.css">
 </head>
 <body>
-    <h1 style="text-align: center;">Quiz Name</h1>
+    <h1 style="text-align: center; font-size: 80px"><?php echo "Quiz name: ".$tableName?></h1>
     <div id="grandp">
         <div id="qnp">
             

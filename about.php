@@ -23,12 +23,16 @@
   padding: 0rem;
   font-family: 'Courier New', Courier, monospace;
   font-weight:600;
+  background-image: linear-gradient(170deg,rgb(243, 247, 247),rgb(166, 239, 252) );
 }
 .topnav {
   overflow: hidden;
-  background-color:#cfcccc;
+  background-color:rgb(176, 237, 248);
   height: auto;
   width: auto;
+  position: sticky;
+  top: 0;
+  border: 1px solid black;
 }
 
 .topnav a {
@@ -55,19 +59,23 @@
   padding-top: 8px;
   padding-right: 8px;
   cursor: pointer;
+  position: absolute;
+  top: 15%;
+  right: 1%;
+
 }
 </style>
     </head>
     <body>
     <div class="topnav">
-      <a href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
-      <a href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
-      <a href="about.php"><i class="fa-solid fa-book"></i> About</a>
-      <a href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
-      <a href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
-      <div align="right" id="log_img">
-        <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
-        <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
+      <a style="font-size: 17px;" href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
+      <a style="font-size: 17px;" href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
+      <a style="font-size: 17px;" href="about.php"><i class="fa-solid fa-book"></i> About</a>
+      <a style="font-size: 17px;" href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
+      <a style="font-size: 17px;" href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
+      <div  id="log_img">
+      <!-- <img src="login_icon.jpg" alt="no image found" id="login_icon"><br> -->
+      <span style="font-size:17px;color:blue;"><i class="fas fa-user-alt"></i> <?php echo "$username"; ?></span>
       </div> 
     </div>
         <h1>Here we will write how website works</h1>

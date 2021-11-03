@@ -15,6 +15,29 @@
     $sqlQuery = "SELECT * FROM quizes";
     $result = mysqli_query($conn, $sqlQuery);
     $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    //edit
+    $conn = mysqli_connect("localhost", "root", "",$username);
+    if(!$conn)
+    {
+        echo "cool";
+    }
+    $sql= "CREATE TABLE IF NOT EXISTS reg_quizes( 
+        id INT NOT NULL ,
+        host TEXT NOT NULL ,
+        q_date DATE NOT NULL , 
+        starttime TIME NOT NULL , 
+        endtime TIME NOT NULL , 
+        duration TIME NOT NULL ,
+        q_name TEXT NOT NULL )";
+    mysqli_query($conn, $sql);
+    
+    //fetch from db
+    //datafilter->user registered quizes
+    //data->all available quizes
+    $sql = "SELECT * FROM reg_quizes";
+    $resultFilter = mysqli_query($conn, $sql);
+    $dataFilter = mysqli_fetch_all($resultFilter, MYSQLI_ASSOC);
 ?>
 <head>
     <title>Register</title>
@@ -28,66 +51,83 @@
         font-weight:600;
       }
       .topnav {
-        overflow: hidden;
-        background-color:#cfcccc;
-        height: auto;
-        width: auto;
-        position: sticky;
-        top: 0;
-      }
+  overflow: hidden;
+  background-color:rgb(176, 237, 248);
+  height: auto;
+  width: auto;
+  position: sticky;
+  top: 0;
+  border: 1px solid black;
+}
 
-    .topnav a {
-      float: left;
-      color:black;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 22px;
-    }
+.topnav a {
+  float: left;
+  color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 22px;
+}
 
-    .topnav a:hover {
-      background-color:skyblue;
-      color: black;
-    }
+.topnav a:hover {
+  background-color:skyblue;
+  color: black;
+}
 
-    #login_icon{
-      width: 27px;
-      height: 27px;
-      border-radius: 50%;
-    }
+#login_icon{
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+}
 
-    #log_img{
-      padding-top: 8px;
-      padding-right: 8px;
-      cursor: pointer;
-    }
+#log_img{
+  padding-top: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+  position: absolute;
+  top: 15%;
+  right: 1%;
 
+}
     </style>
 </head>
 <body>
 <div class="topnav">
-  <a href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
-  <a href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
-  <a href="about.php"><i class="fa-solid fa-book"></i> About</a>
-  <a href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
-  <a href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
-  <div align="right" id="log_img">
-  <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
-  <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
-  </div> 
-</div>
+      <a style="font-size: 17px;" href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
+      <a style="font-size: 17px;" href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
+      <a style="font-size: 17px;" href="about.php"><i class="fa-solid fa-book"></i> About</a>
+      <a style="font-size: 17px;" href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
+      <a style="font-size: 17px;" href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
+      <div  id="log_img">
+      <!-- <img src="login_icon.jpg" alt="no image found" id="login_icon"><br> -->
+      <span style="font-size:17px;color:blue;"><i class="fas fa-user-alt"></i> <?php echo "$username"; ?></span>
+      </div> 
+    </div>
     <h1 id="heading">Quizes available for registration</h1>
     <div id="container"></div>
     <form action="homepage.php">
       <div style="display: flex; justify-content:center; margin: 3%;">
-        <button class="btn" style="float: none" type="submit">Back</button>
+        <button class="btn_back" style="float: none" type="submit">Back</button>
       </div>
     </form>
   
    
     <script>
+        var heading = document.getElementById("heading");
         var y = document.getElementById("container");
-        <?php for($i = 0; $i < sizeof($data); $i++) { ?>
+   <?php for($i = 0; $i < sizeof($data); $i++)
+      {
+          $key = 1;
+          for($j = 0; $j < sizeof($dataFilter); $j++)
+          {
+              if($dataFilter[$j]['id'] == $data[$i]['id'])
+              {
+                $key = 0;
+                break;
+              }
+          }
+         if($key == 1)
+         { ?>
             var form = document.createElement("form");
             form.action = "reg_quiz.php"
             form.method = "POST";
@@ -103,13 +143,13 @@
             button.type = "submit";
             var quizDate = document.createElement("h2");
 
-            heading.innerHTML = "Quiz name: "+"<?= $data[$i]['name'] ?>";
-            startTime.innerHTML = "Start time(24hrs format): "+"<?= $data[$i]['start time'] ?>";
-            endTime.innerHTML = "End time(24hrs format): "+"<?= $data[$i]['end time'] ?>";
-            hostName.innerHTML = "Host name: "+"<?= $data[$i]['host-Email'] ?>";
-            id.innerHTML = "Quiz ID: "+"<?= $data[$i]['id'] ?>";
+            heading.innerHTML = "Quiz Name: "+"<?= $data[$i]['name'] ?>";
+            startTime.innerHTML = "*Start time(24hrs format): "+"<?= $data[$i]['start time'] ?>";
+            endTime.innerHTML = "*End time(24hrs format): "+"<?= $data[$i]['end time'] ?>";
+            hostName.innerHTML = "*Host name: "+"<?= $data[$i]['host-Email'] ?>";
+            id.innerHTML = "*Quiz ID: "+"<?= $data[$i]['id'] ?>";
             button.innerHTML = "Register";
-            quizDate.innerHTML = "Date of conduct: "+"<?= $data[$i]['date'] ?>";
+            quizDate.innerHTML = "*Date of conduct: "+"<?= $data[$i]['date'] ?>";
 
             quizBody.className = "quizContainer";
             heading.className = "heading";
@@ -132,6 +172,11 @@
             quizBody.appendChild(endTime);
             form.appendChild(quizBody);
             y.appendChild(form);
-        <?php } ?>
+        <?php } } ?>
+        var parent = document.getElementById("container");
+        var childs = parent.childNodes.length;
+        if(childs == 0){
+          heading.innerHTML = "No quizes available";
+        }
     </script>
 </body>

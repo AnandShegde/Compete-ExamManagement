@@ -16,6 +16,16 @@
     $username=$row['uName'];
     $_SESSION['user'] = $username;
 
+    $sql= 'CREATE TABLE IF NOT EXISTS `userinfo`.`quizes` ( `id` INT NOT NULL AUTO_INCREMENT ,
+    `host-Email` TEXT NOT NULL ,
+    `date` DATE NOT NULL , 
+    `start time` TIME NOT NULL , 
+    `end time` TIME NOT NULL , 
+    `duration` TIME NOT NULL ,
+    `name` TEXT NOT NULL , 
+    PRIMARY KEY (`id`)) ENGINE = InnoDB;';
+    $connect->query($sql);
+
     //no of quizes
     $sqlQuery = "SELECT * FROM quizes";
     $result = mysqli_query($connect, $sqlQuery);
@@ -29,6 +39,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Extra/letter_q.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="SliderCode/slider-style.css"> -->
     <title>Compete</title>
 <style>
 body{
@@ -41,11 +52,13 @@ body{
 .topnav {
   overflow: hidden;
   /*background-color:#cfcccc;*/
-  background-image: linear-gradient(170deg,rgb(166, 239, 252),rgb(243, 247, 247) );
+ /* background-image: linear-gradient(170deg,rgb(166, 239, 252),rgb(243, 247, 247) );*/
+ background-color:rgb(176, 237, 248);
   height: auto;
   width: auto;
   position: sticky;
   top: 0;
+  border: 1px solid black;
 }
 
 .topnav a {
@@ -89,16 +102,16 @@ body{
 }
 
 .flex-child1{
-    border: 2px solid black;
+    border: 0.8px solid black;
     margin-right: 10px;
     margin-left: 10px;
     width: 70%;
-    border-radius: 4px;
+    border-radius: 2px;
     text-align: center;
 } 
 
 .flex-child2{
-    border: 2px solid black;
+    border: 0.8px solid black;
     margin-right: 10px;
     margin-left: 10px;
     width: 30%;
@@ -109,15 +122,15 @@ body{
 }
 
 .flex-child2 a{
-  border:2px solid black;
-  color:darkblue;
+  border:0.8px solid white;
+  color:black;
   text-decoration: none;
   border-radius: 5px;
   padding: 2%;
-  width: 40%;
+  width: 42%;
   display: inline-block;
   font-size: 20px;
-  background-color: rgb(228, 226, 226);
+  background-color: rgb(166, 239, 252);
   margin-top: 2.5%;
   margin-bottom: 2.5%;
 }
@@ -135,7 +148,7 @@ body{
 }
 
 .flex1{
-  border: 2px solid black;
+  border: 0.8px solid black;
   width: 33.33%;
   margin-left: 10px;
   margin-right: 10px;
@@ -145,7 +158,7 @@ body{
 }
 
 .flex2{
-  border: 2px solid black;
+  border: 0.8px solid black;
   width: 33.33%;
   margin-left: 10px;
   margin-right: 10px;
@@ -155,7 +168,7 @@ body{
 }
 
 .flex3{
-  border: 2px solid black;
+  border: 0.8px solid black;
   width: 33.33%;
   margin-left: 10px;
   margin-right: 10px;
@@ -163,7 +176,48 @@ body{
   text-align: center;
   background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
 }
-
+/*slider style code*/
+.sliderContainer{
+  width: 100%;
+  height: 100%;
+}
+.slider{
+  display: none;
+  height: 21.75rem;
+  widht: 2rem;
+}
+#img{
+  height: 100%;
+  width: 100%;
+}
+.caption{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    opacity: 50%;
+    font-size: 25px;
+}
+.button{
+    position: absolute;
+    top: 36%;
+    color: black;
+    padding: 13px 20px; 
+    cursor: pointer;
+    font-size: 20px;
+    /* border-radius: 50%; */
+    font-weight: 900;
+    opacity: 70%;
+}
+.right{
+    right: 25rem;
+}
+.left{
+    left: 1rem;
+}
 </style>
 </head>
 <body>
@@ -180,7 +234,28 @@ body{
 </div>
 <div class="flex-container">
   <div class="flex-child1">
-    HERE WE WILL BE SLIDES OF QUIZ HOSTED BY OTHER USERS
+    <div class="slideContainer">
+            <div class="slider">
+                <img src="sliderImages/5.jpeg" alt="" id="img">
+            </div>
+            <div class="slider">
+                <img src="sliderImages/6.jpeg" alt="" id="img">
+            </div>
+            <div class="slider">
+                <img src="sliderImages/1.jpeg" alt="" id="img">
+            </div>
+            <div class="slider">
+                <img src="sliderImages/2.jpeg" alt="" id="img">
+            </div>
+            <div class="slider">
+                <img src="sliderImages/3.jpeg" alt="" id="img">
+            </div>
+            <div class="slider">
+                <img src="sliderImages/4.jpeg" alt="" id="img">
+            </div>
+            <span class="button left" onclick="control(-1)">&#10094</span>
+            <span class="button right" onclick="control(1)">&#10095</span>
+    </div> 
   </div>
   <div class="flex-child2">
     <h1 style="text-align: center;">QUIZ PANEL</h1>
@@ -206,5 +281,6 @@ body{
 </div>
 <br><br>
 <hr>
+<script src="SliderCode/slider-script.js"></script>
 </body>
 </html>
