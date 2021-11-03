@@ -157,7 +157,7 @@
     </div>
    <!-- <center><p id="errors"></p></center> -->
     <div class="container">
-        <div class="slideContainer" id="#bgm">
+        <!-- <div class="slideContainer" id="#bgm">
             <div class="slider">
                 <img src="sliderImages/5.jpeg" alt="" id="img">
             </div>
@@ -178,7 +178,7 @@
             </div>
             <span class="button left" onclick="control(-1)">&#10094</span>
             <span class="button right" onclick="control(1)">&#10095</span>
-        </div> 
+        </div>  -->
         <div class="Login">
         <div style="text-align:center;margin-bottom:6%" >
                 <span style="font-size:40px;">
