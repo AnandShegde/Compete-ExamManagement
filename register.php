@@ -38,6 +38,16 @@
     $sql = "SELECT * FROM reg_quizes";
     $resultFilter = mysqli_query($conn, $sql);
     $dataFilter = mysqli_fetch_all($resultFilter, MYSQLI_ASSOC);
+
+    $c_day=(int)date("d");
+    $c_month=(int)date("m");
+    $c_year=(int)date("Y");
+    
+    date_default_timezone_set('Asia/Kolkata');
+    $c_hour=(int)date("H");
+    $c_min=(int)date("i");
+    $c_sec=(int)date("s");
+
 ?>
 <head>
     <title>Register</title>
@@ -117,6 +127,12 @@
         var y = document.getElementById("container");
    <?php for($i = 0; $i < sizeof($data); $i++)
       {
+          $year=(int)substr($data[$i]['date'],0,4);
+          $month=(int)substr($data[$i]['date'],5,2);
+          $date=(int)substr($data[$i]['date'],8,2);
+          $hour=(int)substr($data[$i]["end time"],0,2);
+          $min=(int)substr($data[$i]["end time"],3,2);
+          $sec=(int)substr($data[$i]["end time"],6,2);
           $key = 1;
           for($j = 0; $j < sizeof($dataFilter); $j++)
           {
@@ -126,6 +142,16 @@
                 break;
               }
           }
+         /* if($c_year>$year || ($c_year<=$year && $c_month>$month) || ($c_month<=$month && $c_day>$day)|| ($c_day<=$day && $c_hour>$hour) || ($c_hour<=$hour && $c_min>$min) || ($c_min<=$min && $c_sec>$sec))
+          {
+            if(!($c_day<$day) && !($c_year<$year) && !($c_month<$month))
+            {
+              if(!($_hour<$hour) && !($_min<$min))
+              {
+                $key = 0;
+              }   
+            }
+          }*/
          if($key == 1)
          { ?>
             var form = document.createElement("form");
