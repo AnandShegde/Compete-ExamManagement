@@ -57,6 +57,7 @@
   width: auto;
   position: sticky;
   top: 0;
+  border: 1px solid black;
 }
 
 .topnav a {
