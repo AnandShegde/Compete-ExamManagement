@@ -18,54 +18,58 @@
         font-weight:600;
       }
       .topnav {
-        overflow: hidden;
-        background-color:#cfcccc;
-        height: auto;
-        width: auto;
-        position: sticky;
-        top: 0;
-      }
+  overflow: hidden;
+  background-color:rgb(176, 237, 248);
+  height: auto;
+  width: auto;
+  position: sticky;
+  top: 0;
+}
 
-    .topnav a {
-      float: left;
-      color:black;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 22px;
-    }
+.topnav a {
+  float: left;
+  color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 22px;
+}
 
-    .topnav a:hover {
-      background-color:skyblue;
-      color: black;
-    }
+.topnav a:hover {
+  background-color:skyblue;
+  color: black;
+}
 
-    #login_icon{
-      width: 27px;
-      height: 27px;
-      border-radius: 50%;
-    }
+#login_icon{
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+}
 
-    #log_img{
-      padding-top: 8px;
-      padding-right: 8px;
-      cursor: pointer;
-    }
+#log_img{
+  padding-top: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+  position: absolute;
+  top: 15%;
+  right: 1%;
+
+}
 
     </style>
 </head>
 <body>
-  <div class="topnav">
-    <a href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
-    <a href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
-    <a href="about.php"><i class="fa-solid fa-book"></i> About</a>
-    <a href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
-    <a href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
-    <div align="right" id="log_img">
-      <img src="login_icon.jpg" alt="no image found" id="login_icon"><br>
-      <span style="font-size:15px;color:blue;"><?php echo "$username"; ?></span>
-    </div>  
-  </div>
+<div class="topnav">
+      <a style="font-size: 17px;" href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
+      <a style="font-size: 17px;" href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
+      <a style="font-size: 17px;" href="about.php"><i class="fa-solid fa-book"></i> About</a>
+      <a style="font-size: 17px;" href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
+      <a style="font-size: 17px;" href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
+      <div  id="log_img">
+      <!-- <img src="login_icon.jpg" alt="no image found" id="login_icon"><br> -->
+      <span style="font-size:17px;color:blue;"><i class="fas fa-user-alt"></i> <?php echo "$username"; ?></span>
+      </div> 
+    </div>
     <h1 id="heading">Quizes available for attempt</h1>
     <div id="container"></div>
     <form action="homepage.php">
