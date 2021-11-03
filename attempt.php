@@ -1,6 +1,22 @@
 <?php
     session_start();
     $username = $_SESSION['user'];
+    $conn = mysqli_connect("localhost", "root", "",$username);
+    if(!$conn)
+    {
+        echo "cool";
+    }
+    $sql= "CREATE TABLE IF NOT EXISTS reg_quizes( 
+        id INT NOT NULL ,
+        host TEXT NOT NULL ,
+        q_date DATE NOT NULL , 
+        starttime TIME NOT NULL , 
+        endtime TIME NOT NULL , 
+        duration TIME NOT NULL ,
+        q_name TEXT NOT NULL )";
+    mysqli_query($conn, $sql);
+
+   
     $connect = mysqli_connect("localhost", "root", "", $username);
     $sql = "SELECT * FROM reg_quizes; ";
     $result = mysqli_query($connect, $sql);
@@ -125,6 +141,13 @@
             quizBody.appendChild(endTime);
             form.appendChild(quizBody);
             y.appendChild(form);
+          
         <?php } ?>
+            var heading = document.getElementById("heading");
+            var parent = document.getElementById("container");
+            var childs = parent.childNodes.length;
+            if(childs == 0){
+              heading.innerHTML = "No quizes available";
+            }
     </script>
 </body>

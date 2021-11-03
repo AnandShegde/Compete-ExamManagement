@@ -113,6 +113,7 @@
   
    
     <script>
+        var heading = document.getElementById("heading");
         var y = document.getElementById("container");
    <?php for($i = 0; $i < sizeof($data); $i++)
       {
@@ -172,5 +173,10 @@
             form.appendChild(quizBody);
             y.appendChild(form);
         <?php } } ?>
+        var parent = document.getElementById("container");
+        var childs = parent.childNodes.length;
+        if(childs == 0){
+          heading.innerHTML = "No quizes available";
+        }
     </script>
 </body>
