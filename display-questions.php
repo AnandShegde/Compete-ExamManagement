@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="display-questions.css">
 </head>
 <body>
-    <h1 style="text-align: center;">Quiz Name</h1>
+    <h1 style="text-align: center; font-size: 80px"><?php echo "Quiz name: ".$tableName?></h1>
     <div id="grandp">
         <div id="qnp">
             
