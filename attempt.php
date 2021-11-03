@@ -98,7 +98,7 @@
         var y = document.getElementById("container");
         <?php for($i = 0; $i < sizeof($data); $i++) { ?>
             var form = document.createElement("form");
-            form.action = "#";
+            form.action = "attemptBackend.php";
             form.method = "POST";
             var quizBody = document.createElement("div");
             var heading = document.createElement("h2");
