@@ -15,6 +15,30 @@
     $sqlQuery = "SELECT * FROM quizes";
     $result = mysqli_query($conn, $sqlQuery);
     $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    //edit
+    $conn = mysqli_connect("localhost", "root", "",$username);
+    if(!$conn)
+    {
+        echo "cool";
+    }
+    $sql= "CREATE TABLE IF NOT EXISTS reg_quizes( 
+        id INT NOT NULL ,
+        host TEXT NOT NULL ,
+        q_date DATE NOT NULL , 
+        starttime TIME NOT NULL , 
+        endtime TIME NOT NULL , 
+        duration TIME NOT NULL ,
+        q_name TEXT NOT NULL )";
+    mysqli_query($conn, $sql);
+    
+    //fetch from db
+    //datafilter->user registered quizes
+    //data->all available quizes
+    $sql = "SELECT * FROM reg_quizes";
+    $resultFilter = mysqli_query($conn, $sql);
+    $dataFilter = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
 ?>
 <head>
     <title>Register</title>
@@ -91,6 +115,16 @@
     <script>
         var y = document.getElementById("container");
         <?php for($i = 0; $i < sizeof($data); $i++) { ?>
+        <?php
+          $key = 1;
+          for($j = 0; $j < sizeof($dataFilter); $j++) {
+              if($dataFilter[$j]['id'] == $data[$i]['id']){
+                $key = 0;
+                break;
+              }
+          }
+        ?>
+        <?php if($key == 1) { ?>
             var form = document.createElement("form");
             form.action = "reg_quiz.php"
             form.method = "POST";
@@ -135,6 +169,6 @@
             quizBody.appendChild(endTime);
             form.appendChild(quizBody);
             y.appendChild(form);
-        <?php } ?>
+        <?php } } ?>
     </script>
 </body>
