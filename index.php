@@ -153,7 +153,7 @@
     
     <div class="logo_title">
         <!-- <img src="logo.png" alt="image not loaded" width=100px height=100px style="border-radius: 50%;margin-top: 1.8%;"> -->
-        <h1 id="title" style="letter-spacing: 0.1rem;"></i><i class="fa-solid fa-arrow-trend-up" style="font-size: 80px; color: #2f3640; letter-spacing: 1rem"></i>COMPETE</h1>
+        <h1 id="title" style="letter-spacing: 0.1rem;font-size:100px;"></i><i class="fa-solid fa-arrow-trend-up" style="font-size: 70px; color: white; letter-spacing: 1rem"></i>COMPETE</h1>
     </div>
    <!-- <center><p id="errors"></p></center> -->
     <div class="container">
@@ -181,7 +181,7 @@
         </div>  -->
         <div class="Login">
         <div style="text-align:center;margin-bottom:6%" >
-                <span style="font-size:40px;">
+                <span style="font-size:40px;color:white;">
                     <i class="fa-solid fa-user-large"></i> Login User
                 <span>
         </div>
@@ -197,13 +197,13 @@
                 <input type="submit" style="font-family: 'Courier New', Courier, monospace;font-weight:800" value="Login" name='login' id="log"></input><br><br>
                 </div>
                 <div style="display: flex;flex-direction: row;">
-                    <div><a href="#forgot" style="color:yellow;">Forgot Password</a></div>
-                    <div style="margin-left:56%;"><a href="signup.php" style="color:yellow;">Sign Up</a></div>
+                    <div style="text-align:center;margin-left:-7.5%"><a href="#forgot" style="color:white;">Forgot Password</a></div>
+                    <div style="margin-left:60%;margin-right:-2%;text-align:center;"><a href="signup.php" style="color:white;">Sign Up</a></div>
                 </div>
             </form>
         </div>
     </div>
-<script src="SliderCode/slider-script.js"></script>
+<!--<script src="SliderCode/slider-script.js"></script> -->
 
 <?php 
 //Checking for login details
