@@ -38,6 +38,16 @@
     $sql = "SELECT * FROM reg_quizes";
     $resultFilter = mysqli_query($conn, $sql);
     $dataFilter = mysqli_fetch_all($resultFilter, MYSQLI_ASSOC);
+
+    $c_day=(int)date("d");
+    $c_month=(int)date("m");
+    $c_year=(int)date("Y");
+    
+    date_default_timezone_set('Asia/Kolkata');
+    $c_hour=(int)date("H");
+    $c_min=(int)date("i");
+    $c_sec=(int)date("s");
+
 ?>
 <head>
     <title>Register</title>
@@ -117,7 +127,54 @@
         var y = document.getElementById("container");
    <?php for($i = 0; $i < sizeof($data); $i++)
       {
-          $key = 1;
+          $year=(int)substr($data[$i]['date'],0,4);
+          $month=(int)substr($data[$i]['date'],5,2);
+          $day=(int)substr($data[$i]['date'],8,2);
+          $hour=(int)substr($data[$i]["end time"],0,2);
+          $min=(int)substr($data[$i]["end time"],3,2);
+          $sec=(int)substr($data[$i]["end time"],6,2);
+          if($c_year<$year)
+             $key=1;
+          else if($c_year>=$year)
+          {
+             $key=0;
+            if($c_year==$year)
+             {
+                if($c_month<$month)
+                   $key=1;
+                else if($c_month>=$month)
+                {
+                   $key=0;
+                   if($c_month==$month)
+                   {
+                      if($c_day<$day)
+                         $key=1;
+                      else if($c_day>=$day)
+                      {
+                         $key=0;
+                         if($c_day==$day)
+                         {
+                            if($c_hour<$hour)
+                               $key=1;
+                            else if($c_hour>=$hour)
+                            {
+                               $key=0;
+                               if($c_hour==$hour)
+                               {
+                                  if($c_min<$min)
+                                     $key=1;
+                                  else if($c_min>=$min)
+                                  {
+                                     $key=0;
+                                  }
+                               }
+                            }
+                         }
+                      }
+                   }
+                }
+             }
+          }
           for($j = 0; $j < sizeof($dataFilter); $j++)
           {
               if($dataFilter[$j]['id'] == $data[$i]['id'])

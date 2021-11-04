@@ -21,6 +21,16 @@
     $sql = "SELECT * FROM reg_quizes; ";
     $result = mysqli_query($connect, $sql);
     $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    $c_day=(int)date("d");
+    $c_month=(int)date("m");
+    $c_year=(int)date("Y");
+    
+    date_default_timezone_set('Asia/Kolkata');
+    $c_hour=(int)date("H");
+    $c_min=(int)date("i");
+    $c_sec=(int)date("s");
+
 ?>
 <head>
     <title>Attempt a quiz</title>
@@ -88,6 +98,7 @@
       </div> 
     </div>
     <h1 id="heading">Quizes available for attempt</h1>
+    <p id="1"></p>
     <div id="container"></div>
     <form action="homepage.php">
       <div style="display: flex; justify-content:center; margin: 3%;">
@@ -96,7 +107,58 @@
     </form>
     <script>
         var y = document.getElementById("container");
-        <?php for($i = 0; $i < sizeof($data); $i++) { ?>
+        <?php for($i = 0; $i < sizeof($data); $i++) 
+        { 
+          $year=(int)substr($data[$i]['q_date'],0,4);
+          $month=(int)substr($data[$i]['q_date'],5,2);
+          $day=(int)substr($data[$i]['q_date'],8,2);
+          $hour=(int)substr($data[$i]["endtime"],0,2);
+          $min=(int)substr($data[$i]["endtime"],3,2);
+          $sec=(int)substr($data[$i]["endtime"],6,2);
+          if($c_year<$year)
+             $key=1;
+          else if($c_year>=$year)
+          {
+             $key=0;
+            if($c_year==$year)
+             {
+                if($c_month<$month)
+                   $key=1;
+                else if($c_month>=$month)
+                {
+                   $key=0;
+                   if($c_month==$month)
+                   {
+                      if($c_day<$day)
+                         $key=1;
+                      else if($c_day>=$day)
+                      {
+                         $key=0;
+                         if($c_day==$day)
+                         {
+                            if($c_hour<$hour)
+                               $key=1;
+                            else if($c_hour>=$hour)
+                            {
+                               $key=0;
+                               if($c_hour==$hour)
+                               {
+                                  if($c_min<$min)
+                                     $key=1;
+                                  else if($c_min>=$min)
+                                  {
+                                     $key=0;
+                                  }
+                               }
+                            }
+                         }
+                      }
+                   }
+                }
+             }
+          }
+         if($key==1)
+          { ?>
             var form = document.createElement("form");
             form.action = "attemptBackend.php";
             form.method = "POST";
@@ -142,12 +204,14 @@
             form.appendChild(quizBody);
             y.appendChild(form);
           
-        <?php } ?>
+        <?php } }?>
             var heading = document.getElementById("heading");
             var parent = document.getElementById("container");
             var childs = parent.childNodes.length;
-            if(childs == 0){
+            if(childs == 0)
+            {
               heading.innerHTML = "No quizes available";
             }
     </script>
+   
 </body>
