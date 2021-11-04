@@ -129,7 +129,7 @@
       {
           $year=(int)substr($data[$i]['date'],0,4);
           $month=(int)substr($data[$i]['date'],5,2);
-          $date=(int)substr($data[$i]['date'],8,2);
+          $day=(int)substr($data[$i]['date'],8,2);
           $hour=(int)substr($data[$i]["end time"],0,2);
           $min=(int)substr($data[$i]["end time"],3,2);
           $sec=(int)substr($data[$i]["end time"],6,2);
