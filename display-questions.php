@@ -32,10 +32,177 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="display-questions.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="display-questions.css"> -->
+    <style>
+        body{
+        background-image: linear-gradient(190deg,rgb(166, 239, 252),rgb(243, 247, 247) );
+        margin: 0px;
+}
+#output{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.4rem;
+    color: rgb(16, 1, 60);
+    position: absolute;
+    top: 5.4rem;
+    left: 12.2rem;
+    font-weight: bold;
+    color: red;
+}
+#navButtons{
+   position: absolute;
+   flex-wrap: wrap;
+   top: 10rem;
+   right: 2rem;
+   width: 25%;
+   height: 20rem;
+   margin-left: 5%;
+}
+.qnp{
+    width: 65%;
+}
+
+.buttonHolder{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 32.5rem;
+    left: 15.5rem;
+}
+.controls{
+    padding: 0.7rem;
+    margin: 0.7rem;
+    font-size: 1.0rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    border: 1px solid black;
+    color: white;
+    background-color: teal;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.controls:hover{
+    color: rgb(236, 236, 236);
+    transition: 0.4s;
+    background-color: rgb(30, 96, 36);
+}
+.options{
+    font-size: 20px;
+    padding-left: 15px;
+    color: white;
+}
+.question{
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: white;
+}
+h1{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 4rem;
+    transform: scale(1.1, 1);
+    color: #20546d;
+    text-shadow:6px 6px 40px rgb(57, 130, 154);
+    text-align: center;
+    margin: 0rem;
+
+}
+.Qcontainer{
+    width: 65%;
+    box-sizing: border-box;
+    min-height: 22rem;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-weight: bold;
+    background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));;
+    position: absolute;
+    top: 10rem;
+    left: 2.2rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 0.8px solid black;
+}
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+input[type='radio']:checked:after {
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: green;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+.opdiv{
+    padding: 8px;
+}
+.navButton{
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    margin: 0.2rem;
+    color: teal;
+    background-color: rgb(250, 240, 225);
+    opacity: 70%;
+    border: 0.8px solid black;
+    border-radius: 2px;
+}
+.navButton:hover{
+    transition: 0.5s;
+    background-color: rgb(255, 226, 182)!important;
+    color: black !important;
+}
+#grandp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.reviewButton{
+    text-align: center;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    border: 1px solid black;
+    color: white;
+    background-color: teal;
+    cursor: pointer;
+    border-radius: 3px;
+    position: absolute;
+    font-size: 1.1rem;
+    top: 5.5rem;
+    left: 1.8rem;
+    padding: 0.6rem;
+    margin: 0.6rem;
+    font-weight: 600;
+}
+.reviewButton:hover{
+    color: rgb(236, 236, 236);
+    transition: 0.4s;
+    background-color: rgb(30, 96, 36);
+}
+#parent{
+    margin-right: 2%;
+}
+    </style>
 </head>
 <body>
-    <h1 style="text-align: center; font-size: 80px"><?php echo "Quiz name: ".$tableName?></h1>
+    <h1 style="text-align: center; font-size: 2.8rem;"><?php echo "Quiz name: ".$tableName?></h1>
     <div id="grandp">
         <div id="qnp">
             
@@ -45,10 +212,10 @@
             <div id="parent"></div>    <!--done-->
             <div class="buttonHolder">
             <form action="Submit.php" method="post" id="form"></form> <!--done -->
-                <button class="controls" onclick="previous()">Previous</button>
-                <button class="controls" onclick="reset()">reset</button>
-                <button class="controls" onclick="next()">Next</button>
-                <button class="controls submit" onclick="submit()">Submit</button>
+                <button class="controls" onclick="previous()">PREVIOUS</button>
+                <button class="controls" onclick="reset()">RESET</button>
+                <button class="controls" onclick="next()">NEXT</button>
+                <button class="controls submit" onclick="submit()">SUBMIT</button>
             </div>
         </div>
         <div id="navButtons"></div>
