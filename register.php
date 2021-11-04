@@ -142,16 +142,48 @@
                 break;
               }
           }
-         /* if($c_year>$year || ($c_year<=$year && $c_month>$month) || ($c_month<=$month && $c_day>$day)|| ($c_day<=$day && $c_hour>$hour) || ($c_hour<=$hour && $c_min>$min) || ($c_min<=$min && $c_sec>$sec))
+          if($c_year<$year)
+             $key=1;
+          else if($c_year>=$year)
           {
-            if(!($c_day<$day) && !($c_year<$year) && !($c_month<$month))
-            {
-              if(!($_hour<$hour) && !($_min<$min))
-              {
-                $key = 0;
-              }   
-            }
-          }*/
+             $key=0;
+            if($c_year==$year)
+             {
+                if($c_month<$month)
+                   $key=1;
+                else if($c_month>=$month)
+                {
+                   $key=0;
+                   if($c_month==$month)
+                   {
+                      if($c_day<$day)
+                         $key=1;
+                      else if($c_day>=$day)
+                      {
+                         $key=0;
+                         if($c_day==$day)
+                         {
+                            if($c_hour<$hour)
+                               $key=1;
+                            else if($c_hour>=$hour)
+                            {
+                               $key=0;
+                               if($c_hour==$hour)
+                               {
+                                  if($c_min<$min)
+                                     $key=1;
+                                  else if($c_min>=$min)
+                                  {
+                                     $key=0;
+                                  }
+                               }
+                            }
+                         }
+                      }
+                   }
+                }
+             }
+          }
          if($key == 1)
          { ?>
             var form = document.createElement("form");
