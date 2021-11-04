@@ -32,7 +32,7 @@
     $data=$result->fetch_assoc();
 
     $q_name=$data['name'];
-    $host=$data['host-Email'];
+    $host=$data['host'];
     $q_date=$data['date'];
     $starttime=$data['start time'];
     $endtime=$data['end time'];

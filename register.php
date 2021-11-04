@@ -146,7 +146,7 @@
             heading.innerHTML = "Quiz Name: "+"<?= $data[$i]['name'] ?>";
             startTime.innerHTML = "*Start time(24hrs format): "+"<?= $data[$i]['start time'] ?>";
             endTime.innerHTML = "*End time(24hrs format): "+"<?= $data[$i]['end time'] ?>";
-            hostName.innerHTML = "*Host name: "+"<?= $data[$i]['host-Email'] ?>";
+            hostName.innerHTML = "*Host name: "+"<?= $data[$i]['host'] ?>";
             id.innerHTML = "*Quiz ID: "+"<?= $data[$i]['id'] ?>";
             button.innerHTML = "Register";
             quizDate.innerHTML = "*Date of conduct: "+"<?= $data[$i]['date'] ?>";

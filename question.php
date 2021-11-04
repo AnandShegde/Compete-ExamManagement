@@ -72,7 +72,7 @@
     
     mysqli_query($conn, $sqlQuery);
     $sql= 'CREATE TABLE IF NOT EXISTS `userinfo`.`quizes` ( `id` INT NOT NULL AUTO_INCREMENT ,
-    `host-Email` TEXT NOT NULL ,
+    `host` TEXT NOT NULL ,
     `date` DATE NOT NULL , 
     `start time` TIME NOT NULL , 
     `end time` TIME NOT NULL , 
@@ -113,7 +113,7 @@
     else{
 
     
-    $sql= "INSERT INTO `userinfo`.`quizes` (`id`, `host-Email`, `date`, `start time`, `end time`, `duration`, `name`) 
+    $sql= "INSERT INTO `userinfo`.`quizes` (`id`, `host`, `date`, `start time`, `end time`, `duration`, `name`) 
     VALUES (NULL,'$username' , '$date', '$stime', '$etime', '$seconds', '$name');";
 
     if(!$conn->query($sql))
