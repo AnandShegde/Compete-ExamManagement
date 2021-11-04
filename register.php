@@ -133,15 +133,6 @@
           $hour=(int)substr($data[$i]["end time"],0,2);
           $min=(int)substr($data[$i]["end time"],3,2);
           $sec=(int)substr($data[$i]["end time"],6,2);
-          $key = 1;
-          for($j = 0; $j < sizeof($dataFilter); $j++)
-          {
-              if($dataFilter[$j]['id'] == $data[$i]['id'])
-              {
-                $key = 0;
-                break;
-              }
-          }
           if($c_year<$year)
              $key=1;
           else if($c_year>=$year)
@@ -183,6 +174,14 @@
                    }
                 }
              }
+          }
+          for($j = 0; $j < sizeof($dataFilter); $j++)
+          {
+              if($dataFilter[$j]['id'] == $data[$i]['id'])
+              {
+                $key = 0;
+                break;
+              }
           }
          if($key == 1)
          { ?>
