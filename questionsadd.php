@@ -77,7 +77,7 @@ if(isset($_POST['done']))
         } else {
             echo "Error: " . $sql . "<br>" . $conn1->error;
         }
-        echo $last_id;
+        
         //  $sql= " SELECT `no` FROM `$tablename` ORDER BY `no` DESC LIMIT 1";
         //  $result= $conn1->query($sql);
         //  $sie= mysqli_fetch_assoc($result);
@@ -122,7 +122,7 @@ if(isset($_POST['done']))
     <h1>ADD QUESTION</h1>
    <div class="instuction ">Please state the question, as well as the options and their responses.</div>
    
-   <p> Question:</p>
+   <p id='questionnumber'> Question <?php if(isset($last_id)){ echo $last_id;} else {echo "1";}?>:</p>
     <form action="" method="post" class="questionsadd">
         <textarea name="question" id="question"></textarea>
         <br><br>
@@ -171,6 +171,7 @@ if(isset($_SESSION['edit']))
     $j= $_POST['editb'];
 
     echo "console.log($j);";
+    echo "var qnum= $j+1;";
     $edit= 1;
     
     
@@ -179,6 +180,7 @@ if(isset($_SESSION['edit']))
     give_option_blanks1(<?=$questionSet[$j]['no_of_options']?>);
     document.getElementById("correct").value= <?=$questionSet[$j]['correct_option']?>;
     document.getElementById("j").value= "<?=$j?>";
+    document.getElementById("questionnumber").innerHTML= "Question "+qnum;
     var op=1;
     
     
