@@ -96,7 +96,7 @@
       /* nav style */
       .topnav {
   overflow: hidden;
-  postion: relative;
+  position: relative;
   background-color:rgb(176, 237, 248);
   height: auto;
   width: auto;

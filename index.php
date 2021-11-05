@@ -197,7 +197,7 @@
                 <input type="submit" style="font-family: 'Courier New', Courier, monospace;font-weight:800" value="Login" name='login' id="log"></input><br><br>
                 </div>
                 <div style="display: flex;flex-direction: row;">
-                    <div style="text-align:center;margin-left:-7.5%"><a href="#forgot" style="color:white;">Forgot Password</a></div>
+                    <div style="text-align:center;margin-left:-7.5%"><a href="forgot_password.php" style="color:white;">Forgot Password</a></div>
                     <div style="margin-left:60%;margin-right:-2%;text-align:center;"><a href="signup.php" style="color:white;">Sign Up</a></div>
                 </div>
             </form>
