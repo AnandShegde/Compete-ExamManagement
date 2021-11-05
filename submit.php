@@ -177,7 +177,7 @@
       Quiz date: <?php echo "25/11/2022";?>
     </h1>
     <h1>
-      Quiz duration: <?php echo "2:30:00" ?>
+      Quiz ID: <?php echo "2" ?>
     </h1>
   </div>
 
@@ -185,8 +185,7 @@
   <h2 style="font-size: 2rem; margin-top: 0px;">Your score: <span><?php echo '<span style="color:rgb(21, 167, 21);">'.$rightans.'</span>'.'/'.'<span style="color: rgb(0, 183, 255);">'.sizeof($answers).'</span>'; ?></span></h2>
     <h1><i class="fas fa-poll-h"></i> Question Statistics</h1>
     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-    
-  </div>
+</div>
   
 
 <script>
