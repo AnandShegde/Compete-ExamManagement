@@ -79,7 +79,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 <script>
 var xValues = ["Correct answers", "total questions"];
 var yValues = [<?=$rightans?>,<?=sizeof($answers)?>];
- var barColors = ["red", "green"];
+ var barColors = ["darkorange", "darkblue"];
 
 
 new Chart("myChart", {

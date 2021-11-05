@@ -2,10 +2,6 @@ let container = document.querySelector('.flex-child1');
 let slider = document.querySelector('.s_slide');
 
 let images = document.querySelectorAll('.img');
-
-let prevBtn = document.getElementById('prev');
-let nextBtn = document.getElementById('next');
-
 let width = images[0].clientWidth;
 var counter = 1;
 container.style.width = width;
@@ -17,7 +13,7 @@ function slide(){
     slider.style.transition = 'transform 1s ease-in-out';
     slider.style.transform = 'translateX('+(-counter*width)+'px)';
 }
-setInterval("slide()", 2000);
+setInterval("slide()", 5000);
 slider.addEventListener('transitionend', ()=>{
     if(images[counter].id == 'lastclone'){
         slider.style.transition = 'none';
