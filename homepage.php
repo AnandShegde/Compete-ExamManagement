@@ -59,6 +59,7 @@ body{
   position: sticky !important;
   top: 0;
   border: 1px solid black;
+  z-index: 100;
 }
 
 .topnav a {
@@ -109,6 +110,7 @@ body{
     border-radius: 2px;
     text-align: center;
     overflow: hidden;
+    z-index: -1;
 } 
 
 .flex-child2{
