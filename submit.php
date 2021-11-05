@@ -61,7 +61,8 @@
         margin: 0px;
         padding: 0px;
         background: linear-gradient(190deg,rgb(243, 247, 247),rgb(166, 239, 252));
-        font-family: 'Zen Kaku Gothic Antique', sans-serif;
+        /* font-family: 'Zen Kaku Gothic Antique', sans-serif; */
+        font-family: 'Courier New', Courier, monospace;
         color: rgb(102, 48, 84);
       }
       .flex1{
@@ -78,9 +79,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 0% 5%;
+        margin: 3% 5%;
         position: relative;
-        bottom: 4.5rem;
       }
       .heading{
         position:relative;
@@ -105,6 +105,7 @@
   border: 1px solid black;
   z-index: 100;
   font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 }
 
 .topnav a {
@@ -151,7 +152,7 @@
 </div>
   <h1 class="heading">
     Quiz Name: 
-    <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; color: rgb(0, 183, 255)">
+    <span style="color: rgb(0, 183, 255)">
     <?php echo $qname ?>
     </span>
   </h1>
@@ -181,9 +182,10 @@
   </div>
 
   <div class="result">
+  <h2 style="font-size: 2rem; margin-top: 0px;">Your score: <span><?php echo '<span style="color:rgb(21, 167, 21);">'.$rightans.'</span>'.'/'.'<span style="color: rgb(0, 183, 255);">'.sizeof($answers).'</span>'; ?></span></h2>
     <h1><i class="fas fa-poll-h"></i> Question Statistics</h1>
     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-    <h2 style="font-size: 2rem; margin-top: 0px;">Your score: <span><?php echo '<span style="color:rgb(21, 167, 21);">'.$rightans.'</span>'.'/'.'<span style="color: rgb(0, 183, 255);">'.sizeof($answers).'</span>'; ?></span></h2>
+    
   </div>
   
 
