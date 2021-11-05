@@ -160,13 +160,13 @@
   <div class="flex1">
     <h1>
       Candidate name: 
-      <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; color: rgb(114, 113, 113)">
+      <span style=" color: rgb(114, 113, 113)">
         <?php echo $_SESSION['user']; ?>
       </span>
     </h1>
     <h1>
       Host name: 
-      <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; color: rgb(114, 113, 113)">
+      <span style=" color: rgb(114, 113, 113)">
         <?php echo $_SESSION['q_host_db']; ?>
       </span>
     </h1>
