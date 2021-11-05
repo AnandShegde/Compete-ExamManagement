@@ -17,7 +17,7 @@
     $_SESSION['user'] = $username;
 
     $sql= 'CREATE TABLE IF NOT EXISTS `userinfo`.`quizes` ( `id` INT NOT NULL AUTO_INCREMENT ,
-    `host-Email` TEXT NOT NULL ,
+    `host` TEXT NOT NULL ,
     `date` DATE NOT NULL , 
     `start time` TIME NOT NULL , 
     `end time` TIME NOT NULL , 
