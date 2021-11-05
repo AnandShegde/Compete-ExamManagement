@@ -17,7 +17,7 @@
     $_SESSION['user'] = $username;
 
     $sql= 'CREATE TABLE IF NOT EXISTS `userinfo`.`quizes` ( `id` INT NOT NULL AUTO_INCREMENT ,
-    `host` TEXT NOT NULL ,
+    `host-Email` TEXT NOT NULL ,
     `date` DATE NOT NULL , 
     `start time` TIME NOT NULL , 
     `end time` TIME NOT NULL , 
@@ -39,6 +39,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Extra/letter_q.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="1.css">
     <!-- <link rel="stylesheet" href="SliderCode/slider-style.css"> -->
     <title>Compete</title>
 <style>
@@ -95,7 +96,7 @@ body{
     display: flex;
     margin-top: 2%;
     width: auto;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
     height: 350px;
     padding: 0.5%;
@@ -105,7 +106,7 @@ body{
     border: 0.8px solid black;
     margin-right: 10px;
     margin-left: 10px;
-    width: 70%;
+    width: 600px;
     border-radius: 2px;
     text-align: center;
 } 
@@ -114,7 +115,7 @@ body{
     border: 0.8px solid black;
     margin-right: 10px;
     margin-left: 10px;
-    width: 30%;
+    width: 40%;
     border-radius: 4px;
     color:white;
     text-align: center;
@@ -126,8 +127,8 @@ body{
   color:black;
   text-decoration: none;
   border-radius: 5px;
-  padding: 2%;
-  width: 42%;
+  padding: 1.8%;
+  width: 36%;
   display: inline-block;
   font-size: 20px;
   background-color: rgb(166, 239, 252);
@@ -184,7 +185,7 @@ body{
 .slider{
   display: none;
   height: 21.75rem;
-  width: 2rem;
+  widht: 2rem;
 }
 #img{
   height: 100%;
@@ -218,6 +219,38 @@ body{
 .left{
     left: 1rem;
 }
+#prev{
+  position: absolute;
+  top:15rem;
+  left: 1.2rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  opacity: 90%;
+}
+#next{
+  position: absolute;
+  top: 15rem;
+  left: 40.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  opacity: 90%;
+}
+.s_container{
+    width: 100%;
+    margin: auto;
+    border: 2px solid green;
+    /* overflow: hidden; */
+}
+.s_slide{
+    width: 5400px;
+    height: 350px;
+    display: flex;
+}
+.img{
+    height: 100%;
+    /* border: 2px solid black; */
+    width: 600px;
+}
 </style>
 </head>
 <body>
@@ -234,28 +267,24 @@ body{
 </div>
 <div class="flex-container">
   <div class="flex-child1">
-    <div class="slideContainer">
-            <div class="slider">
-                <img src="sliderImages/5.jpeg" alt="" id="img">
-            </div>
-            <div class="slider">
-                <img src="sliderImages/6.jpeg" alt="" id="img">
-            </div>
-            <div class="slider">
-                <img src="sliderImages/1.jpeg" alt="" id="img">
-            </div>
-            <div class="slider">
-                <img src="sliderImages/2.jpeg" alt="" id="img">
-            </div>
-            <div class="slider">
-                <img src="sliderImages/3.jpeg" alt="" id="img">
-            </div>
-            <div class="slider">
-                <img src="sliderImages/4.jpeg" alt="" id="img">
-            </div>
-            <span class="button left" onclick="control(-1)">&#10094</span>
-            <span class="button right" onclick="control(1)">&#10095</span>
-    </div> 
+  <div class="s_container">
+        <div class="s_slide">
+
+            <img  class="img" id="lastclone"src="sliderImages/6.jpeg" alt="">
+            <img  class="img" src="sliderImages/2.jpeg" alt="">
+            <img  class="img" src="sliderImages/4.jpeg" alt="">
+            <img  class="img" src="sliderImages/5.jpeg" alt="">
+            <img src="sliderImages/7.jpeg" alt="" class="img">
+            <img src="sliderImages/8.jpeg" alt="" class="img">
+            <img src="sliderImages/9.jpeg" alt="" class="img">
+            <img  class="img" src="sliderImages/6.jpeg" alt="">
+            <img  class="img" id="firstclone" src="sliderImages/2.jpeg" alt="">
+           
+        </div>
+    </div>
+    <i class="fas fa-arrow-left" id="prev"></i>
+    <i class="fas fa-arrow-right" id="next"></i>
+    <script src="1.js"></script>
   </div>
   <div class="flex-child2">
     <h1 style="text-align: center;">QUIZ PANEL</h1>
