@@ -20,16 +20,20 @@
            $sql= "UPDATE usertable
            SET 
                 uPassword='$password'
-            WHERE uGmail=$Email;";
+            WHERE uGmail='$Email';";
             if($conn->query($sql))
             {
+                echo "changed successfully";
                 header("Location: index.php");
                 
             } 
             else
             {
-                "There was en error in updating Your password";
+                echo $conn->error;
+                echo "There was en error in updating Your password";
             }
+            // header("Location: index.php");
+            
         }
 
     ?>

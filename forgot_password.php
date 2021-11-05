@@ -31,9 +31,9 @@
             $txt = "Hello world!";
             $headers = "From: Compete@example.com" . "\r\n" ."BCC: anandishegde@gmail.com";//200030041@iitdh.ac.in, 200010022@iitdh.ac.in
             // send email
+
             if(mail("$Email",$subject,$msg,$headers))
             {
-                session_start();
                 $_SESSION['emailp']=$Email;
                 header("Location: enterotp.php");
             }     
