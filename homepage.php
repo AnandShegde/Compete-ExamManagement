@@ -51,13 +51,12 @@ body{
   background-image: linear-gradient(170deg,rgb(243, 247, 247),rgb(166, 239, 252) );
 }
 .topnav {
-  overflow: hidden;
-  /*background-color:#cfcccc;*/
- /* background-image: linear-gradient(170deg,rgb(166, 239, 252),rgb(243, 247, 247) );*/
- background-color:rgb(176, 237, 248);
+  overflow: hidden !important;
+  postion: relative !important;
+  background-color:rgb(176, 237, 248);
   height: auto;
   width: auto;
-  position: sticky;
+  position: sticky !important;
   top: 0;
   border: 1px solid black;
 }
@@ -106,9 +105,10 @@ body{
     border: 0.8px solid black;
     margin-right: 10px;
     margin-left: 10px;
-    width: 600px;
+    width: 700px;
     border-radius: 2px;
     text-align: center;
+    overflow: hidden;
 } 
 
 .flex-child2{
@@ -178,47 +178,6 @@ body{
   background-image: linear-gradient(170deg, teal, rgb(85, 85, 231));
 }
 /*slider style code*/
-.sliderContainer{
-  width: 100%;
-  height: 100%;
-}
-.slider{
-  display: none;
-  height: 21.75rem;
-  widht: 2rem;
-}
-#img{
-  height: 100%;
-  width: 100%;
-}
-.caption{
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    color: white;
-    background-color: black;
-    text-align: center;
-    padding: 10px;
-    opacity: 50%;
-    font-size: 25px;
-}
-.button{
-    position: absolute;
-    top: 36%;
-    color: black;
-    padding: 13px 20px; 
-    cursor: pointer;
-    font-size: 20px;
-    /* border-radius: 50%; */
-    font-weight: 900;
-    opacity: 70%;
-}
-.right{
-    right: 25rem;
-}
-.left{
-    left: 1rem;
-}
 #prev{
   position: absolute;
   top:15rem;
@@ -235,21 +194,14 @@ body{
   font-size: 1.6rem;
   opacity: 90%;
 }
-.s_container{
-    width: 100%;
-    margin: auto;
-    border: 2px solid green;
-    /* overflow: hidden; */
-}
 .s_slide{
-    width: 5400px;
+    width: 7700px;
     height: 350px;
     display: flex;
 }
 .img{
     height: 100%;
-    /* border: 2px solid black; */
-    width: 600px;
+    width: 700px;
 }
 </style>
 </head>
@@ -261,29 +213,22 @@ body{
   <a style="font-size: 17px;" href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
   <a style="font-size: 17px;" href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
   <div  id="log_img">
-  <!-- <img src="login_icon.jpg" alt="no image found" id="login_icon"><br> -->
   <span style="font-size:17px;color:blue;"><i class="fas fa-user-alt"></i> <?php echo "$username"; ?></span>
   </div> 
 </div>
 <div class="flex-container">
   <div class="flex-child1">
-  <div class="s_container">
         <div class="s_slide">
-
-            <img  class="img" id="lastclone"src="sliderImages/6.jpeg" alt="">
+            <img  class="img" id="lastclone" src="sliderImages/6.jpeg" alt="">
             <img  class="img" src="sliderImages/2.jpeg" alt="">
             <img  class="img" src="sliderImages/4.jpeg" alt="">
             <img  class="img" src="sliderImages/5.jpeg" alt="">
-            <img src="sliderImages/7.jpeg" alt="" class="img">
-            <img src="sliderImages/8.jpeg" alt="" class="img">
-            <img src="sliderImages/9.jpeg" alt="" class="img">
+            <img  class="img" src="sliderImages/7.jpeg" alt="">
+            <img  class="img" src="sliderImages/8.jpeg" alt="">
+            <img  class="img" src="sliderImages/9.jpeg" alt="">
             <img  class="img" src="sliderImages/6.jpeg" alt="">
             <img  class="img" id="firstclone" src="sliderImages/2.jpeg" alt="">
-           
         </div>
-    </div>
-    <i class="fas fa-arrow-left" id="prev"></i>
-    <i class="fas fa-arrow-right" id="next"></i>
     <script src="1.js"></script>
   </div>
   <div class="flex-child2">
