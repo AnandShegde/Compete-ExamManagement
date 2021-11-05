@@ -8,5 +8,6 @@
     $data=$result->fetch_assoc();
     $_SESSION['q_current_table'] = $data['q_name'];
     $_SESSION['q_host_db'] = $data['host'];
+    
     header("Location: display-questions.php");
 ?>

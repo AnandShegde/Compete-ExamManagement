@@ -5,12 +5,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     session_start();
     // $_SESSION['qname']= 
     $user= $_SESSION['user'];
-    $host= $_SESSION['host'];
-    $qname= $_SESSION['qname'];
-    
-    $qname= $qname;
-
-
+    $host= $_SESSION['q_host_db'];
+    $qname= $_SESSION['q_current_table'];
     $qnameres= $qname."responses";
     
     
