@@ -135,7 +135,7 @@
     
          if($seconds<=0)
         {
-            echo "please select proper start and end times";
+            echo "<script>alert('Please select proper Start and End time')</script>";
         }
         else
         {
