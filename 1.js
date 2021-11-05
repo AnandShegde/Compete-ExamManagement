@@ -17,7 +17,7 @@ function slide(){
     slider.style.transition = 'transform 1s ease-in-out';
     slider.style.transform = 'translateX('+(-counter*width)+'px)';
 }
-setInterval("slide()", 2000);
+setInterval("slide()", 5000);
 slider.addEventListener('transitionend', ()=>{
     if(images[counter].id == 'lastclone'){
         slider.style.transition = 'none';
