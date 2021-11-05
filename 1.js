@@ -2,10 +2,6 @@ let container = document.querySelector('.flex-child1');
 let slider = document.querySelector('.s_slide');
 
 let images = document.querySelectorAll('.img');
-
-let prevBtn = document.getElementById('prev');
-let nextBtn = document.getElementById('next');
-
 let width = images[0].clientWidth;
 var counter = 1;
 container.style.width = width;
