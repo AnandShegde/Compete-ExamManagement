@@ -40,6 +40,11 @@
 
     $sql = "INSERT INTO reg_quizes (id,host,q_date,starttime,endtime,duration,q_name)  VALUES('$id','$host','$q_date','$starttime','$endtime','$duration','$q_name')";
     mysqli_query($conn, $sql);
+
+    $connect_res= mysqli_connect("localhost","root","",$host);
+    $table=$q_name."responses";
+    $sql_query="INSERT INTO '$table' (username) VALUES('$username')";
+    mysqli_query($connect_res,$sql_query);
 ?>
 
 <html>
