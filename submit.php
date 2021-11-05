@@ -1,65 +1,47 @@
 <?php
-
-
-if($_SERVER['REQUEST_METHOD']=='POST'){
-    session_start();
-    // $_SESSION['qname']= 
-    $user= $_SESSION['user'];
-    $host= $_SESSION['q_host_db'];
-    $qname= $_SESSION['q_current_table'];
-    $qnameres= $qname."responses";
-    
-    
-   $conn1= mysqli_connect("localhost","root",'',"$host");
-    // $sql= "CREATE TABLE IF NOT EXISTS `$host`.`$qname`";
-    // echo $qname;
-    // echo "<br>";
-    // echo $host.$qname;
-    $sql= "INSERT INTO `$qnameres` (`username`) VALUES ('$user');";
-   if(! $conn1->query($sql))
-   {
-       echo $conn1->error;
-   }
-
-    $id=$conn1->insert_id;
-
-    $answers= $_POST['values'];
-    $sql= "SELECT  `correct_option` FROM `$qname`;";
-   $result=  $conn1->query($sql);
-   $correct= mysqli_fetch_all($result, MYSQLI_ASSOC);
-   $rightans=0; 
-    for ($i=1;$i<=sizeof($answers);$i++)
-    {
+  if($_SERVER['REQUEST_METHOD']=='POST'){
+      session_start();
+      $user= $_SESSION['user'];
+      $host= $_SESSION['q_host_db'];
+      $qname= $_SESSION['q_current_table'];
+      $qnameres= $qname."responses";
+      $conn1= mysqli_connect("localhost","root",'',"$host");
+      $sql= "INSERT INTO `$qnameres` (`username`) VALUES ('$user');";
+      if(! $conn1->query($sql))
+      {
+          echo $conn1->error;
+      }
+      $id=$conn1->insert_id;
+      $answers= $_POST['values'];
+      $sql= "SELECT  `correct_option` FROM `$qname`;";
+      $result=  $conn1->query($sql);
+      $correct= mysqli_fetch_all($result, MYSQLI_ASSOC);
+      $rightans=0; 
+      for ($i=1;$i<=sizeof($answers);$i++)
+      {
         $j= $i-1;
         $val= $answers[$j];
-        
-
         if($val==$correct[$j]['correct_option'])
         {   
-            $rightans++;
-
-
+          $rightans++;
         }
-
         $sql= "UPDATE `".$qnameres."` SET `$i` = '$val' WHERE `$qnameres`.`no` = $id;";
-      
         if(!$conn1->query($sql))
         {
             echo $conn1->error;
         }
-    }
-
-    $sql= "ALTER TABLE `$qnameres` ADD if not exists `result` INT";
-    if(!$conn1->query($sql))
-    {
-        echo $conn1->error;
-    }
-    $sql= "UPDATE `".$qnameres."` SET `result` = '$rightans' WHERE `$qnameres`.`no` = $id;";
-    if(!$conn1->query($sql))
-    {
-        echo $conn1->error;
-    }
-    unset($_POST);
+      }
+      $sql= "ALTER TABLE `$qnameres` ADD if not exists `result` INT";
+      if(!$conn1->query($sql))
+      {
+          echo $conn1->error;
+      }
+      $sql= "UPDATE `".$qnameres."` SET `result` = '$rightans' WHERE `$qnameres`.`no` = $id;";
+      if(!$conn1->query($sql))
+      {
+          echo $conn1->error;
+      }
+      unset($_POST);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,17 +51,146 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <title>Document</title>
+    <title>Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Roboto:wght@100&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+      body{
+        margin: 0px;
+        padding: 0px;
+        background: linear-gradient(190deg,rgb(243, 247, 247),rgb(166, 239, 252));
+        font-family: 'Zen Kaku Gothic Antique', sans-serif;
+        color: rgb(102, 48, 84);
+      }
+      .flex1{
+        display: flex;
+        justify-content: space-between;
+        margin: 2% 5%;
+      }
+      .flex2{
+        display: flex;
+        justify-content: space-between;
+        margin: 2% 5%;
+      }
+      .result{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0% 5%;
+        position: relative;
+        bottom: 4.5rem;
+      }
+      .heading{
+        position:relative;
+        top: 0rem;
+        text-align: center;
+        margin: 0px;
+        font-size: 2.8rem;
+        color: rgb(27, 160, 78);
+      }
+      h1{
+        margin: 0px;
+      }
+      /* nav style */
+      .topnav {
+  overflow: hidden;
+  postion: relative;
+  background-color:rgb(176, 237, 248);
+  height: auto;
+  width: auto;
+  position: sticky;
+  top: 0;
+  border: 1px solid black;
+  z-index: 100;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.topnav a {
+  float: left;
+  color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.topnav a:hover {
+  background-color:skyblue;
+  color: black;
+}
+
+#login_icon{
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+}
+
+#log_img{
+  padding-top: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+  position: absolute;
+  top: 15%;
+  right: 1%;
+
+}
+    </style>
 </head>
 <body>
-  <center><H1 > Congratulations you have got <?php echo $rightans?> questions correct</H1></center>
-  <!-- <div id="container" style="width: 100%; height: 100%"></div> -->
-  <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+<div class="topnav">
+  <a style="font-size: 17px;" href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
+  <a style="font-size: 17px;" href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
+  <a style="font-size: 17px;" href="about.php"><i class="fa-solid fa-book"></i> About</a>
+  <a style="font-size: 17px;" href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
+  <a style="font-size: 17px;" href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
+  <div  id="log_img">
+  <span style="font-size:17px;color:blue;"><i class="fas fa-user-alt"></i> <?php echo "$user"; ?></span>
+  </div> 
+</div>
+  <h1 class="heading">
+    Quiz Name: 
+    <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; color: rgb(0, 183, 255)">
+    <?php echo $qname ?>
+    </span>
+  </h1>
+
+  <div class="flex1">
+    <h1>
+      Candidate name: 
+      <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; color: rgb(114, 113, 113)">
+        <?php echo $_SESSION['user']; ?>
+      </span>
+    </h1>
+    <h1>
+      Host name: 
+      <span style="font-family: 'Zen Kaku Gothic Antique', sans-serif; color: rgb(114, 113, 113)">
+        <?php echo $_SESSION['q_host_db']; ?>
+      </span>
+    </h1>
+  </div>
+
+  <div class="flex2">
+    <h1>
+      Quiz date: <?php echo "25/11/2022";?>
+    </h1>
+    <h1>
+      Quiz duration: <?php echo "2:30:00" ?>
+    </h1>
+  </div>
+
+  <div class="result">
+    <h1><i class="fas fa-poll-h"></i> Question Statistics</h1>
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    <h2 style="font-size: 2rem; margin-top: 0px;">Your score: <span><?php echo '<span style="color:rgb(21, 167, 21);">'.$rightans.'</span>'.'/'.'<span style="color: rgb(0, 183, 255);">'.sizeof($answers).'</span>'; ?></span></h2>
+  </div>
+  
 
 <script>
-var xValues = ["Correct answers", "total questions"];
+var xValues = ["Correct", "Total"];
 var yValues = [<?=$rightans?>,<?=sizeof($answers)?>];
- var barColors = ["darkorange", "darkblue"];
+ var barColors = ["rgb(21, 167, 21)", "rgb(0, 183, 255)"];
 
 
 new Chart("myChart", {
