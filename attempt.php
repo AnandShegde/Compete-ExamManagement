@@ -115,6 +115,9 @@
           $hour=(int)substr($data[$i]["endtime"],0,2);
           $min=(int)substr($data[$i]["endtime"],3,2);
           $sec=(int)substr($data[$i]["endtime"],6,2);
+          $shour=(int)substr($data[$i]["starttime"],0,2);
+          $smin=(int)substr($data[$i]["starttime"],3,2);
+          $ssec=(int)substr($data[$i]["starttime"],6,2);
           if($c_year<$year)
              $key=1;
           else if($c_year>=$year)
@@ -159,6 +162,7 @@
           }
          if($key==1)
           { ?>
+        
             var form = document.createElement("form");
             form.action = "attemptBackend.php";
             form.method = "POST";
@@ -172,6 +176,33 @@
             button.value = "<?= $i+1 ?>";
             button.name = "submitted";
             button.type = "submit";
+            button.style.background = 'grey';
+            button.disabled = true;
+            <?php 
+               $key1 = 0;
+               if($c_year == $year && $c_month == $month && $c_day == $day){       
+                  if($c_hour<$shour)
+                  $key1=0;
+                  else if($c_hour>=$shour)
+                  {
+                     $key1=1;
+                     if($c_hour==$hour)
+                     {
+                        if($c_min>=$smin)
+                           $key1=1;
+                        else if($c_min<$min)
+                        {
+                           $key1=0;
+                        }
+                     }
+                  }
+               } 
+            ?>
+           <?php if($key1 == 1){ ?>
+              button.disabled = false;
+              button.style.background = 'green';
+           <?php  }?>
+
             var quizDate = document.createElement("h2");
 
             heading.innerHTML = "Quiz Name: "+"<?= $data[$i]['q_name'] ?>";
