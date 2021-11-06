@@ -57,6 +57,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Roboto:wght@100&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <style>
+      @media print
+      {    
+          .no-print, .no-print *
+          {
+              display: none !important;
+          }
+      }
       body{
         margin: 0px;
         padding: 0px;
@@ -137,10 +144,28 @@
   right: 1%;
 
 }
+.print{
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 3%;
+}
+.printBtn{
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  border: .6px solid darkblue;
+  border-radius: 4px;
+  color: white;
+  background:rgb(102, 48, 84);
+}
+.printBtn:hover{
+  background-color: green;
+  transition: 0.7s;
+}
     </style>
 </head>
 <body>
-<div class="topnav">
+<div class="topnav no-print">
   <a style="font-size: 17px;" href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
   <a style="font-size: 17px;" href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
   <a style="font-size: 17px;" href="about.php"><i class="fa-solid fa-book"></i> About</a>
@@ -186,12 +211,14 @@
     <h1><i class="fas fa-poll-h"></i> Question Statistics</h1>
     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 </div>
-  
+<div class="print no-print">
+  <button class="printBtn"onclick="window.print();">Print Result</button>
+</div>
 
 <script>
-var xValues = ["Correct", "Total"];
-var yValues = [<?=$rightans?>,<?=sizeof($answers)?>];
- var barColors = ["rgb(21, 167, 21)", "rgb(0, 183, 255)"];
+  var xValues = ["Correct", "Total"];
+  var yValues = [<?=$rightans?>,<?=sizeof($answers)?>];
+  var barColors = ["rgb(21, 167, 21)", "rgb(0, 183, 255)"];
 
 
 new Chart("myChart", {
