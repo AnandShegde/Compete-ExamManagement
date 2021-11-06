@@ -13,6 +13,7 @@
     $institute=$row['uInstitute'];
 ?>
 <link rel="icon" href="Extra/letter_q.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div class="topnav">
       <a style="font-size: 17px;" href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
       <a style="font-size: 17px;" href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
@@ -20,16 +21,15 @@
       <a style="font-size: 17px;" href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
       <a style="font-size: 17px;" href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
       <div  id="log_img">
-      <!-- <img src="login_icon.jpg" alt="no image found" id="login_icon"><br> -->
       <span style="font-size:17px;color:blue;"><i class="fas fa-user-alt"></i> <?php echo "$username"; ?></span>
       </div> 
 </div>
         <h1 style="text-align: center;font-family: 'Courier New', Courier, monospace;">User Profile</h1>
         <div class="container">
         <div class="profile_container">
-            <div style="text-align:center;"><span>👨‍🎓[Username]</span><br><span><?php echo "$username";?></span></div>
-            <div style="text-align:center;"><span>🏫[Institute]</span><br><span><?php echo "$institute";?></span></div>
-            <div style="text-align:center;"><span>📧[Email-ID]</span><br><span><?php echo "$email"?></span></div>
+            <div style="text-align:center;"><span><i class="fa-solid fa-user-large"></i> Username</span><br><br><span><?php echo "$username";?></span></div>
+            <div style="text-align:center;"><span><i class="fa fa-university" aria-hidden="true"></i> Institute</span><br><br><span><?php echo "$institute";?></span></div>
+            <div style="text-align:center;"><span><i class="fa fa-envelope" aria-hidden="true"></i> Email-ID</span><br><br><span><?php echo "$email"?></span></div>
         </div>
        </div>
 <head>
