@@ -165,6 +165,9 @@
                 }
              }
           }
+          if($data[$i]['attempted'] == 1){
+            $key =0;
+          }
          if($key==1)
           { ?>
         
