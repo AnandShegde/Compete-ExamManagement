@@ -27,15 +27,6 @@
     $result = mysqli_query($connect, $sql);
     $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    $c_day=(int)date("d");
-    $c_month=(int)date("m");
-    $c_year=(int)date("Y");
-    
-    date_default_timezone_set('Asia/Kolkata');
-    $c_hour=(int)date("H");
-    $c_min=(int)date("i");
-    $c_sec=(int)date("s");
-
 ?>
 <head>
     <title>Attempt a quiz</title>
@@ -114,15 +105,22 @@
         var y = document.getElementById("container");
         <?php for($i = 0; $i < sizeof($data); $i++) 
         { 
-          $year=(int)substr($data[$i]['q_date'],0,4);
-          $month=(int)substr($data[$i]['q_date'],5,2);
-          $day=(int)substr($data[$i]['q_date'],8,2);
-          $hour=(int)substr($data[$i]["endtime"],0,2);
-          $min=(int)substr($data[$i]["endtime"],3,2);
-          $sec=(int)substr($data[$i]["endtime"],6,2);
-          $shour=(int)substr($data[$i]["starttime"],0,2);
-          $smin=(int)substr($data[$i]["starttime"],3,2);
-          $ssec=(int)substr($data[$i]["starttime"],6,2);
+         $c_day=(int)date("d");
+         $c_month=(int)date("m");
+         $c_year=(int)date("Y");
+         date_default_timezone_set('Asia/Kolkata');
+         $c_hour=(int)date("H");
+         $c_min=(int)date("i");
+         $c_sec=(int)date("s");
+         $year=(int)substr($data[$i]['q_date'],0,4);
+         $month=(int)substr($data[$i]['q_date'],5,2);
+         $day=(int)substr($data[$i]['q_date'],8,2);
+         $hour=(int)substr($data[$i]["endtime"],0,2);
+         $min=(int)substr($data[$i]["endtime"],3,2);
+         $sec=(int)substr($data[$i]["endtime"],6,2);
+         $shour=(int)substr($data[$i]["starttime"],0,2);
+         $smin=(int)substr($data[$i]["starttime"],3,2);
+         $ssec=(int)substr($data[$i]["starttime"],6,2);   
           if($c_year<$year)
              $key=1;
           else if($c_year>=$year)
@@ -165,9 +163,6 @@
                 }
              }
           }
-          if($data[$i]['attempted'] == 1){
-            $key =0;
-          }
          if($key==1)
           { ?>
         
@@ -188,17 +183,20 @@
             button.disabled = true;
             <?php 
                $key1 = 0;
-               if($c_year == $year && $c_month == $month && $c_day == $day){       
+               if($c_year == $year && $c_month == $month && $c_day == $day){ 
                   if($c_hour<$shour)
-                  $key1=0;
+                  {  
+                     $key1=0;
+                  }
                   else if($c_hour>=$shour)
                   {
                      $key1=1;
-                     if($c_hour==$hour)
+                     if($c_hour==$shour)
                      {
+                       
                         if($c_min>=$smin)
                            $key1=1;
-                        else if($c_min<$min)
+                        else if($c_min<$smin)
                         {
                            $key1=0;
                         }
