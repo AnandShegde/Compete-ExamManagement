@@ -32,15 +32,21 @@
         }
       }
       $sql= "ALTER TABLE `$qnameres` ADD if not exists `result` INT";
+
+
       if(!$conn1->query($sql))
       {
           echo $conn1->error;
       }
       $sql= "UPDATE `".$qnameres."` SET `result` = '$rightans' WHERE `$qnameres`.`no` = $id;";
+
       if(!$conn1->query($sql))
       {
           echo $conn1->error;
       }
+      $connuser= mysqli_connect('localhost','root','',$user);
+      // $sql= "CREATE IF NOT EXISTS "
+      // $sql= "INSERT INTO "
       unset($_POST);
 ?>
 <!DOCTYPE html>

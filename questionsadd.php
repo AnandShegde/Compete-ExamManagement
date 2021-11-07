@@ -34,7 +34,7 @@
         $conn1->query($sql);
 
         $sql= "CREATE TABLE IF NOT EXISTS `$username`.`".$tablename.'responses`(
-            `username` VARCHAR(200) NOT NULL,
+            `username` VARCHAR(200) NOT NULL, `result` INT(4) NOT NULL
             `no` INT NOT NULL AUTO_INCREMENT , PRIMARY KEY (`no`)) ENGINE= InnoDB;';
         $conn1->query($sql);
         $response= $tablename."responses";

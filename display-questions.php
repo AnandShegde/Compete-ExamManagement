@@ -8,6 +8,22 @@
     $result = mysqli_query($connection, $query);
     $questionSet = mysqli_fetch_all($result, MYSQLI_ASSOC);
     $noOfQuestions = sizeof($questionSet); 
+    $responses= $tableName."responses";
+    $user=$_SESSION['user'];
+    $sql= "SELECT * FROM `$responses`";
+    $result1= $connect->query($sql);
+    $res= $result1->fetch_assoc();
+   
+    if(isset($res['result']))
+    {
+        if($res['result']!=NULL)
+        {
+            header("Location: homepage.php");
+        }
+        
+    }
+
+
 ?>
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -315,8 +331,9 @@
             })
             buttonsParent.appendChild(y);
         }
-
+        var clicked= false;
         function submit(){
+             clicked= true;
             var z=0;
             let values= new Array(x+1);
             for(z=1;z<=x;z++)
@@ -487,9 +504,26 @@
             buttonArray[i].style.background = "rgb(250, 240, 225)";
             buttonArray[i].style.color = "teal";
         }
-        var time = 600; 
+        <?php
+        date_default_timezone_set('asia/kolkata');
+        $stime= date("H:i:s");
+        echo "console.log('$stime');";
+        
+        $etime= $_SESSION['q_end_time'];
+        $seconds= 0;
+        $start= strtotime($stime);
+        $end= strtotime($etime);
+        $seconds= $end- $start;
+        ?>
+        var time = <?=$seconds?> 
         var output = document.getElementById("output")
         function display(){
+            if(time<=0)
+            {
+                submit();
+            }
+
+
             if(time == 0){
                 clearInterval(event);
             }
@@ -504,7 +538,16 @@
             output.innerHTML = "Time left : "+min+":"+sec;
             time--;
         }
-        let event = setInterval(display, 1000);
+        let event = setInterval(display, 1000);      
     </script>
+    <script>
+window.onbeforeunload = function(event) {
+    if(!clicked)
+    {
+        event.returnValue = "Write something clever here..";
+    }
+  
+};
+</script>
 </body>
 
