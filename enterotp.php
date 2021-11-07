@@ -1,73 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
-	<style>
-	
-	body{
-		background-color: yellowgreen;
-	}
-		input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-	.container{
-	display: flex;
-	flex-flow: column;
-	height: 100%;
-	align-items: space-around;
-	justify-content: center;
-}
-
-.userInput{
-	display: flex;
-	justify-content: center;
-}
-
-input{
-	margin: 10px;
-	height: 35px;
-	width: 65px;
-	border: none;
-	border-radius: 5px;
-	text-align: center;
-	font-family: arimo;
-	font-size: 1.2rem;
-	background: #eef2f3;
-
-}
-
-h1{
-	text-align: center;
-	font-family: arimo;
-	color: rgb(111, 255, 111);
-}
-
-#submit{
-	width: 150px;
-	height: 40px;
-	margin: 25px auto 0px auto;
-	font-family: arimo;
-	font-size: 1.1rem;
-	border: none;
-	border-radius: 5px;
-	letter-spacing: 2px;
-	cursor: pointer;
-	background: #616161;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #9bc5c3, #616161);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #9bc5c3, #616161); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-
-	</style>
-</head>
-<body>
-	<?php
+<?php
 		if(@$_POST['submit'])
 		{
 			session_start();
@@ -98,10 +29,85 @@ background: linear-gradient(to right, #9bc5c3, #616161); /* W3C, IE 10+/ Edge, F
 				echo 'PLEASE ENTER CORRECT OTP';
 			}
 		}
-	?>
+?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+	<style>
+	
+	body{
+			background-image: linear-gradient(170deg,rgb(59, 59, 238), white);
+            font-family: 'Courier New', Courier, monospace;;
+	}
+		input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+	.container{
+	display: flex;
+	flex-flow: column;
+	height: 100%;
+	align-items: space-around;
+	justify-content: center;
+}
+
+.userInput{
+	display: flex;
+	justify-content: center;
+}
+
+input{
+	margin: 10px;
+	height: 35px;
+	width: 65px;
+	border: 1px solid black;
+	border-radius: 5px;
+	text-align: center;
+	font-family: arimo;
+	font-size: 1.2rem;
+	background: #eef2f3;
+
+}
+
+h1{
+	font-family: 'Courier New', Courier, monospace;;
+	text-align: center;
+	font-family: arimo;
+	color: rgb(111, 255, 111);
+}
+
+#submit{
+	width: 150px;
+	height: 40px;
+	margin: 25px auto 0px auto;
+	font-family: arimo;
+	font-size: 1.1rem;
+	border: none;
+	border-radius: 5px;
+	letter-spacing: 2px;
+	cursor: pointer;
+    background-color: teal;
+	color:white;
+	border:1px solid white;
+}
+
+#submit:hover{
+    background-color: rgb(75, 35, 187);
+    color: white;
+    transition: 0.3s;
+}
+
+	</style>
+</head>
+<body>
     <form action="" method="post">
 	<div class="container">
-		<h1>ENTER OTP</h1>
+		<h1 style="color:white" >ENTER OTP</h1>
 		<div class="userInput">
 			<input type="number" id='ist' name="otp[]" maxlength="1" onkeyup="clickEvent(this,'sec')">
 			<input type="number" id="sec" name="otp[]" maxlength="1" onkeyup="clickEvent(this,'third')">
@@ -111,7 +117,7 @@ background: linear-gradient(to right, #9bc5c3, #616161); /* W3C, IE 10+/ Edge, F
 			<input type="number" id="sixth" maxlength="1" name="otp[]">
 
 		</div>
-		<input type="submit" value="CONFIRM" name="submit" id='submit'>
+		<input type="submit" value="Confirm" name="submit" id='submit'>
 	</div>
     </form>
 	<script>
