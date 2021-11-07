@@ -14,14 +14,14 @@
     $result1= $connect->query($sql);
     $res= $result1->fetch_assoc();
    
-    if(isset($res['result']))
-    {
-        if($res['result']!=NULL)
-        {
-            header("Location: homepage.php");
-        }
+    // if(isset($res['result']))
+    // {
+    //     if($res['result']!=NULL)
+    //     {
+    //         header("Location: homepage.php");
+    //     }
         
-    }
+    // }
 
 
 ?>
@@ -513,7 +513,9 @@
         $seconds= 0;
         $start= strtotime($stime);
         $end= strtotime($etime);
+        echo "console.log('$etime');";
         $seconds= $end- $start;
+        echo "console.log('$seconds');";
         ?>
         var time = <?=$seconds?> 
         var output = document.getElementById("output")
@@ -541,7 +543,10 @@
         let event = setInterval(display, 1000);      
     </script>
     <script>
+        console.log(clicked);
+
 window.onbeforeunload = function(event) {
+    alert("hello");
     if(!clicked)
     {
         event.returnValue = "Write something clever here..";
