@@ -258,7 +258,7 @@ body{
     <h1 style="text-align: center;margin-bottom: 2px; margin-top: 12px;">QUIZ PANEL</h1>
     <a href="attempt.php">Attempt Quiz</a><br>
     <a href="register.php">Register</a><br>
-    <a href="#Given_Quizs.php">Given Quizs</a><br>
+    <a href="given_quizes.php">Given Quizs</a><br>
     <a href="question.php">Host Quiz</a><br>
     <a href="hosted_quizes.php">Hosted quizes</a>
   </div>
