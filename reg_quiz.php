@@ -38,6 +38,11 @@
     $endtime=$data['end time'];
     $duration=$data['duration'];
 
+    $sql="SELECT * FROM usertable WHERE uName='$host'";
+    $result=mysqli_query($connect,$sql);
+    $row = $result->fetch_assoc();
+    $host_email=$row['uGmail'];
+
     $sql = "INSERT INTO reg_quizes (id,host,q_date,starttime,endtime,duration,q_name)  VALUES('$id','$host','$q_date','$starttime','$endtime','$duration','$q_name')";
     mysqli_query($conn, $sql);
 
@@ -45,6 +50,11 @@
     $table=$q_name."responses";
     $sql_query="INSERT INTO '$table' (username) VALUES('$username')";
     mysqli_query($connect_res,$sql_query);
+
+    $msg_host="Candidate $username have Registered to quiz: $q_name and quiz-ID: $id";
+    $Subject="Regarding Quiz: $q_name registration";
+    $headers = "From: SSL@gmail.com" . "\r\n" ."CC: $email ";
+    mail("$host_email",$Subject,$msg_host,$headers);
 ?>
 
 <html>
