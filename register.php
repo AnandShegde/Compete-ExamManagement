@@ -17,6 +17,9 @@
     $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     //edit
+    $sql= "CREATE DATABASE IF NOT EXISTS `$username`";
+    $connq=mysqli_connect('localhost', 'root', '');
+    $connq->query($sql);
     $conn = mysqli_connect("localhost", "root", "",$username);
     if(!$conn)
     {

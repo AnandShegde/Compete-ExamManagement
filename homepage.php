@@ -15,6 +15,10 @@
     $row=$result->fetch_assoc();
     $username=$row['uName'];
     $_SESSION['user'] = $username;
+    $sql="SELECT * FROM quizes WHERE host='$username'";
+    $result=mysqli_query($connect,$sql);
+    $data1=mysqli_fetch_all($result,MYSQLI_ASSOC);
+    $no_of_quizes_hosted=sizeof($data1);
 
     $sql= 'CREATE TABLE IF NOT EXISTS `userinfo`.`quizes` ( `id` INT NOT NULL AUTO_INCREMENT ,
     `host` TEXT NOT NULL ,
@@ -248,7 +252,7 @@ body{
   </div>
   <div class="flex2">
     <h1 style="color: white;"><i class="fa-regular fa-pen-to-square"></i> Quizzes Hosted</h1>
-    <h1 style="font-size: 100px; color: white;margin-top: -2%;">19</h1>
+    <h1 style="font-size: 100px; color: white;margin-top: -2%;"><?php echo $no_of_quizes_hosted ?></h1>
   </div>
   <div class="flex3">
     <h1 style="color: white;"><i class="fa-solid fa-users"></i> Users</h1>

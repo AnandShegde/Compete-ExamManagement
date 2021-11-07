@@ -1,6 +1,9 @@
 <?php
     session_start();
     $username = $_SESSION['user'];
+    $sql= "CREATE DATABASE IF NOT EXISTS `$username`";
+    $connq=mysqli_connect('localhost', 'root', '');
+    $connq->query($sql);
     $conn = mysqli_connect("localhost", "root", "",$username);
     if(!$conn)
     {
