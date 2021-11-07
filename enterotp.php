@@ -1,35 +1,3 @@
-<?php
-		if(@$_POST['submit'])
-		{
-			session_start();
-			
-			$Email= $_SESSION['emailp'];
-			$conn= mysqli_connect('localhost','root','','userinfo');
-			$sql= "SELECT * FROM otp WHERE EMAIL='$Email'";
-			$result= $conn->query($sql);
-			$x = ($result->num_rows)-1;
-			$otp=mysqli_fetch_all($result,MYSQLI_ASSOC);
-			$inpa= $_POST['otp'];
-			$j=100000;
-			$inp= 0;
-			for($i=0;$i<sizeof($inpa);$i++)
-			{	
-				$inp= ($inp) +$inpa[$i]*$j;
-				$j= $j/10;
-			}
-			echo $inp;
-			if($inp==$otp[$x]['OTP'])
-			{
-				$sql= "DELETE FROM otp WHERE EMAIL='$Email';";
-				$conn->query($sql);
-				header("Location: newpassword.php");
-			}
-			else
-			{
-				echo 'PLEASE ENTER CORRECT OTP';
-			}
-		}
-?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -130,3 +98,35 @@ h1{
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+		if(@$_POST['submit'])
+		{
+			session_start();
+			
+			$Email= $_SESSION['emailp'];
+			$conn= mysqli_connect('localhost','root','','userinfo');
+			$sql= "SELECT * FROM otp WHERE EMAIL='$Email'";
+			$result= $conn->query($sql);
+			$x = ($result->num_rows)-1;
+			$otp=mysqli_fetch_all($result,MYSQLI_ASSOC);
+			$inpa= $_POST['otp'];
+			$j=100000;
+			$inp= 0;
+			for($i=0;$i<sizeof($inpa);$i++)
+			{	
+				$inp= ($inp) +$inpa[$i]*$j;
+				$j= $j/10;
+			}
+			echo $inp;
+			if($inp==$otp[$x]['OTP'])
+			{
+				$sql= "DELETE FROM otp WHERE EMAIL='$Email';";
+				$conn->query($sql);
+				header("Location: newpassword.php");
+			}
+			else
+			{
+				echo '<script>alert(`PLEASE ENTER CORRECT OTP`)</script>';
+			}
+		}
+?>
