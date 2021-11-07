@@ -45,6 +45,9 @@
           echo $conn1->error;
       }
       $connuser= mysqli_connect('localhost','root','',$user);
+      $qid= $_SESSION['id'];
+      $sql= "UPDATE reg_quizes SET `attempted`= '1' WHERE `id`='$qid';";
+      $connuser->query($sql);
       // $sql= "CREATE IF NOT EXISTS "
       // $sql= "INSERT INTO "
       unset($_POST);

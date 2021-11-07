@@ -10,14 +10,16 @@
         echo "cool";
     }
     $sql= "CREATE TABLE IF NOT EXISTS reg_quizes( 
-        id INT NOT NULL ,
-        host TEXT NOT NULL ,
-        q_date DATE NOT NULL , 
-        starttime TIME NOT NULL , 
-        endtime TIME NOT NULL , 
-        duration TIME NOT NULL ,
-        q_name TEXT NOT NULL )";
-    mysqli_query($conn, $sql);
+      id INT NOT NULL ,
+      attempted INT NOT NULL,
+      host TEXT NOT NULL ,
+      q_date DATE NOT NULL , 
+      starttime TIME NOT NULL , 
+      endtime TIME NOT NULL , 
+      duration TIME NOT NULL ,
+      q_name TEXT NOT NULL )";
+  mysqli_query($conn, $sql);
+
 
    
     $connect = mysqli_connect("localhost", "root", "", $username);

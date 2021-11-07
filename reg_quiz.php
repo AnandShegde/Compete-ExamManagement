@@ -18,6 +18,7 @@
     }
     $sql= "CREATE TABLE IF NOT EXISTS reg_quizes( 
         id INT NOT NULL ,
+        attempted INT NOT NULL,
         host TEXT NOT NULL ,
         q_date DATE NOT NULL , 
         starttime TIME NOT NULL , 
