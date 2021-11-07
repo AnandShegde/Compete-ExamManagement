@@ -178,7 +178,7 @@
             var hostName = document.createElement("h2");
             var id = document.createElement("h2");
             var button = document.createElement("button");
-            button.value = "<?= $i+1 ?>";
+            button.value = "<?= $data[$i]['id'] ?>";
             button.name = "submitted";
             button.type = "submit";
             button.style.background = 'grey';
