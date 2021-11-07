@@ -10,7 +10,7 @@
     $_SESSION['q_host_db'] = $data['host'];
     $_SESSION['q_end_time']=$data['endtime'];
     $_SESSION['q_start_time']=$data['starttime'];
-    echo $data['end time'];
+   
     
     header("Location: display-questions.php");
 ?>

@@ -14,14 +14,14 @@
     $result1= $connect->query($sql);
     $res= $result1->fetch_assoc();
    
-    // if(isset($res['result']))
-    // {
-    //     if($res['result']!=NULL)
-    //     {
-    //         header("Location: homepage.php");
-    //     }
+    if(isset($res['result']))
+    {
+        if($res['result']!=NULL)
+        {
+            header("Location: homepage.php");
+        }
         
-    // }
+    }
 
 
 ?>

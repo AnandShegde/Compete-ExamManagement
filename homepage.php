@@ -7,6 +7,7 @@
     }
     $connect=mysqli_connect("localhost","root","","userInfo");
     $sql="SELECT * FROM usertable";
+    
     $result=mysqli_query($connect,$sql);
     $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
     $no_of_users=sizeof($data);
@@ -15,6 +16,21 @@
     $row=$result->fetch_assoc();
     $username=$row['uName'];
     $_SESSION['user'] = $username;
+    $sql= "CREATE DATABASE IF NOT EXISTS `$username`";
+    $connq=mysqli_connect('localhost', 'root', '');
+    $connq->query($sql);
+
+
+    // $conn = mysqli_connect("localhost", "root", "",$username);
+    $sql= 'CREATE TABLE IF NOT EXISTS `userinfo`.`quizes` ( `id` INT NOT NULL AUTO_INCREMENT ,
+    `host` TEXT NOT NULL ,
+    `date` DATE NOT NULL , 
+    `start time` TIME NOT NULL , 
+    `end time` TIME NOT NULL , 
+    `duration` TIME NOT NULL ,
+    `name` TEXT NOT NULL , 
+    PRIMARY KEY (`id`)) ENGINE = InnoDB;';
+    $connect->query($sql);
     $sql="SELECT * FROM quizes WHERE host='$username'";
     $result=mysqli_query($connect,$sql);
     $data1=mysqli_fetch_all($result,MYSQLI_ASSOC);
