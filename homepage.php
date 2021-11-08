@@ -229,7 +229,7 @@ body{
 </head>
 <body>
 <div class="topnav">
-  <a style="font-size: 17px;" href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
+  <a style="font-size: 17px;" href="homepage.php"><i class="fa-solid fa-house-user"></i> Dashboard</a>
   <a style="font-size: 17px;" href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
   <a style="font-size: 17px;" href="about.php"><i class="fa-solid fa-book"></i> About</a>
   <a style="font-size: 17px;" href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
@@ -256,11 +256,11 @@ body{
   </div>
   <div class="flex-child2">
     <h1 style="text-align: center;margin-bottom: 2px; margin-top: 12px;">QUIZ PANEL</h1>
-    <a href="attempt.php">Attempt Quiz</a><br>
+    <a href="attempt.php">Attempt a Quiz</a><br>
     <a href="register.php">Register</a><br>
-    <a href="given_quizes.php">Given Quizs</a><br>
-    <a href="question.php">Host Quiz</a><br>
-    <a href="hosted_quizes.php">Hosted quizes</a>
+    <a href="given_quizes.php">Given Quizzes</a><br>
+    <a href="question.php">Host a Quiz</a><br>
+    <a href="hosted_quizes.php">Hosted Quizzes</a>
   </div>
 </div>
 <div class="flex-container2">
