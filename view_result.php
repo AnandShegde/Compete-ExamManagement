@@ -119,7 +119,8 @@
       .print{
         position: relative;
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
+        justify-content: space-between;
         margin: 3%;
       }
       .printBtn{
@@ -185,7 +186,8 @@
     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 </div>
 <div class="print no-print">
-  <button class="printBtn"onclick="window.print();">Print Result</button>
+  <button class="printBtn" onclick="switchs()">Back</button>
+  <button class="printBtn" onclick="window.print();">Print Result</button>
 </div>
 
 <script>
@@ -214,11 +216,12 @@ new Chart("myChart", {
     }
   }
 });
-    
-
-    
 </script>
-
+<script>
+  function switchs(){
+    location.replace("given_quizes.php");
+  }
+</script>
 </body>
 </html>
 

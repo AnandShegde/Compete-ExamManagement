@@ -78,7 +78,27 @@
   right: 1%;
 
 }
-
+.ins{
+   font-family: 'Courier New', Courier, monospace;
+   float: right;
+   position: absolute;
+   margin: 1%;
+   padding: 1%;
+   top: 8%;
+   right: 1%;
+   border-radius: 4px;
+   border: 0.2px solid black;
+   background: teal;
+   color: white;
+   font-size: 15px;
+   font-weight: 600;
+}
+   .ins:hover{
+      box-shadow: 4px 4px 10px grey;
+      background: green;
+      transition: 0.7s;
+      cursor: pointer;
+   }
     </style>
 </head>
 <body>
@@ -94,6 +114,7 @@
       </div> 
     </div>
     <h1 id="heading">Quizes available for attempt</h1>
+    <button class="ins" onclick="switchs();">Instructions</button>
     <p id="1"></p>
     <div id="container"></div>
     <form action="homepage.php">
@@ -252,6 +273,9 @@
             {
               heading.innerHTML = "No quizes available";
             }
+         function switchs(){
+            location.replace("instructions.html");
+         }
     </script>
    
 </body>

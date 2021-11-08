@@ -107,6 +107,21 @@
             top: 15%;
             right: 1%;
         }
+        .printBtn{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+            padding: 0.8rem;
+            font-size: 1.1rem;
+            border: .6px solid darkblue;
+            border-radius: 4px;
+            color: white;
+            background:rgb(102, 48, 84);
+            margin: 3%;
+        }
+        .printBtn:hover{
+            background-color: green;
+            transition: 0.7s;
+        }
     </style>
 </head>
 <body>
@@ -122,6 +137,10 @@
     </div>
     <h1 id= "heading">Registered candidates for the quiz : <?php echo $data['name']; ?> </h1>
     <div id="container"></div>
+    <div style="display: flex; justify-content: center;">
+        <button class="printBtn" onclick="switchs()">Back</button>
+    </div>
+   
     <script>
         var container = document.getElementById("container");
     <?php for($i=0; $i<sizeof($data1); $i++){ ?>
@@ -140,6 +159,9 @@
     if(container.childNodes.length == 0){
         var y = document.getElementById("heading");
         y.innerHTML = "No candidates registered";
+    }
+    function switchs(){
+        location.replace("hosted_quizes.php");
     }
     </script>
 </body>
