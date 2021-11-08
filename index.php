@@ -117,6 +117,10 @@
         {
             echo '<script type="text/javascript">ALERT()</script>';
         }
+        if($_GET['flag']==2)
+        {
+            echo "<script>alert('PASSWORD CHANGED SUCCESSFULLY')</script>";
+        }
     }
     $conn = mysqli_connect('localhost', 'root', '');
     $sqlQuery = 'CREATE DATABASE IF NOT EXISTS userInfo ;';
