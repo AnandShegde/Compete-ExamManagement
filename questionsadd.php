@@ -97,6 +97,7 @@
             }
             unset($_SESSION['edit']);
         }
+        $last_id= $last_id+1;
     }  
 ?>
 <head>
@@ -129,7 +130,7 @@
         <input type="number" name="j" id="j" hidden>
         <div id="flex-2">
         <div class="submit"><input type="submit" value="Add" name="done" id="done" disabled></div>
-        <div><button id="preview" onclick="preview()">Preview added questions</button></div>
+        <div><button id="preview" onclick="previ()">Preview added questions</button></div>
         <div style="margin-top:7px"><a href="homepage.php" id="finish">Finish</a></div>
         </div>
     </form>
@@ -170,10 +171,13 @@ if(isset($_SESSION['edit']))
         op++;
     <?php
     }
-    // unset($_SESSION['edit']);
+    
 }
 ?>
-
+function previ()
+{
+    window.location.href="editquestions.php";
+}
 function preview()
 {
     window.location.href="editquestions.php";
