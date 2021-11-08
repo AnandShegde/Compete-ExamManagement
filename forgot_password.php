@@ -75,6 +75,20 @@
         if(isset($_POST['sendotp']))
         {
             $Email= $_POST['email'];
+            $conn= mysqli_connect('localhost','root','','userinfo');
+            $sql= "SELECT * FROM `usertable` WHERE `uGmail`='$Email';";
+            $result= $conn->query($sql);
+            
+            if(!$result->fetch_assoc())
+            {
+               
+                echo "<script> alert('There is no account with the given Email Id');</script>";
+            }
+            
+            else{
+
+            
+
             session_start();
             
             //echo 'Created the account successfully';
@@ -105,4 +119,5 @@
             
             } 
         }
+    }
 ?>
