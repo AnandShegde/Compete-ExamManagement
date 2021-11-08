@@ -77,7 +77,6 @@
         margin: 0px;
         padding: 0px;
         background: linear-gradient(190deg,rgb(243, 247, 247),rgb(166, 239, 252));
-        /* font-family: 'Zen Kaku Gothic Antique', sans-serif; */
         font-family: 'Courier New', Courier, monospace;
         color: rgb(102, 48, 84);
       }
@@ -111,71 +110,71 @@
       }
       /* nav style */
       .topnav {
-  overflow: hidden;
-  position: relative;
-  background-color:rgb(176, 237, 248);
-  height: auto;
-  width: auto;
-  position: sticky;
-  top: 0;
-  border: 1px solid black;
-  z-index: 100;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-}
+        overflow: hidden;
+        position: relative;
+        background-color:rgb(176, 237, 248);
+        height: auto;
+        width: auto;
+        position: sticky;
+        top: 0;
+        border: 1px solid black;
+        z-index: 100;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+      }
 
-.topnav a {
-  float: left;
-  color:black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 22px;
-}
+      .topnav a {
+        float: left;
+        color:black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 22px;
+      }
 
-.topnav a:hover {
-  background-color:skyblue;
-  color: black;
-}
+      .topnav a:hover {
+        background-color:skyblue;
+        color: black;
+      }
 
-#login_icon{
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-}
+      #login_icon{
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+      }
 
-#log_img{
-  padding-top: 8px;
-  padding-right: 8px;
-  cursor: pointer;
-  position: absolute;
-  top: 15%;
-  right: 1%;
+      #log_img{
+        padding-top: 8px;
+        padding-right: 8px;
+        cursor: pointer;
+        position: absolute;
+        top: 15%;
+        right: 1%;
 
-}
-.print{
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 3%;
-}
-.printBtn{
-  padding: 0.8rem;
-  font-size: 1.1rem;
-  border: .6px solid darkblue;
-  border-radius: 4px;
-  color: white;
-  background:rgb(102, 48, 84);
-}
-.printBtn:hover{
-  background-color: green;
-  transition: 0.7s;
-}
+      }
+      .print{
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        margin: 3%;
+      }
+      .printBtn{
+        padding: 0.8rem;
+        font-size: 1.1rem;
+        border: .6px solid darkblue;
+        border-radius: 4px;
+        color: white;
+        background:rgb(102, 48, 84);
+      }
+      .printBtn:hover{
+        background-color: green;
+        transition: 0.7s;
+      }
     </style>
 </head>
 <body>
 <div class="topnav no-print">
-  <a style="font-size: 17px;" href="homepage.php"><i class="fa-solid fa-house-user"></i> Home</a>
+  <a style="font-size: 17px;" href="homepage.php"><i class="fa-solid fa-house-user"></i> Dashboard</a>
   <a style="font-size: 17px;" href="contact.php"><i class="fa-solid fa-phone"></i></i> Contact</a>
   <a style="font-size: 17px;" href="about.php"><i class="fa-solid fa-book"></i> About</a>
   <a style="font-size: 17px;" href="viewprofile.php"><i class="fas fa-user-alt"></i> Profile</a>
@@ -208,10 +207,10 @@
 
   <div class="flex2">
     <h1>
-      Quiz date: <?php echo "25/11/2022";?>
+      Quiz date: <?php echo $_SESSION['q_date'];?>
     </h1>
     <h1>
-      Quiz ID: <?php echo "2" ?>
+      Quiz ID: <?php echo $_SESSION['q_id']; ?>
     </h1>
   </div>
 
