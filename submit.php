@@ -6,12 +6,12 @@
       $qname= $_SESSION['q_current_table'];
       $qnameres= $qname."responses";
       $conn1= mysqli_connect("localhost","root",'',"$host");
-      $sql= "INSERT INTO `$qnameres` (`username`) VALUES ('$user');";
-      if(! $conn1->query($sql))
-      {
-          echo $conn1->error;
-      }
-      $id=$conn1->insert_id;
+      // $sql= "SELECT no FROM `$qnameres` WHERE `username`= '$user';";
+      // if(! $conn1->query($sql))
+      // {
+      //     echo $conn1->error;
+      // }
+      // $id=$conn1->insert_id;
       $answers= $_POST['values'];
       $sql= "SELECT  `correct_option` FROM `$qname`;";
       $result=  $conn1->query($sql);
@@ -25,7 +25,7 @@
         {   
           $rightans++;
         }
-        $sql= "UPDATE `".$qnameres."` SET `$i` = '$val' WHERE `$qnameres`.`no` = $id;";
+        $sql= "UPDATE `".$qnameres."` SET `$i` = '$val' WHERE `$qnameres`.`username` = '$user';";
         if(!$conn1->query($sql))
         {
             echo $conn1->error;
@@ -38,7 +38,7 @@
       {
           echo $conn1->error;
       }
-      $sql= "UPDATE `".$qnameres."` SET `result` = '$rightans' WHERE `$qnameres`.`no` = $id;";
+      $sql= "UPDATE `".$qnameres."` SET `result` = '$rightans' WHERE `$qnameres`.`username` = '$user';";
 
       if(!$conn1->query($sql))
       {
@@ -52,6 +52,7 @@
       // $sql= "INSERT INTO "
       unset($_POST);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
