@@ -93,7 +93,6 @@
    color: white;
    font-size: 15px;
    font-weight: 600;
-   z-index: -1;
 }
    .ins:hover{
       box-shadow: 4px 4px 10px grey;
