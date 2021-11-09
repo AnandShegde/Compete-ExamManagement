@@ -120,6 +120,8 @@ Once you register for a quiz, it will appear in the ATTEMPT a Quiz tab. Once the
 
 The answers are compared and the result will be given.
 
+Forgot your password? No worries we have added a forgot password option which send a 6 digit verification code to your email id and you can easily get your account back by changing the password.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -129,8 +131,11 @@ The answers are compared and the result will be given.
 ## Contact
 
 ANAND HEGDE - anandishegde@gmail.com
-PAVAN PATIL - 
-KARTHIK JP  -
+
+PAVAN PATIL - pavanvpatil01@gmail.com
+
+KARTHIK JP  - karthikjagadeeshponarkar@gmail.com
+
 Project Link: [https://github.com/AnandShegde/ssl-lab](https://github.com/AnandShegde/ssl-lab)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
