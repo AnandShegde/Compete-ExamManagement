@@ -87,11 +87,11 @@ li{
 </style>
     </head>
     <body>
-      <h1 style="text-align:center">Website Overview</h1>
+      <h1 style="text-align:center; color: grey;">Website Overview</h1>
     <div id="output">
             Compete website enables users to use the features of efficient examination conduct seemlessly. Every user has a feature to host any objective based quiz by mentioning the necessary details of the quiz conduct like quiz date, quiz time and duration. The host can also set the academic criteria for the users to register for the quiz. Every user in the website can register for the quiz given they have passed necessary academic requirements by suitable means and give the examination on the quiz portal. After giving the examination users can veiw there quiz report which enables them to reassess their performance. The home page has many features which enables users to view their profile, know about how the website works and many more.
         </div>
-        <h1 style="text-align:center">Website Components</h1>
+        <h1 style="text-align:center; color: grey;">Website Components</h1>
         <div id="output">
             <ul>
                 <li>
