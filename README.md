@@ -63,7 +63,7 @@
 
 [![Product Name Screen Shot][product-screenshot]]
 
-The interest of universities/companies towards the online examination increasing day by day. The factors influence this interest consists of reduction of paper use, fast evaluation, cost reduction and much more such advantages. The Examination Management System (EMS) is software which enables companies to conduct examinations online in an efficient way.
+The interest of universities and companies towards the online examination is increasing day by day. The factors influencing this interest consists of reduction of paper use, fast evaluation, cost reduction and much more such advantages. The Examination Management System (EMS) is software which enables companies to conduct examinations online in an efficient way.
 * The process of adding the questions and evaluating them must be easy and fast
 * Answering the questions must be fun :smile:
 
@@ -105,7 +105,7 @@ You need to have XAMPP installed in you PC. To install XAMPP please visit [XAMPP
 ## Usage
 
 Please enter the Details asked in signup page. After signing up you can sign in and start using the website.
-The website is made in such a way that you can host some quizzes and attend some with the same login credentials. If you want to host a quiz, click on HOST A QUIZ in the homepage, it will ask you regarding the details of the quiz. After adding them, you can add questions. The questions should multiple choice questions with single answer. The number of options may vary from 2-4.
+The website is made in such a way that you can host some quizzes and attend some with the same login credentials. If you want to host a quiz, click on HOST A QUIZ in the homepage, it will ask you regarding the details of the quiz. After adding them, you can add questions. The questions should be of multiple choice type with single correct answer. The number of options may vary from 2-5.
 
 After hosting the quiz, The quiz will appear in the registration tab. Other students can register using the REGISTER page.
 
@@ -123,11 +123,11 @@ Forgot your password? No worries we have added a forgot password option which se
 <!-- CONTACT -->
 ## Contact
 
-ANAND HEGDE - anandishegde@gmail.com
+ANAND S HEGDE - anandishegde@gmail.com
 
-PAVAN PATIL - pavanvpatil01@gmail.com
+PAVAN KUMAR V PATIL - pavanvpatil01@gmail.com
 
-KARTHIK JP  - karthikjagadeeshponarkar@gmail.com
+KARTHIK J PONARKAR  - karthikjagadeeshponarkar@gmail.com
 
 Project Link: [https://github.com/AnandShegde/ssl-lab](https://github.com/AnandShegde/ssl-lab)
 
