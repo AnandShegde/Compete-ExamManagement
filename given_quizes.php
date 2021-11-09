@@ -1,6 +1,17 @@
 <?php 
     session_start();
     $username = $_SESSION['user'];
+    $conn = mysqli_connect("localhost", "root", "",$username);
+    $sql= "CREATE TABLE IF NOT EXISTS reg_quizes( 
+        id INT NOT NULL ,
+        attempted INT NOT NULL,
+        host TEXT NOT NULL ,
+        q_date DATE NOT NULL , 
+        starttime TIME NOT NULL , 
+        endtime TIME NOT NULL , 
+        duration TIME NOT NULL ,
+        q_name TEXT NOT NULL )";
+    mysqli_query($conn, $sql);
     $conn = mysqli_connect("localhost", "root", "", $username);
     $sql = "SELECT * FROM reg_quizes WHERE attempted = 1";
     $result = mysqli_query($conn, $sql);
