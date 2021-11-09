@@ -20,7 +20,7 @@
     <a href="https://github.com/AnandShegde/ssl-lab"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/AnandShegde/ssl-lab">View Demo</a>
+    <a href="https://www.youtube.com/watch?v=KLeQLn9jf9c">View Demo</a>
     ·
     <a href="https://github.com/AnandShegde/ssl-lab/issues">Report Bug</a>
     ·
@@ -131,7 +131,7 @@ KARTHIK J PONARKAR  - karthikjagadeeshponarkar@gmail.com
 
 Project Link: [https://github.com/AnandShegde/ssl-lab](https://github.com/AnandShegde/ssl-lab)
 
-Youtube video Link: [https://www.youtube.com/watch?v=KLeQLn9jf9c](https://github.com/AnandShegde/ssl-lab)
+Youtube video Link: [https://www.youtube.com/watch?v=KLeQLn9jf9c](https://www.youtube.com/watch?v=KLeQLn9jf9c)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
