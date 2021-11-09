@@ -15,7 +15,7 @@
   <h3 align="center">COMPETE</h3>
 
   <p align="center">
-   A Quizing Website 
+   A Online Examination Mangement Site
     <br />
     <a href="https://github.com/AnandShegde/ssl-lab"><strong>Explore the docs »</strong></a>
     <br />
@@ -70,9 +70,6 @@ The interest of universities/companies towards the online examination increasing
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * HTML 5
 * CSS
 * JAVASCRIPT
@@ -94,10 +91,6 @@ You need to have XAMPP installed in you PC. To install XAMPP please visit [XAMPP
 
 
 ### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-
 1. Clone the repo
    ```sh
    git clone https://github.com/AnandShegde/ssl-lab.git
