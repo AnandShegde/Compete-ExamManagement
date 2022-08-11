@@ -17,14 +17,9 @@
   <p align="center">
    A Online Examination Mangement Site
     <br />
-    <a href="https://github.com/AnandShegde/ssl-lab"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://www.youtube.com/watch?v=KLeQLn9jf9c">View Demo</a>
-    ·
-    <a href="https://github.com/AnandShegde/ssl-lab/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/AnandShegde/ssl-lab/issues">Request Feature</a>
   </p>
 </div>
 
